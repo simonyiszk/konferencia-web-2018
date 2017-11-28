@@ -9,7 +9,9 @@
   "dependencies": {
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
+    "gatsby-plugin-glamor": "^1.6.8",
     "gatsby-plugin-react-helmet": "^2.0.1",
+    "normalize.css": "^7.0.0",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {

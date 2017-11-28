@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     title: 'XV. Simonyi Konferencia',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: ['gatsby-plugin-glamor', 'gatsby-plugin-react-helmet'],
 };
