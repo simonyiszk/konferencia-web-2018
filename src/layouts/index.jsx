@@ -5,13 +5,53 @@ import Helmet from 'react-helmet';
 
 import 'normalize.css';
 
+import Container from '../components/Container';
+
 const Header = () => (
   <header
     css={{
       position: 'absolute',
+      width: '100%',
     }}
   >
-    <Link to="/">Főoldal</Link>
+    <Container>
+      <nav
+        css={{
+          height: '4rem',
+          display: 'flex',
+          alignItems: 'center',
+          margin: '0 -1.5rem',
+
+          '& a': {
+            color: 'white',
+            textDecoration: 'none',
+            padding: '0.5rem',
+            margin: '0 1rem',
+
+            ':hover': {
+              textDecoration: 'underline',
+            },
+          },
+
+          '& ul': {
+            padding: 0,
+          },
+        }}
+      >
+        <ul css={{ flex: 1 }}>
+          <Link to="/">Főoldal</Link>
+        </ul>
+        <ul>
+          <Link to="#videos">Videók</Link>
+        </ul>
+        <ul>
+          <Link to="#gallery">Galéria</Link>
+        </ul>
+        <ul>
+          <Link to="#sponsors">Támogatók</Link>
+        </ul>
+      </nav>
+    </Container>
   </header>
 );
 
