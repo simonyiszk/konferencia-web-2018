@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "graphql": true
+  },
+  "settings": {
+    // TODO: Remove if https://github.com/gatsbyjs/gatsby/issues/1990 gets resolved
+    "import/core-modules": ["prop-types", "react"]
+  },
+  "rules": {
+    // TODO: Remove if https://github.com/airbnb/javascript/pull/1648 gets merged and released
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ]
+  }
+}
