@@ -3,6 +3,7 @@ module.exports = {
     title: 'XV. Simonyi Konferencia',
   },
   plugins: [
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-glamor',
     'gatsby-plugin-react-helmet',
     {
@@ -10,6 +11,12 @@ module.exports = {
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-smartypants'],
       },
     },
     'gatsby-transformer-sharp',

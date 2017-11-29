@@ -52,16 +52,23 @@ const GallerySection = ({ data }) => (
         margin: '-1rem',
       }}
     >
-      {data.galleryThumbnails.edges.map(({ node: thumbnail }) => (
+      {data.galleries.edges.map(({ node: gallery }) => (
         <div
-          key={thumbnail.name}
+          key={gallery.frontmatter.title}
           css={{
-            flex: '50%',
+            flex: '100%',
             padding: '1rem',
+
+            '@media (min-width: 576px)': {
+              flex: '50%',
+            },
+
             '& *': { height: '100%' },
           }}
         >
-          <Img sizes={thumbnail.childImageSharp.sizes} />
+          <a href={gallery.frontmatter.source} target="_blank" rel="noreferrer noopener">
+            <Img sizes={gallery.frontmatter.thumbnail.childImageSharp.sizes} />
+          </a>
         </div>
       ))}
     </div>
@@ -130,16 +137,21 @@ export const query = graphql`
         title
       }
     }
-    galleryThumbnails: allFile(
-      filter: { id: { regex: "/gallery-thumbnails/" } }
-      sort: { fields: [name], order: DESC }
+    galleries: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/gallery/" } }
+      sort: { fields: [frontmatter___title], order: DESC }
     ) {
       edges {
         node {
-          name
-          childImageSharp {
-            sizes(maxWidth: 500) {
-              ...GatsbyImageSharpSizes
+          frontmatter {
+            title
+            source
+            thumbnail {
+              childImageSharp {
+                sizes(maxWidth: 544) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
             }
           }
         }
