@@ -3,43 +3,51 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Container from '../components/Container';
 
-const VideosSection = () => (
+const VideosSection = ({ data }) => (
   <div id="videos">
     <h1>Videók</h1>
 
-    <article
-      css={{
-        display: 'flex',
-        alignItems: 'center',
-        margin: '-2rem',
+    {data.videos.edges.map(({ node: video }) => (
+      <article
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+          margin: '-2rem',
 
-        '& > *': {
-          margin: '2rem',
-        },
-      }}
-    >
-      <div>
-        <h2>Satellite navigation on new waves</h2>
-        <p>
-          The European satellite navigation infrastructures EGNOS and Galileo are up and running.
-          Satellite navigation will facilitate autonomous driving, support to the
-          Internet-of-Things, advanced logistics, asset management and traffic management in sectors
-          like railways and aviation.
-        </p>
-      </div>
+          '& > *': {
+            margin: '2rem',
+          },
 
-      <div css={{ flex: '0 0 40%' }}>
-        <video
-          src="http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/simonyikonf2017_IB028_blokk1_verhoef_hq_HD.mp4"
-          controls
-          css={{
-            width: '100%',
-          }}
-        />
-      </div>
-    </article>
+          ':nth-child(odd)': {
+            flexDirection: 'row-reverse',
+          },
+        }}
+      >
+        <div>
+          <h2>{video.frontmatter.title}</h2>
+
+          {/* eslint-disable react/no-danger */}
+          <p dangerouslySetInnerHTML={{ __html: video.html }} />
+          {/* eslint-enable react/no-danger */}
+        </div>
+
+        <div css={{ flex: '0 0 40%' }}>
+          <video
+            src={video.frontmatter.source}
+            controls
+            css={{
+              width: '100%',
+            }}
+          />
+        </div>
+      </article>
+    ))}
   </div>
 );
+
+VideosSection.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
 
 const GallerySection = ({ data }) => (
   <div id="gallery">
@@ -117,7 +125,7 @@ const IndexPage = ({ data }) => (
         },
       }}
     >
-      <VideosSection />
+      <VideosSection data={data} />
       <GallerySection data={data} />
     </Container>
   </div>
@@ -137,6 +145,22 @@ export const query = graphql`
         siteAddressPretty
       }
     }
+    videos: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/videos/" } }
+      sort: { fields: [frontmatter___title] }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            presenterName
+            presenterRole
+            source
+          }
+          html
+        }
+      }
+    }
     galleries: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/gallery/" } }
       sort: { fields: [frontmatter___title], order: DESC }
@@ -144,7 +168,6 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            title
             source
             thumbnail {
               childImageSharp {
