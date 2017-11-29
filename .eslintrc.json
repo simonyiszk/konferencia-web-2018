@@ -20,6 +20,7 @@
         "specialLink": ["to"],
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
-    ]
+    ],
+    "jsx-a11y/media-has-caption": "off"
   }
 }
