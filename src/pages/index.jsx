@@ -1,3 +1,4 @@
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from '../components/Container';
@@ -40,6 +41,37 @@ const VideosSection = () => (
   </div>
 );
 
+const GallerySection = ({ data }) => (
+  <div id="#gallery">
+    <h1>Galéria</h1>
+
+    <div
+      css={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        margin: '-1rem',
+      }}
+    >
+      {data.galleryThumbnails.edges.map(({ node: thumbnail }) => (
+        <div
+          key={thumbnail.name}
+          css={{
+            flex: '50%',
+            padding: '1rem',
+            '& *': { height: '100%' },
+          }}
+        >
+          <Img sizes={thumbnail.childImageSharp.sizes} />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+GallerySection.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 const IndexPage = ({ data }) => (
   <div>
     <div
@@ -80,6 +112,7 @@ const IndexPage = ({ data }) => (
       }}
     >
       <VideosSection />
+      <GallerySection data={data} />
     </Container>
   </div>
 );
@@ -95,6 +128,21 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    galleryThumbnails: allFile(
+      filter: { id: { regex: "/gallery-thumbnails/" } }
+      sort: { fields: [name], order: DESC }
+    ) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            sizes(maxWidth: 500) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

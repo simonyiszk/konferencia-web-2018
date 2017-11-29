@@ -8,9 +8,13 @@
   },
   "dependencies": {
     "gatsby": "^1.9.119",
+    "gatsby-image": "^1.0.27",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-glamor": "^1.6.8",
     "gatsby-plugin-react-helmet": "^2.0.1",
+    "gatsby-plugin-sharp": "^1.6.22",
+    "gatsby-source-filesystem": "^1.5.9",
+    "gatsby-transformer-sharp": "^1.6.15",
     "normalize.css": "^7.0.0",
     "react-helmet": "^5.2.0"
   },
