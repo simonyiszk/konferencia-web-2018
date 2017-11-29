@@ -4,7 +4,6 @@ import React from 'react';
 const Container = ({ children, ...props }) => (
   <div
     css={{
-      boxSizing: 'border-box',
       width: '100%',
       padding: '0 1rem',
       margin: '0 auto',

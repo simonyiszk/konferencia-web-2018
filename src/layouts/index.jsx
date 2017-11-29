@@ -56,7 +56,15 @@ const Header = () => (
 );
 
 const IndexLayout = ({ children, data }) => (
-  <div css={{ fontFamily: 'Montserrat, sans-serif' }}>
+  <div
+    css={{
+      fontFamily: 'Montserrat, sans-serif',
+      boxSizing: 'border-box',
+      '& *, & *:before, & *:after': {
+        boxSizing: 'inherit',
+      },
+    }}
+  >
     <Helmet
       defaultTitle={data.site.siteMetadata.title}
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
