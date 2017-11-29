@@ -42,7 +42,7 @@ const VideosSection = () => (
 );
 
 const GallerySection = ({ data }) => (
-  <div id="#gallery">
+  <div id="gallery">
     <h1>Galéria</h1>
 
     <div
@@ -84,6 +84,7 @@ const IndexPage = ({ data }) => (
     <div
       css={{
         background: 'linear-gradient(227.5deg, #00e676, #009688)',
+        color: 'white',
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -91,8 +92,6 @@ const IndexPage = ({ data }) => (
     >
       <Container
         css={{
-          color: 'white',
-
           '& h1': { fontSize: '3rem' },
           '& h2': { fontSize: '2rem' },
           '& h3': { fontSize: '1rem' },
@@ -107,7 +106,7 @@ const IndexPage = ({ data }) => (
         <h1 css={{ wordSpacing: '100vw' }}>{data.site.siteMetadata.title}</h1>
         <h2>2018. április 18.</h2>
         <h2>BME I épület</h2>
-        <h3>Budapest, Magyar tudósok körútja 2, 1117</h3>
+        <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
       </Container>
     </div>
 
@@ -135,6 +134,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        siteAddressPretty
       }
     }
     galleries: allMarkdownRemark(

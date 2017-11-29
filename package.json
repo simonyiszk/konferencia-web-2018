@@ -19,7 +19,8 @@
     "gatsby-transformer-remark": "^1.7.22",
     "gatsby-transformer-sharp": "^1.6.15",
     "normalize.css": "^7.0.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7"
   },
   "devDependencies": {
     "eslint": "^4.12.0",

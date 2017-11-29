@@ -2,6 +2,9 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
+import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
+import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
+import FaInstagram from 'react-icons/lib/fa/instagram';
 
 import 'normalize.css';
 
@@ -12,6 +15,7 @@ const Header = () => (
     css={{
       position: 'absolute',
       width: '100%',
+      color: 'white',
     }}
   >
     <Container>
@@ -23,7 +27,6 @@ const Header = () => (
           margin: '0 -1.5rem',
 
           '& a': {
-            color: 'white',
             textDecoration: 'none',
             padding: '0.5rem',
             margin: '0 1rem',
@@ -55,13 +58,48 @@ const Header = () => (
   </header>
 );
 
+const Footer = ({ data }) => (
+  <footer
+    css={{
+      background: '#263238',
+      color: 'white',
+      textAlign: 'center',
+      marginTop: '4rem',
+
+      '& svg': {
+        fontSize: '2rem',
+        margin: '2rem',
+      },
+    }}
+  >
+    <a href={data.site.siteMetadata.siteFacebookURL} target="_blank" rel="noreferrer noopener">
+      <FaFacebookOfficial />
+    </a>
+    <a href={data.site.siteMetadata.siteYouTubeURL} target="_blank" rel="noreferrer noopener">
+      <FaYouTubePlay />
+    </a>
+    <a href={data.site.siteMetadata.siteInstagramURL} target="_blank" rel="noreferrer noopener">
+      <FaInstagram />
+    </a>
+  </footer>
+);
+
+Footer.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 const IndexLayout = ({ children, data }) => (
   <div
     css={{
       fontFamily: 'Montserrat, sans-serif',
       boxSizing: 'border-box',
+
       '& *, & *:before, & *:after': {
         boxSizing: 'inherit',
+      },
+
+      '& a': {
+        color: 'inherit',
       },
     }}
   >
@@ -77,6 +115,8 @@ const IndexLayout = ({ children, data }) => (
     <Header />
 
     <main>{children()}</main>
+
+    <Footer data={data} />
   </div>
 );
 
@@ -92,6 +132,9 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        siteFacebookURL
+        siteYouTubeURL
+        siteInstagramURL
       }
     }
   }
