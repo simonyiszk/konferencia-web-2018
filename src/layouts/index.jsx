@@ -110,6 +110,15 @@ const IndexLayout = ({ children, data }) => (
           textDecoration: 'underline',
         },
       },
+
+      // Fix anchor scroll positioning
+      '*& [id]:before': {
+        display: 'block',
+        content: ' ',
+        marginTop: '-4rem',
+        height: '4rem',
+        visibility: 'hidden',
+      },
     }}
   >
     <Helmet
