@@ -27,13 +27,15 @@ const VideosSection = () => (
         </p>
       </div>
 
-      <video
-        src="http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/simonyikonf2017_IB028_blokk1_verhoef_hq_HD.mp4"
-        controls
-        css={{
-          flexBasis: '80%',
-        }}
-      />
+      <div css={{ flex: '0 0 40%' }}>
+        <video
+          src="http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/simonyikonf2017_IB028_blokk1_verhoef_hq_HD.mp4"
+          controls
+          css={{
+            width: '100%',
+          }}
+        />
+      </div>
     </article>
   </div>
 );
