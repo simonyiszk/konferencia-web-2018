@@ -147,7 +147,7 @@ export const query = graphql`
     }
     videos: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/videos/" } }
-      sort: { fields: [frontmatter___title] }
+      sort: { fields: [fileAbsolutePath], order: DESC }
     ) {
       edges {
         node {
@@ -163,7 +163,7 @@ export const query = graphql`
     }
     galleries: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/gallery/" } }
-      sort: { fields: [frontmatter___title], order: DESC }
+      sort: { fields: [fileAbsolutePath], order: DESC }
     ) {
       edges {
         node {
