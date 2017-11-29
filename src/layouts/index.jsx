@@ -13,45 +13,49 @@ import Container from '../components/Container';
 const Header = () => (
   <header
     css={{
-      position: 'absolute',
+      position: 'fixed',
       width: '100%',
       color: 'white',
+      background: '#009688',
+      zIndex: 9,
     }}
   >
-    <Container>
-      <nav
-        css={{
-          height: '4rem',
-          display: 'flex',
-          alignItems: 'center',
-          margin: '0 -1.5rem',
+    <Container
+      css={{
+        display: 'flex',
+        alignItems: 'center',
 
-          '& a': {
-            textDecoration: 'none',
-            padding: '0.5rem',
-            margin: '0 1rem',
+        '& a': {
+          display: 'block',
+          padding: '0.5rem',
+          margin: '1rem -0.5rem',
+        },
 
-            ':hover': {
-              textDecoration: 'underline',
-            },
-          },
+        '& ul': {
+          listStyleType: 'none',
+          margin: 0,
+        },
 
-          '& ul': {
-            padding: 0,
-          },
-        }}
-      >
-        <ul css={{ flex: 1 }}>
-          <Link to="/">Főoldal</Link>
-        </ul>
-        <ul>
-          <Link to="#videos">Videók</Link>
-        </ul>
-        <ul>
-          <Link to="#gallery">Galéria</Link>
-        </ul>
-        <ul>
-          <Link to="#sponsors">Támogatók</Link>
+        '& li': {
+          marginLeft: '3rem',
+        },
+      }}
+    >
+      <div css={{ flex: 1 }}>
+        <Link to="/">Főoldal</Link>
+      </div>
+
+      <nav>
+        <ul css={{ display: 'flex' }}>
+          <li>
+            <Link to="#videos">Videók</Link>
+          </li>
+          <li>
+            <Link to="#gallery">Galéria</Link>
+          </li>
+          <li>
+            <Link to="#sponsors">Támogatók</Link>
+          </li>
         </ul>
       </nav>
     </Container>
@@ -100,6 +104,11 @@ const IndexLayout = ({ children, data }) => (
 
       '& a': {
         color: 'inherit',
+        textDecoration: 'none',
+
+        ':hover': {
+          textDecoration: 'underline',
+        },
       },
     }}
   >
