@@ -2,6 +2,8 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
+import FaChevronDown from 'react-icons/lib/fa/chevron-down';
+import FaChevronUp from 'react-icons/lib/fa/chevron-up';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
@@ -23,6 +25,7 @@ const Header = () => (
     <Container
       css={{
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
 
         '& a': {
@@ -30,23 +33,81 @@ const Header = () => (
           padding: '0.5rem',
           margin: '1rem -0.5rem',
         },
-
-        '& ul': {
-          listStyleType: 'none',
-          margin: 0,
-        },
-
-        '& li': {
-          marginLeft: '3rem',
-        },
       }}
     >
       <div css={{ flex: 1 }}>
         <Link to="/#home">Főoldal</Link>
       </div>
 
-      <nav>
-        <ul css={{ display: 'flex' }}>
+      <input
+        id="navbar-toggle"
+        type="checkbox"
+        css={{
+          display: 'none',
+
+          '@media (max-width: 768px)': {
+            ':not(:checked)': {
+              '& + label > svg:nth-child(1)': {
+                display: 'none',
+              },
+
+              '& ~ nav > ul': {
+                display: 'none',
+              },
+            },
+
+            ':checked': {
+              '& + label > svg:nth-child(2)': {
+                display: 'none',
+              },
+
+              '& ~ nav > ul': {
+                display: 'block',
+              },
+            },
+          },
+        }}
+      />
+
+      {/* eslint-disable jsx-a11y/label-has-for */}
+      <label
+        htmlFor="navbar-toggle"
+        css={{
+          cursor: 'pointer',
+          userSelect: 'none',
+
+          '@media (min-width: 768px)': {
+            display: 'none',
+          },
+        }}
+      >
+        {/* eslint-enable jsx-a11y/label-has-for */}
+        <FaChevronUp />
+        <FaChevronDown />
+      </label>
+
+      <nav
+        css={{
+          '@media (max-width: 768px)': {
+            width: '100%', // Wrap component onto a new line
+          },
+        }}
+      >
+        <ul
+          id="navbar-nav"
+          css={{
+            display: 'flex',
+            listStyleType: 'none',
+            padding: 0,
+            margin: 0,
+
+            '@media (min-width: 768px)': {
+              '& > li': {
+                marginLeft: '3rem',
+              },
+            },
+          }}
+        >
           <li>
             <Link to="/#videos">Videók</Link>
           </li>
