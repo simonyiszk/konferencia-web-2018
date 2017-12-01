@@ -26,9 +26,10 @@ const VideosSection = ({ data }) => (
         <div>
           <h2>{video.frontmatter.title}</h2>
 
-          {/* eslint-disable react/no-danger */}
-          <p dangerouslySetInnerHTML={{ __html: video.html }} />
-          {/* eslint-enable react/no-danger */}
+          <p
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: video.html }}
+          />
         </div>
 
         <div css={{ flex: '0 0 40%' }}>
@@ -90,6 +91,7 @@ GallerySection.propTypes = {
 const IndexPage = ({ data }) => (
   <div>
     <div
+      id="home"
       css={{
         background: 'linear-gradient(227.5deg, #00e676, #009688)',
         color: 'white',

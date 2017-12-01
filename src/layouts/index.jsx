@@ -26,7 +26,7 @@ const Header = () => (
         alignItems: 'center',
 
         '& a': {
-          display: 'block',
+          display: 'inline-block',
           padding: '0.5rem',
           margin: '1rem -0.5rem',
         },
@@ -42,19 +42,19 @@ const Header = () => (
       }}
     >
       <div css={{ flex: 1 }}>
-        <Link to="/">Főoldal</Link>
+        <Link to="/#home">Főoldal</Link>
       </div>
 
       <nav>
         <ul css={{ display: 'flex' }}>
           <li>
-            <Link to="#videos">Videók</Link>
+            <Link to="/#videos">Videók</Link>
           </li>
           <li>
-            <Link to="#gallery">Galéria</Link>
+            <Link to="/#gallery">Galéria</Link>
           </li>
           <li>
-            <Link to="#sponsors">Támogatók</Link>
+            <Link to="/#sponsors">Támogatók</Link>
           </li>
         </ul>
       </nav>
