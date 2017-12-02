@@ -9,6 +9,7 @@ const VideosSection = ({ data }) => (
 
     {data.videos.edges.map(({ node: video }) => (
       <article
+        key={video.frontmatter.source}
         css={{
           display: 'flex',
           alignItems: 'center',
@@ -63,7 +64,7 @@ const GallerySection = ({ data }) => (
     >
       {data.galleries.edges.map(({ node: gallery }) => (
         <div
-          key={gallery.frontmatter.title}
+          key={gallery.frontmatter.source}
           css={{
             flex: '100%',
             padding: '1rem',
