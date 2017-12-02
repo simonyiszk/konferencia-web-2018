@@ -12,116 +12,140 @@ import 'normalize.css';
 
 import Container from '../components/Container';
 
-const Header = () => (
-  <header
-    css={{
-      position: 'fixed',
-      width: '100%',
-      color: 'white',
-      background: '#009688',
-      zIndex: 9,
-    }}
-  >
-    <Container
-      css={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
+class Header extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isMenuOpen: false,
+    };
 
-        '& a': {
-          display: 'inline-block',
-          padding: '0.5rem',
-          margin: '1rem -0.5rem',
-        },
-      }}
-    >
-      <div css={{ flex: 1 }}>
-        <Link to="/#home">Főoldal</Link>
-      </div>
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
 
-      <input
-        id="navbar-toggle"
-        type="checkbox"
+  handleInputChange(event) {
+    const { target } = event;
+    const value = target.checked;
+
+    this.setState({
+      [target.name]: value,
+    });
+  }
+
+  render() {
+    return (
+      <header
         css={{
-          display: 'none',
-
-          '@media (max-width: 768px)': {
-            ':not(:checked)': {
-              '& + label > svg:nth-child(1)': {
-                display: 'none',
-              },
-
-              '& ~ nav > ul': {
-                display: 'none',
-              },
-            },
-
-            ':checked': {
-              '& + label > svg:nth-child(2)': {
-                display: 'none',
-              },
-
-              '& ~ nav > ul': {
-                display: 'block',
-              },
-            },
-          },
-        }}
-      />
-
-      {/* eslint-disable jsx-a11y/label-has-for */}
-      <label
-        htmlFor="navbar-toggle"
-        css={{
-          cursor: 'pointer',
-          userSelect: 'none',
-
-          '@media (min-width: 768px)': {
-            display: 'none',
-          },
+          position: 'fixed',
+          width: '100%',
+          color: 'white',
+          background: '#009688',
+          zIndex: 9,
         }}
       >
-        {/* eslint-enable jsx-a11y/label-has-for */}
-        <FaChevronUp />
-        <FaChevronDown />
-      </label>
-
-      <nav
-        css={{
-          '@media (max-width: 768px)': {
-            width: '100%', // Wrap component onto a new line
-          },
-        }}
-      >
-        <ul
-          id="navbar-nav"
+        <Container
           css={{
             display: 'flex',
-            listStyleType: 'none',
-            padding: 0,
-            margin: 0,
+            flexWrap: 'wrap',
+            alignItems: 'center',
 
-            '@media (min-width: 768px)': {
-              '& > li': {
-                marginLeft: '3rem',
-              },
+            '& a': {
+              display: 'inline-block',
+              padding: '0.5rem',
+              margin: '1rem -0.5rem',
             },
           }}
         >
-          <li>
-            <Link to="/#videos">Videók</Link>
-          </li>
-          <li>
-            <Link to="/#gallery">Galéria</Link>
-          </li>
-          <li>
-            <Link to="/#sponsors">Támogatók</Link>
-          </li>
-        </ul>
-      </nav>
-    </Container>
-  </header>
-);
+          <div css={{ flex: 1 }}>
+            <Link to="/#home" onClick={() => this.setState({ isMenuOpen: false })}>
+              Főoldal
+            </Link>
+          </div>
+
+          <input
+            id="menu-checkbox"
+            name="isMenuOpen"
+            type="checkbox"
+            checked={this.state.isMenuOpen}
+            onChange={this.handleInputChange}
+            css={{
+              display: 'none',
+
+              '@media (max-width: 768px)': {
+                ':not(:checked)': {
+                  '& + label > svg:nth-child(1)': {
+                    display: 'none',
+                  },
+
+                  '& ~ nav > ul': {
+                    display: 'none',
+                  },
+                },
+
+                ':checked': {
+                  '& + label > svg:nth-child(2)': {
+                    display: 'none',
+                  },
+
+                  '& ~ nav > ul': {
+                    display: 'block',
+                  },
+                },
+              },
+            }}
+          />
+
+          {/* eslint-disable jsx-a11y/label-has-for */}
+          <label
+            htmlFor="menu-checkbox"
+            css={{
+              cursor: 'pointer',
+              userSelect: 'none',
+
+              '@media (min-width: 768px)': {
+                display: 'none',
+              },
+            }}
+          >
+            {/* eslint-enable jsx-a11y/label-has-for */}
+            <FaChevronUp />
+            <FaChevronDown />
+          </label>
+
+          <nav
+            css={{
+              '@media (max-width: 768px)': {
+                width: '100%', // Wrap component onto a new line
+              },
+            }}
+          >
+            <ul
+              css={{
+                display: 'flex',
+                listStyleType: 'none',
+                padding: 0,
+                margin: 0,
+
+                '@media (min-width: 768px)': {
+                  '& > li': {
+                    marginLeft: '3rem',
+                  },
+                },
+              }}
+            >
+              {[['/#videos', 'Videók'], ['/#gallery', 'Galéria'], ['/#sponsors', 'Támogatók']].map(([to, name]) => (
+                <li key={to}>
+                  <Link to={to} onClick={() => this.setState({ isMenuOpen: false })}>
+                    {name}
+                  </Link>
+                </li>
+                ))}
+            </ul>
+          </nav>
+        </Container>
+      </header>
+    );
+  }
+}
 
 const Footer = ({ data }) => (
   <footer
