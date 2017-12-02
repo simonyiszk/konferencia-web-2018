@@ -71,7 +71,7 @@ class Header extends React.Component {
               display: 'none',
 
               '@media (max-width: 768px)': {
-                ':not(:checked)': {
+                '&:not(:checked)': {
                   '& + label > svg:nth-child(1)': {
                     display: 'none',
                   },
@@ -81,7 +81,7 @@ class Header extends React.Component {
                   },
                 },
 
-                ':checked': {
+                '&:checked': {
                   '& + label > svg:nth-child(2)': {
                     display: 'none',
                   },
@@ -191,15 +191,15 @@ const IndexLayout = ({ children, data }) => (
         color: 'inherit',
         textDecoration: 'none',
 
-        ':hover': {
+        '&:hover': {
           textDecoration: 'underline',
         },
       },
 
       // Fix anchor scroll positioning
-      '*& [id]:before': {
+      '& [id]:before': {
         display: 'block',
-        content: ' ',
+        content: '""',
         marginTop: '-4rem',
         height: '4rem',
         visibility: 'hidden',

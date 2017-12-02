@@ -19,7 +19,7 @@ const VideosSection = ({ data }) => (
             margin: '2rem',
           },
 
-          ':nth-child(odd)': {
+          '&:nth-child(odd)': {
             flexDirection: 'row-reverse',
           },
         }}
