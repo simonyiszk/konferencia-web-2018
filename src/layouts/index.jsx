@@ -1,7 +1,7 @@
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { css } from 'react-emotion';
+import { css, injectGlobal } from 'react-emotion';
 import Helmet from 'react-helmet';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
@@ -13,6 +13,38 @@ import 'normalize.css';
 
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
+
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  body {
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* Fix anchor scroll positioning */
+  [id]::before {
+    display: block;
+    content: '';
+    margin-top: -4rem;
+    height: 4rem;
+    visibility: hidden;
+  }
+`;
 
 class Header extends React.Component {
   constructor() {
@@ -187,32 +219,9 @@ Footer.propTypes = {
 const IndexLayout = ({ children, data }) => (
   <div
     className={css`
-      font-family: Montserrat, sans-serif;
-      box-sizing: border-box;
-
-      & *,
-      & *:before,
-      & *:after {
-        box-sizing: inherit;
-      }
-
-      & a {
-        color: inherit;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-      /* Fix anchor scroll positioning */
-      & [id]:before {
-        display: block;
-        content: '';
-        margin-top: -4rem;
-        height: 4rem;
-        visibility: hidden;
-      }
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     `}
   >
     <Helmet
@@ -226,7 +235,13 @@ const IndexLayout = ({ children, data }) => (
 
     <Header />
 
-    <main>{children()}</main>
+    <main
+      className={css`
+        flex: 1;
+      `}
+    >
+      {children()}
+    </main>
 
     <Footer data={data} />
   </div>
