@@ -161,7 +161,8 @@ const Footer = ({ data }) => (
       text-align: center;
       margin-top: 4rem;
 
-      & svg {
+      & a {
+        display: inline-block;
         font-size: 2rem;
         margin: 2rem;
       }
