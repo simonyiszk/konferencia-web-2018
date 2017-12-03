@@ -12,19 +12,19 @@ const VideosSection = ({ data }) => (
     {data.videos.edges.map(({ node: video }) => (
       <article
         key={video.frontmatter.source}
-        css={{
-          display: 'flex',
-          alignItems: 'center',
-          margin: '-2rem',
+        className={css`
+          display: flex;
+          align-items: center;
+          margin: -2rem;
 
-          '& > *': {
-            margin: '2rem',
-          },
+          & > * {
+            margin: 2rem;
+          }
 
-          '&:nth-child(odd)': {
-            flexDirection: 'row-reverse',
-          },
-        }}
+          &:nth-child(odd) {
+            flex-direction: row-reverse;
+          }
+        `}
       >
         <div>
           <h2>{video.frontmatter.title}</h2>
@@ -35,13 +35,17 @@ const VideosSection = ({ data }) => (
           />
         </div>
 
-        <div css={{ flex: '0 0 40%' }}>
+        <div
+          className={css`
+            flex: 0 0 40%;
+          `}
+        >
           <video
             src={video.frontmatter.source}
             controls
-            css={{
-              width: '100%',
-            }}
+            className={css`
+              width: 100%;
+            `}
           />
         </div>
       </article>
@@ -58,11 +62,11 @@ const GallerySection = ({ data }) => (
     <h1>Galéria</h1>
 
     <div
-      css={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        margin: '-1rem',
-      }}
+      className={css`
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1rem;
+      `}
     >
       {data.galleries.edges.map(({ node: gallery }) => (
         <div
@@ -97,13 +101,13 @@ const IndexPage = ({ data }) => (
   <div>
     <div
       id="home"
-      css={{
-        background: 'linear-gradient(227.5deg, #00e676, #009688)',
-        color: 'white',
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-      }}
+      className={css`
+        background: linear-gradient(227.5deg, #00e676, #009688);
+        color: white;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      `}
     >
       <Container
         className={css`
@@ -134,7 +138,13 @@ const IndexPage = ({ data }) => (
           `};
         `}
       >
-        <h1 css={{ wordSpacing: '100vw' }}>{data.site.siteMetadata.title}</h1>
+        <h1
+          className={css`
+            word-spacing: 100vw;
+          `}
+        >
+          {data.site.siteMetadata.title}
+        </h1>
         <h2>2018. április 18.</h2>
         <h2>BME I épület</h2>
         <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
@@ -142,11 +152,11 @@ const IndexPage = ({ data }) => (
     </div>
 
     <Container
-      css={{
-        '& h1': {
-          textAlign: 'center',
-        },
-      }}
+      className={css`
+        & h1 {
+          text-align: center;
+        }
+      `}
     >
       <VideosSection data={data} />
       <GallerySection data={data} />

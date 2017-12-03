@@ -36,28 +36,32 @@ class Header extends React.Component {
   render() {
     return (
       <header
-        css={{
-          position: 'fixed',
-          width: '100%',
-          color: 'white',
-          background: '#009688',
-          zIndex: 9,
-        }}
+        className={css`
+          position: fixed;
+          width: 100%;
+          color: white;
+          background: #009688;
+          z-index: 9;
+        `}
       >
         <Container
-          css={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
+          className={css`
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
 
-            '& a': {
-              display: 'inline-block',
-              padding: '0.5rem',
-              margin: '1rem -0.5rem',
-            },
-          }}
+            & a {
+              display: inline-block;
+              padding: 0.5rem;
+              margin: 1rem -0.5rem;
+            }
+          `}
         >
-          <div css={{ flex: 1 }}>
+          <div
+            className={css`
+              flex: 1;
+            `}
+          >
             <Link to="/#home" onClick={() => this.setState({ isMenuOpen: false })}>
               Főoldal
             </Link>
@@ -69,31 +73,31 @@ class Header extends React.Component {
             type="checkbox"
             checked={this.state.isMenuOpen}
             onChange={this.handleInputChange}
-            css={{
-              display: 'none',
+            className={css`
+              display: none;
 
-              '@media (max-width: 768px)': {
-                '&:not(:checked)': {
-                  '& + label > svg:nth-child(1)': {
-                    display: 'none',
-                  },
+              @media (max-width: 768px) {
+                &:not(:checked) {
+                  & + label > svg:nth-child(1) {
+                    display: none;
+                  }
 
-                  '& ~ nav > ul': {
-                    display: 'none',
-                  },
-                },
+                  & ~ nav > ul {
+                    display: none;
+                  }
+                }
 
-                '&:checked': {
-                  '& + label > svg:nth-child(2)': {
-                    display: 'none',
-                  },
+                &:checked {
+                  & + label > svg:nth-child(2) {
+                    display: none;
+                  }
 
-                  '& ~ nav > ul': {
-                    display: 'block',
-                  },
-                },
-              },
-            }}
+                  & ~ nav > ul {
+                    display: block;
+                  }
+                }
+              }
+            `}
           />
 
           {/* eslint-disable jsx-a11y/label-has-for */}
@@ -114,11 +118,11 @@ class Header extends React.Component {
           </label>
 
           <nav
-            css={{
-              '@media (max-width: 768px)': {
-                width: '100%', // Wrap component onto a new line
-              },
-            }}
+            className={css`
+              @media (max-width: 768px) {
+                width: 100%; /* Wrap component onto a new line */
+              }
+            `}
           >
             <ul
               className={css`
@@ -151,17 +155,17 @@ class Header extends React.Component {
 
 const Footer = ({ data }) => (
   <footer
-    css={{
-      background: '#263238',
-      color: 'white',
-      textAlign: 'center',
-      marginTop: '4rem',
+    className={css`
+      background: #263238;
+      color: white;
+      text-align: center;
+      margin-top: 4rem;
 
-      '& svg': {
-        fontSize: '2rem',
-        margin: '2rem',
-      },
-    }}
+      & svg {
+        font-size: 2rem;
+        margin: 2rem;
+      }
+    `}
   >
     <a href={data.site.siteMetadata.siteFacebookURL} target="_blank" rel="noreferrer noopener">
       <FaFacebookOfficial />
@@ -181,32 +185,34 @@ Footer.propTypes = {
 
 const IndexLayout = ({ children, data }) => (
   <div
-    css={{
-      fontFamily: 'Montserrat, sans-serif',
-      boxSizing: 'border-box',
+    className={css`
+      font-family: Montserrat, sans-serif;
+      box-sizing: border-box;
 
-      '& *, & *:before, & *:after': {
-        boxSizing: 'inherit',
-      },
+      & *,
+      & *:before,
+      & *:after {
+        box-sizing: inherit;
+      }
 
-      '& a': {
-        color: 'inherit',
-        textDecoration: 'none',
+      & a {
+        color: inherit;
+        text-decoration: none;
 
-        '&:hover': {
-          textDecoration: 'underline',
-        },
-      },
+        &:hover {
+          text-decoration: underline;
+        }
+      }
 
-      // Fix anchor scroll positioning
-      '& [id]:before': {
-        display: 'block',
-        content: '""',
-        marginTop: '-4rem',
-        height: '4rem',
-        visibility: 'hidden',
-      },
-    }}
+      /* Fix anchor scroll positioning */
+      & [id]:before {
+        display: block;
+        content: '';
+        margin-top: -4rem;
+        height: 4rem;
+        visibility: hidden;
+      }
+    `}
   >
     <Helmet
       defaultTitle={data.site.siteMetadata.title}
