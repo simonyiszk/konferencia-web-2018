@@ -9,47 +9,62 @@ const VideosSection = ({ data }) => (
   <div id="videos">
     <h1>Videók</h1>
 
-    {data.videos.edges.map(({ node: video }) => (
-      <article
-        key={video.frontmatter.source}
-        className={css`
-          display: flex;
-          align-items: center;
-          margin: -2rem;
+    {data.videos.edges.map(({ node: video }) => {
+      let thumbnailSrc;
+      if (video.frontmatter.thumbnail != null) {
+        thumbnailSrc =
+          video.frontmatter.thumbnail.childImageSharp != null
+            ? video.frontmatter.thumbnail.childImageSharp.sizes.src
+            : `/${video.frontmatter.thumbnail.relativePath}`;
+      }
 
-          & > * {
-            margin: 2rem;
-          }
+      const transparentPixelSrc =
+        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-          &:nth-child(odd) {
-            flex-direction: row-reverse;
-          }
-        `}
-      >
-        <div>
-          <h2>{video.frontmatter.title}</h2>
-
-          <p
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: video.html }}
-          />
-        </div>
-
-        <div
+      return (
+        <article
+          key={video.frontmatter.source}
           className={css`
-            flex: 0 0 40%;
+            display: flex;
+            align-items: center;
+            margin: -2rem;
+
+            & > * {
+              margin: 2rem;
+            }
+
+            &:nth-child(odd) {
+              flex-direction: row-reverse;
+            }
           `}
         >
-          <video
-            src={video.frontmatter.source}
-            controls
+          <div>
+            <h2>{video.frontmatter.title}</h2>
+
+            <p
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: video.html }}
+            />
+          </div>
+
+          <div
             className={css`
-              width: 100%;
+              flex: 0 0 40%;
             `}
-          />
-        </div>
-      </article>
-    ))}
+          >
+            <video
+              src={video.frontmatter.source}
+              poster={transparentPixelSrc}
+              controls
+              className={css`
+                width: 100%;
+                background: url(${thumbnailSrc}) center / contain no-repeat;
+              `}
+            />
+          </div>
+        </article>
+      );
+    })}
   </div>
 );
 
@@ -189,6 +204,14 @@ export const query = graphql`
             presenterName
             presenterRole
             source
+            thumbnail {
+              relativePath
+              childImageSharp {
+                sizes(maxWidth: 544) {
+                  src
+                }
+              }
+            }
           }
           html
         }

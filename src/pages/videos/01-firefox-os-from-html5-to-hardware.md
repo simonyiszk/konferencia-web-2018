@@ -1,6 +1,7 @@
 ---
 title: "Firefox OS: From HTML5 to hardware"
 source: http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/20140415_simonyikonf2014_ib28_03_hq_HD.mp4
+thumbnail: ../../../static/assets/logos/firefox.svg
 ---
 
 Puts fingers in ears and sings la-la-la-la-la-la. In recent years there has been

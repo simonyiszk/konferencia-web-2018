@@ -1,6 +1,7 @@
 ---
 title: LBR iiwa and mobile robotics
 source: http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/simonyikonf2015_ib028_05_hq_HD.mp4
+thumbnail: ../../../static/assets/logos/kuka.svg
 ---
 
 The robotics world as known today lays within a period of transition which is
