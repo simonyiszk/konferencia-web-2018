@@ -68,9 +68,9 @@ const GallerySection = ({ data }) => (
         margin: -1rem;
       `}
     >
-      {data.galleries.edges.map(({ node: gallery }) => (
+      {data.galleries.edges.map(({ node: album }) => (
         <div
-          key={gallery.frontmatter.source}
+          key={album.frontmatter.source}
           className={css`
             flex: 100%;
             padding: 1rem;
@@ -84,8 +84,8 @@ const GallerySection = ({ data }) => (
             `};
           `}
         >
-          <a href={gallery.frontmatter.source} target="_blank" rel="noreferrer noopener">
-            <Img sizes={gallery.frontmatter.thumbnail.childImageSharp.sizes} />
+          <a href={album.frontmatter.source} target="_blank" rel="noreferrer noopener">
+            <Img sizes={album.frontmatter.thumbnail.childImageSharp.sizes} />
           </a>
         </div>
       ))}
@@ -195,7 +195,7 @@ export const query = graphql`
       }
     }
     galleries: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/gallery/" } }
+      filter: { fileAbsolutePath: { regex: "/albums/" } }
       sort: { fields: [fileAbsolutePath], order: DESC }
     ) {
       edges {
