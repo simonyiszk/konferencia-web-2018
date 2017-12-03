@@ -1,6 +1,7 @@
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { css } from 'react-emotion';
 import Helmet from 'react-helmet';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
@@ -11,6 +12,7 @@ import FaInstagram from 'react-icons/lib/fa/instagram';
 import 'normalize.css';
 
 import Container from '../components/Container';
+import { mediaQueries } from '../utils/media-queries';
 
 class Header extends React.Component {
   constructor() {
@@ -97,14 +99,14 @@ class Header extends React.Component {
           {/* eslint-disable jsx-a11y/label-has-for */}
           <label
             htmlFor="menu-checkbox"
-            css={{
-              cursor: 'pointer',
-              userSelect: 'none',
+            className={css`
+              cursor: pointer;
+              user-select: none;
 
-              '@media (min-width: 768px)': {
-                display: 'none',
-              },
-            }}
+              ${mediaQueries.medium`
+                display: none;
+              `};
+            `}
           >
             {/* eslint-enable jsx-a11y/label-has-for */}
             <FaChevronUp />
@@ -119,18 +121,18 @@ class Header extends React.Component {
             }}
           >
             <ul
-              css={{
-                display: 'flex',
-                listStyleType: 'none',
-                padding: 0,
-                margin: 0,
+              className={css`
+                display: flex;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
 
-                '@media (min-width: 768px)': {
-                  '& > li': {
-                    marginLeft: '3rem',
-                  },
-                },
-              }}
+                ${mediaQueries.medium`
+                  & > li {
+                    margin-left: 3rem;
+                  }
+                `};
+              `}
             >
               {[['/#videos', 'Videók'], ['/#gallery', 'Galéria'], ['/#sponsors', 'Támogatók']].map(([to, name]) => (
                 <li key={to}>

@@ -1,45 +1,26 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import styled from 'react-emotion';
+import { mediaQueries } from '../utils/media-queries';
 
-const Container = ({ children, className, ...props }) => (
-  <div
-    css={[
-      {
-        width: '100%',
-        padding: '0 1rem',
-        margin: '0 auto',
+const Container = styled.div`
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
 
-        '@media (min-width: 576px)': {
-          maxWidth: '540px',
-        },
+  ${mediaQueries.small`
+    max-width: 540px;
+  `};
 
-        '@media (min-width: 768px)': {
-          maxWidth: '720px',
-        },
+  ${mediaQueries.medium`
+    max-width: 720px;
+  `};
 
-        '@media (min-width: 992px)': {
-          maxWidth: '960px',
-        },
+  ${mediaQueries.large`
+    max-width: 960px;
+  `};
 
-        '@media (min-width: 1200px)': {
-          maxWidth: '1140px',
-        },
-      },
-      className,
-    ]}
-    {...props}
-  >
-    {children}
-  </div>
-);
-
-Container.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
-
-Container.defaultProps = {
-  className: '',
-};
+  ${mediaQueries.xLarge`
+    max-width: 1140px;
+  `};
+`;
 
 export default Container;

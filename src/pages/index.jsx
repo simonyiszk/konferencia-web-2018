@@ -1,7 +1,9 @@
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { css } from 'react-emotion';
 import Container from '../components/Container';
+import { mediaQueries } from '../utils/media-queries';
 
 const VideosSection = ({ data }) => (
   <div id="videos">
@@ -65,16 +67,18 @@ const GallerySection = ({ data }) => (
       {data.galleries.edges.map(({ node: gallery }) => (
         <div
           key={gallery.frontmatter.source}
-          css={{
-            flex: '100%',
-            padding: '1rem',
+          className={css`
+            flex: 100%;
+            padding: 1rem;
 
-            '@media (min-width: 576px)': {
-              flex: '50%',
-            },
+            & * {
+              height: 100%;
+            }
 
-            '& *': { height: '100%' },
-          }}
+            ${mediaQueries.small`
+              flex: 50%;
+            `};
+          `}
         >
           <a href={gallery.frontmatter.source} target="_blank" rel="noreferrer noopener">
             <Img sizes={gallery.frontmatter.thumbnail.childImageSharp.sizes} />
@@ -102,17 +106,33 @@ const IndexPage = ({ data }) => (
       }}
     >
       <Container
-        css={{
-          '& h1': { fontSize: '3rem' },
-          '& h2': { fontSize: '2rem' },
-          '& h3': { fontSize: '1rem' },
+        className={css`
+          & h1 {
+            font-size: 3rem;
+          }
 
-          '@media (min-width: 576px)': {
-            '& h1': { fontSize: '10vmin' },
-            '& h2': { fontSize: '5vmin' },
-            '& h3': { fontSize: '3vmin' },
-          },
-        }}
+          & h2 {
+            font-size: 2rem;
+          }
+
+          & h3 {
+            font-size: 1rem;
+          }
+
+          ${mediaQueries.small`
+            & h1 {
+              font-size: 10vmin;
+            }
+
+            & h2 {
+              font-size: 5vmin;
+            }
+
+            & h3 {
+              font-size: 3vmin;
+            }
+          `};
+        `}
       >
         <h1 css={{ wordSpacing: '100vw' }}>{data.site.siteMetadata.title}</h1>
         <h2>2018. április 18.</h2>
