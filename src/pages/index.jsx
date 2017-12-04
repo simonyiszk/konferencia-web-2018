@@ -5,66 +5,78 @@ import { css } from 'react-emotion';
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
+const transparentPixelSrc =
+  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
 const VideosSection = ({ data }) => (
   <div id="videos">
     <h1>Videók</h1>
 
-    {data.videos.edges.map(({ node: video }) => {
-      let thumbnailSrc;
-      if (video.frontmatter.thumbnail != null) {
-        thumbnailSrc =
-          video.frontmatter.thumbnail.childImageSharp != null
-            ? video.frontmatter.thumbnail.childImageSharp.sizes.src
-            : `/${video.frontmatter.thumbnail.relativePath}`;
-      }
+    <div
+      className={css`
+        margin: -1rem 0;
 
-      const transparentPixelSrc =
-        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        ${mediaQueries.large`
+          margin: -1rem -3rem;
+        `};
+      `}
+    >
+      {data.videos.edges.map(({ node: video }) => {
+        let thumbnailSrc;
+        if (video.frontmatter.thumbnail != null) {
+          thumbnailSrc =
+            video.frontmatter.thumbnail.childImageSharp != null
+              ? video.frontmatter.thumbnail.childImageSharp.sizes.src
+              : `/${video.frontmatter.thumbnail.relativePath}`;
+        }
 
-      return (
-        <article
-          key={video.frontmatter.source}
-          className={css`
-            display: flex;
-            align-items: center;
-            margin: -2rem;
-
-            & > * {
-              margin: 2rem;
-            }
-
-            &:nth-child(odd) {
-              flex-direction: row-reverse;
-            }
-          `}
-        >
-          <div>
-            <h2>{video.frontmatter.title}</h2>
-
-            <p
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: video.html }}
-            />
-          </div>
-
-          <div
+        return (
+          <article
+            key={video.frontmatter.source}
             className={css`
-              flex: 0 0 40%;
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              margin: 1rem 0;
+
+              ${mediaQueries.large`
+                flex-wrap: nowrap;
+
+                & > * {
+                  flex-basis: 50%;
+                  margin: 1rem 3rem;
+                }
+
+                &:nth-child(odd) {
+                  flex-direction: row-reverse;
+                }
+              `};
             `}
           >
-            <video
-              src={video.frontmatter.source}
-              poster={transparentPixelSrc}
-              controls
-              className={css`
-                width: 100%;
-                background: url(${thumbnailSrc}) center / contain no-repeat;
-              `}
-            />
-          </div>
-        </article>
-      );
-    })}
+            <div>
+              <h2>{video.frontmatter.title}</h2>
+
+              <p
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{ __html: video.html }}
+              />
+            </div>
+
+            <div>
+              <video
+                src={video.frontmatter.source}
+                poster={transparentPixelSrc}
+                controls
+                className={css`
+                  width: 100%;
+                  background: url(${thumbnailSrc}) center / contain no-repeat;
+                `}
+              />
+            </div>
+          </article>
+        );
+      })}
+    </div>
   </div>
 );
 
