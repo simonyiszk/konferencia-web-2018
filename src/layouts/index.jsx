@@ -138,6 +138,8 @@ class Header extends React.Component {
             className={css`
               cursor: pointer;
               user-select: none;
+              padding: 0.5rem;
+              margin: -0.5rem;
 
               ${mediaQueries.medium`
                 display: none;
