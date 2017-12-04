@@ -43,7 +43,7 @@ const VideosSection = ({ data }) => (
                 flex-wrap: nowrap;
 
                 & > * {
-                  flex-basis: 50%;
+                  flex: 50%;
                   margin: 1rem 3rem;
                 }
 
@@ -111,8 +111,50 @@ const GallerySection = ({ data }) => (
             `};
           `}
         >
-          <a href={album.frontmatter.source} target="_blank" rel="noreferrer noopener">
-            <Img sizes={album.frontmatter.thumbnail.childImageSharp.sizes} />
+          <a
+            href={album.frontmatter.source}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={css`
+              display: block;
+              position: relative;
+
+              &:hover {
+                & > div {
+                  opacity: 1;
+                }
+              }
+            `}
+          >
+            <Img
+              sizes={album.frontmatter.thumbnail.childImageSharp.sizes}
+              className={css`
+                transition: filter 0.5s;
+
+                &:hover {
+                  filter: brightness(0.5);
+                }
+              `}
+            />
+
+            <div
+              className={css`
+                position: absolute;
+                top: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.5s;
+                font-size: 8rem;
+                color: white;
+              `}
+            >
+              {album.frontmatter.title}
+            </div>
           </a>
         </div>
       ))}
@@ -236,6 +278,7 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
+            title
             source
             thumbnail {
               childImageSharp {
