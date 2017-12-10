@@ -185,9 +185,8 @@ class Header extends React.Component {
                   `}
                 >
                   {[
-                    ['/#videos', 'Videók'],
+                    ['/#presentations', 'Előadások'],
                     ['/#gallery', 'Galéria'],
-                    ['/#sponsors', 'Támogatók'],
                   ].map(([to, name]) => (
                     <li key={to}>
                       <Link to={to} onClick={() => this.setState({ isMenuOpen: false })}>

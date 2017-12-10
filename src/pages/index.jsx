@@ -10,7 +10,7 @@ const transparentPixelSrc =
 
 const VideosSection = ({ data }) => (
   <div id="videos">
-    <h1>Videók</h1>
+    <h1>Korábbi előadások</h1>
 
     <div
       className={css`
