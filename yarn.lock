@@ -103,6 +103,12 @@ ansi-escapes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.0.0.tgz#ec3e8b4e9f8064fc02c3ac9b65f1c275bda8ef92"
 
+ansi-gray@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-gray/-/ansi-gray-0.1.1.tgz#2962cf54ec9792c48510a3deb524436861ef7251"
+  dependencies:
+    ansi-wrap "0.1.0"
+
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
@@ -2002,6 +2008,10 @@ color-string@^1.4.0:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
+color-support@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
+
 color@^0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/color/-/color-0.10.1.tgz#c04188df82a209ddebccecdacd3ec320f193739f"
@@ -3479,10 +3489,11 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
 
 fancy-log@^1.1.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.3.0.tgz#45be17d02bb9917d60ccffd4995c999e6c8c9948"
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/fancy-log/-/fancy-log-1.3.2.tgz#f41125e3d84f2e7d89a43d06d958c8f78be16be1"
   dependencies:
-    chalk "^1.1.1"
+    ansi-gray "^0.1.1"
+    color-support "^1.1.3"
     time-stamp "^1.0.0"
 
 fast-deep-equal@^1.0.0:
@@ -3889,14 +3900,14 @@ gatsby-cli@^1.1.27:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-image@1.0.28:
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.28.tgz#4ea0468c724e04e1a8e7291ae2939492c1c4ff30"
+gatsby-image@^1.0.30:
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.30.tgz#013c1d746309a8746d3bc3307b889c6670d1565c"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.6.0"
 
-gatsby-link@^1.6.28:
+gatsby-link@^1.6.28, gatsby-link@^1.6.30:
   version "1.6.32"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.32.tgz#49114e5fc649f274254953e06bfaafebb296ccb8"
   dependencies:
@@ -3930,8 +3941,8 @@ gatsby-plugin-react-helmet@^2.0.1:
     babel-runtime "^6.26.0"
 
 gatsby-plugin-sharp@^1.6.22:
-  version "1.6.23"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.23.tgz#6f53013ee72a6b4613587ec07485cffc18e40e9b"
+  version "1.6.24"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.24.tgz#f885a384b222f655534e45788a99863a038bf107"
   dependencies:
     async "^2.1.2"
     babel-runtime "^6.26.0"
@@ -4011,8 +4022,8 @@ gatsby-transformer-sharp@^1.6.15:
     image-size "^0.6.0"
 
 gatsby@^1.9.119:
-  version "1.9.131"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.131.tgz#15ad010885bdb1dd6bfe8c8d069108b6f06f4311"
+  version "1.9.134"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.134.tgz#fe6c088151f3442e089d3b81238a5c56827fa578"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4052,6 +4063,7 @@ gatsby@^1.9.119:
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
     gatsby-cli "^1.1.27"
+    gatsby-link "^1.6.30"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.6"
     glob "^7.1.1"
@@ -10624,8 +10636,8 @@ xdg-basedir@^3.0.0:
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
 xhr@^2.0.1:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/xhr/-/xhr-2.4.0.tgz#e16e66a45f869861eeefab416d5eff722dc40993"
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/xhr/-/xhr-2.4.1.tgz#ba982cced205ae5eec387169ac9dc77ca4853d38"
   dependencies:
     global "~4.3.0"
     is-function "^1.0.1"
