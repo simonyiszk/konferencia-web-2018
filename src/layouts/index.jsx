@@ -29,11 +29,15 @@ injectGlobal`
   }
 
   a {
-    color: inherit;
+    color: #03a9f4;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    header &, footer & {
+      color: inherit;
     }
   }
 
@@ -75,17 +79,19 @@ class Header extends React.Component {
             width: 100%;
             color: white;
 
-            & .headroom--unfixed {
-              & > div {
-                background: transparent;
+            ${mediaQueries.medium`
+              & .headroom--unfixed {
+                & > div {
+                  background: transparent;
+                }
               }
-            }
+            `};
           `}
         >
           <div
             className={css`
               background: #009688;
-              transition: background 0.5s;
+              transition: all 0.5s;
             `}
           >
             <Container
@@ -104,6 +110,12 @@ class Header extends React.Component {
               <div
                 className={css`
                   flex: 1;
+
+                  ${mediaQueries.medium`
+                    .headroom--unfixed & {
+                      visibility: hidden;
+                    }
+                  `};
                 `}
               >
                 <Link to="/#home" onClick={() => this.setState({ isMenuOpen: false })}>
