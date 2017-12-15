@@ -12,6 +12,7 @@ import FaInstagram from 'react-icons/lib/fa/instagram';
 
 import 'normalize.css';
 
+import SimonyiKonferenciaLogo from '../../static/assets/logos/simonyi-konferencia.svg';
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
@@ -101,8 +102,7 @@ class Header extends React.Component {
 
                 & a {
                   display: inline-block;
-                  padding: 0.5rem;
-                  margin: 1rem -0.5rem;
+                  margin: 1rem 0;
                 }
               `}
             >
@@ -118,7 +118,14 @@ class Header extends React.Component {
                 `}
               >
                 <Link to="/#home" onClick={() => this.setState({ isMenuOpen: false })}>
-                  Főoldal
+                  <img
+                    src={SimonyiKonferenciaLogo}
+                    alt="Simonyi Konferencia"
+                    className={css`
+                      height: 2em;
+                      filter: invert(1);
+                    `}
+                  />
                 </Link>
               </div>
 
@@ -165,8 +172,8 @@ class Header extends React.Component {
                   margin: -0.5rem;
 
                   ${mediaQueries.medium`
-                display: none;
-              `};
+                    display: none;
+                  `};
                 `}
               >
                 {/* eslint-enable jsx-a11y/label-has-for */}
@@ -188,11 +195,16 @@ class Header extends React.Component {
                     padding: 0;
                     margin: 0;
 
+                    && a {
+                      padding: 0.5rem;
+                      margin: 1rem -0.5rem;
+                    }
+
                     ${mediaQueries.medium`
-                  & > li {
-                    margin-left: 3rem;
-                  }
-                `};
+                      & > li {
+                        margin-left: 3rem;
+                      }
+                    `};
                   `}
                 >
                   {[['/#videos', 'Előadások'], ['/#gallery', 'Galéria']].map(([to, name]) => (
