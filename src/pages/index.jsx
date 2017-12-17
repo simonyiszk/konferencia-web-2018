@@ -2,6 +2,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'react-emotion';
+import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
@@ -173,13 +174,14 @@ const IndexPage = ({ data }) => (
       className={css`
         background: linear-gradient(227.5deg, #00e676, #009688);
         color: white;
-        height: 100vh;
-        display: flex;
-        align-items: center;
       `}
     >
       <Container
         className={css`
+          height: 100vh;
+          display: flex;
+          align-items: center;
+
           & h1 {
             font-size: 3rem;
           }
@@ -207,16 +209,36 @@ const IndexPage = ({ data }) => (
           `};
         `}
       >
-        <h1
+        <div
           className={css`
-            word-spacing: 100vw;
+            flex: 1;
           `}
         >
-          {data.site.siteMetadata.title}
-        </h1>
-        <h2>2018. április 18.</h2>
-        <h2>BME I épület</h2>
-        <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
+          <h1
+            className={css`
+              word-spacing: 100vw;
+            `}
+          >
+            {data.site.siteMetadata.title}
+          </h1>
+          <h2>2018. április 18.</h2>
+          <h2>BME I épület</h2>
+          <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
+        </div>
+
+        <img
+          src={SimonyiLogo}
+          alt=""
+          className={css`
+            height: 50%;
+            filter: brightness(0) invert(1);
+            display: none;
+
+            ${mediaQueries.large`
+              display: block;
+            `};
+          `}
+        />
       </Container>
     </div>
 
