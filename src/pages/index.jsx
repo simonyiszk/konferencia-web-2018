@@ -9,6 +9,48 @@ import { mediaQueries } from '../utils/media-queries';
 const transparentPixelSrc =
   'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
+const AboutSection = () => (
+  <div id="about">
+    <h1> A Konferenciáról</h1>
+
+    <div
+      className={css`
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em -2em;
+
+        & section {
+          padding: 0 2em;
+          flex: 100%;
+
+          ${mediaQueries.medium`
+            flex: 50%;
+          `};
+        }
+      `}
+    >
+      {Array.from({ length: 4 }).map(() => (
+        <section>
+          <h2>
+            <span role="img" aria-label="Grinning Face">
+              😀
+            </span>{' '}
+            Lorem ipsum
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </section>
+      ))}
+    </div>
+  </div>
+);
+
 const VideosSection = ({ data }) => (
   <div id="videos">
     <h1>Korábbi előadások</h1>
@@ -258,6 +300,7 @@ const IndexPage = ({ data }) => (
         }
       `}
     >
+      <AboutSection />
       <VideosSection data={data} />
       <GallerySection data={data} />
     </Container>
