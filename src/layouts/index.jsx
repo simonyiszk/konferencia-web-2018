@@ -166,7 +166,6 @@ class Header extends React.Component {
               <label
                 htmlFor="menu-checkbox"
                 className={css`
-                  cursor: pointer;
                   user-select: none;
                   padding: 0.5rem;
                   margin: -0.5rem;

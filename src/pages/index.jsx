@@ -232,6 +232,7 @@ const IndexPage = ({ data }) => (
           className={css`
             height: 50%;
             filter: brightness(0) invert(1);
+            user-select: none;
             display: none;
 
             ${mediaQueries.large`
