@@ -131,10 +131,15 @@ const GallerySection = ({ data }) => (
               sizes={album.frontmatter.thumbnail.childImageSharp.sizes}
               className={css`
                 transition: filter 0.5s;
+                filter: brightness(0.8);
 
                 &:hover {
                   filter: brightness(0.5);
                 }
+
+                ${mediaQueries.medium`
+                  filter: none;
+                `};
               `}
             />
 
@@ -148,10 +153,13 @@ const GallerySection = ({ data }) => (
                 justify-content: center;
                 text-align: center;
                 pointer-events: none;
-                opacity: 0;
                 transition: opacity 0.5s;
-                font-size: 8rem;
+                font-size: 6em;
                 color: white;
+
+                ${mediaQueries.medium`
+                  opacity: 0;
+                `};
               `}
             >
               {album.frontmatter.title}
