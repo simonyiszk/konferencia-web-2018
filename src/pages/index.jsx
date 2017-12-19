@@ -50,7 +50,7 @@ const AboutSection = () => (
 );
 
 const PresentationsSection = ({ data }) => (
-  <div id="videos">
+  <div id="presentations">
     <h1>Korábbi előadások</h1>
 
     <div

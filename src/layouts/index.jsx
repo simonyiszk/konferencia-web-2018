@@ -209,7 +209,7 @@ class Header extends React.Component {
                 >
                   {[
                     ['/#about', 'A Konferenciáról'],
-                    ['/#videos', 'Előadások'],
+                    ['/#presentations', 'Előadások'],
                     ['/#gallery', 'Galéria'],
                   ].map(([to, name]) => (
                     <li key={to}>
