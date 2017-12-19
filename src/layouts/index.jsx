@@ -6,6 +6,7 @@ import Headroom from 'react-headroom';
 import Helmet from 'react-helmet';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
@@ -242,6 +243,9 @@ const Footer = ({ data }) => (
       }
     `}
   >
+    <a href={data.site.siteMetadata.siteEmailURL}>
+      <FaEnvelope />
+    </a>
     <a href={data.site.siteMetadata.siteFacebookURL} target="_blank" rel="noreferrer noopener">
       <FaFacebookOfficial />
     </a>
@@ -301,6 +305,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        siteEmailURL
         siteFacebookURL
         siteYouTubeURL
         siteInstagramURL
