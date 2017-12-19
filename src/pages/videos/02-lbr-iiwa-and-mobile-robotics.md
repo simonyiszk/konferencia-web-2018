@@ -1,6 +1,7 @@
 ---
 title: LBR iiwa and mobile robotics
 source: http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/simonyikonf2015_ib028_05_hq_HD.mp4
+aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/kuka.svg
 ---
 

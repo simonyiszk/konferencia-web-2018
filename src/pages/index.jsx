@@ -4,10 +4,8 @@ import React from 'react';
 import { css } from 'react-emotion';
 import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
 import Container from '../components/Container';
+import Video from '../components/Video';
 import { mediaQueries } from '../utils/media-queries';
-
-const transparentPixelSrc =
-  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 const AboutSection = () => (
   <div id="about">
@@ -105,15 +103,16 @@ const VideosSection = ({ data }) => (
               />
             </div>
 
-            <div>
-              <video
+            <div
+              className={css`
+                width: 100%;
+              `}
+            >
+              <Video
                 src={video.frontmatter.source}
-                poster={transparentPixelSrc}
+                aspectRatio={video.frontmatter.aspectRatio}
+                poster={thumbnailSrc}
                 controls
-                className={css`
-                  width: 100%;
-                  background: url(${thumbnailSrc}) center / contain no-repeat;
-                `}
               />
             </div>
           </article>
@@ -332,6 +331,7 @@ export const query = graphql`
             presenterName
             presenterRole
             source
+            aspectRatio
             thumbnail {
               relativePath
               childImageSharp {
