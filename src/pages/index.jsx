@@ -103,18 +103,12 @@ const VideosSection = ({ data }) => (
               />
             </div>
 
-            <div
-              className={css`
-                width: 100%;
-              `}
-            >
-              <Video
-                src={video.frontmatter.source}
-                aspectRatio={video.frontmatter.aspectRatio}
-                poster={thumbnailSrc}
-                controls
-              />
-            </div>
+            <Video
+              src={video.frontmatter.source}
+              aspectRatio={video.frontmatter.aspectRatio}
+              poster={thumbnailSrc}
+              controls
+            />
           </article>
         );
       })}

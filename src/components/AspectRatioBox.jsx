@@ -5,23 +5,29 @@ import { css } from 'react-emotion';
 const AspectRatioBox = ({ aspectRatio, children, ...props }) => (
   <div
     className={css`
-      height: 0;
-      overflow: hidden;
-      padding-top: ${100 / aspectRatio}%;
-      position: relative;
+      width: 100%;
     `}
     {...props}
   >
     <div
       className={css`
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        height: 0;
+        overflow: hidden;
+        padding-top: ${100 / aspectRatio}%;
+        position: relative;
       `}
     >
-      {children}
+      <div
+        className={css`
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        `}
+      >
+        {children}
+      </div>
     </div>
   </div>
 );
