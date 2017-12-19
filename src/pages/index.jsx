@@ -49,7 +49,7 @@ const AboutSection = () => (
   </div>
 );
 
-const VideosSection = ({ data }) => (
+const PresentationsSection = ({ data }) => (
   <div id="videos">
     <h1>Korábbi előadások</h1>
 
@@ -116,7 +116,7 @@ const VideosSection = ({ data }) => (
   </div>
 );
 
-VideosSection.propTypes = {
+PresentationsSection.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
@@ -294,7 +294,7 @@ const IndexPage = ({ data }) => (
       `}
     >
       <AboutSection />
-      <VideosSection data={data} />
+      <PresentationsSection data={data} />
       <GallerySection data={data} />
     </Container>
   </div>
