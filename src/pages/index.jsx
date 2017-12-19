@@ -221,40 +221,51 @@ const IndexPage = ({ data }) => (
     >
       <Container
         className={css`
-          height: 100vh;
+          min-height: 100vh;
           display: flex;
           align-items: center;
 
           & h1 {
-            font-size: 3rem;
+            font-size: 3em;
           }
 
           & h2 {
-            font-size: 2rem;
+            font-size: 1.5em;
           }
 
           & h3 {
-            font-size: 1rem;
+            font-size: 1em;
           }
 
           ${mediaQueries.small`
-            & h1 {
-              font-size: 10vmin;
-            }
+            font-size: 1.25rem;
+          `};
 
-            & h2 {
-              font-size: 5vmin;
-            }
+          ${mediaQueries.large`
+            font-size: 1.5rem;
+          `};
 
-            & h3 {
-              font-size: 3vmin;
-            }
+          ${mediaQueries.xLarge`
+            font-size: 1.75rem;
           `};
         `}
       >
         <div
           className={css`
-            flex: 1;
+            margin: 4em 0;
+            filter: brightness(0) invert(1);
+
+            & > :first-child {
+              margin-top: 0;
+            }
+
+            & > :last-child {
+              margin-bottom: 0;
+            }
+
+            ${mediaQueries.medium`
+              background: url(${SimonyiLogo}) right / 38.2% no-repeat;
+            `};
           `}
         >
           <h1
@@ -268,21 +279,6 @@ const IndexPage = ({ data }) => (
           <h2>BME I épület</h2>
           <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
         </div>
-
-        <img
-          src={SimonyiLogo}
-          alt=""
-          className={css`
-            height: 50%;
-            filter: brightness(0) invert(1);
-            user-select: none;
-            display: none;
-
-            ${mediaQueries.large`
-              display: block;
-            `};
-          `}
-        />
       </Container>
     </div>
 
