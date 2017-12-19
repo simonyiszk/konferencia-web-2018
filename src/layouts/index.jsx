@@ -228,40 +228,6 @@ class Header extends React.Component {
   }
 }
 
-const Footer = ({ data }) => (
-  <footer
-    className={css`
-      background: #263238;
-      color: white;
-      text-align: center;
-      margin-top: 4rem;
-
-      & a {
-        display: inline-block;
-        font-size: 2rem;
-        margin: 2rem;
-      }
-    `}
-  >
-    <a href={data.site.siteMetadata.siteEmailURL}>
-      <FaEnvelope />
-    </a>
-    <a href={data.site.siteMetadata.siteFacebookURL} target="_blank" rel="noreferrer noopener">
-      <FaFacebookOfficial />
-    </a>
-    <a href={data.site.siteMetadata.siteYouTubeURL} target="_blank" rel="noreferrer noopener">
-      <FaYouTubePlay />
-    </a>
-    <a href={data.site.siteMetadata.siteInstagramURL} target="_blank" rel="noreferrer noopener">
-      <FaInstagram />
-    </a>
-  </footer>
-);
-
-Footer.propTypes = {
-  data: PropTypes.shape({}).isRequired,
-};
-
 const IndexLayout = ({ children, data }) => (
   <div
     className={css`
@@ -289,7 +255,52 @@ const IndexLayout = ({ children, data }) => (
       {children()}
     </main>
 
-    <Footer data={data} />
+    <footer
+      className={css`
+        background: #263238;
+        color: white;
+        font-size: 2rem;
+        padding: 0.5em 0;
+        margin-top: 4rem;
+      `}
+    >
+      <Container>
+        <div
+          className={css`
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            min-width: 40%;
+            max-width: 10em;
+
+            & a {
+              margin: 0.5em;
+            }
+          `}
+        >
+          <a href={data.site.siteMetadata.siteEmailURL}>
+            <FaEnvelope />
+          </a>
+          <a
+            href={data.site.siteMetadata.siteFacebookURL}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FaFacebookOfficial />
+          </a>
+          <a href={data.site.siteMetadata.siteYouTubeURL} target="_blank" rel="noreferrer noopener">
+            <FaYouTubePlay />
+          </a>
+          <a
+            href={data.site.siteMetadata.siteInstagramURL}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FaInstagram />
+          </a>
+        </div>
+      </Container>
+    </footer>
   </div>
 );
 
