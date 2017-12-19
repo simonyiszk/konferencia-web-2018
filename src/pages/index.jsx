@@ -237,7 +237,7 @@ const IndexPage = ({ data }) => (
             font-size: 1em;
           }
 
-          ${mediaQueries.small`
+          ${mediaQueries.medium`
             font-size: 1.25rem;
           `};
 
