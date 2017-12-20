@@ -138,67 +138,22 @@ const GallerySection = ({ data }) => (
             flex: 100%;
             padding: 1rem;
 
-            & * {
-              height: 100%;
-            }
-
-            ${mediaQueries.small`
+            ${mediaQueries.medium`
               flex: 50%;
             `};
           `}
         >
-          <a
-            href={album.frontmatter.source}
-            target="_blank"
-            rel="noreferrer noopener"
+          <h2
             className={css`
-              display: block;
-              position: relative;
-
-              &:hover {
-                & > div {
-                  opacity: 1;
-                }
-              }
+              text-align: center;
+              margin-top: 0;
             `}
           >
-            <Img
-              sizes={album.frontmatter.thumbnail.childImageSharp.sizes}
-              className={css`
-                transition: filter 0.5s;
-                filter: brightness(0.8);
+            {album.frontmatter.title}
+          </h2>
 
-                &:hover {
-                  filter: brightness(0.5);
-                }
-
-                ${mediaQueries.medium`
-                  filter: none;
-                `};
-              `}
-            />
-
-            <div
-              className={css`
-                position: absolute;
-                top: 0;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                pointer-events: none;
-                transition: opacity 0.5s;
-                font-size: 6em;
-                color: white;
-
-                ${mediaQueries.medium`
-                  opacity: 0;
-                `};
-              `}
-            >
-              {album.frontmatter.title}
-            </div>
+          <a href={album.frontmatter.source} target="_blank" rel="noreferrer noopener">
+            <Img sizes={album.frontmatter.thumbnail.childImageSharp.sizes} />
           </a>
         </div>
       ))}
