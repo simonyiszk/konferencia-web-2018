@@ -49,75 +49,128 @@ const AboutSection = () => (
   </div>
 );
 
+const Presentation = ({
+  title,
+  /* eslint-disable no-unused-vars */
+  presenterName,
+  presenterRole,
+  /* eslint-enable no-unused-vars */
+  source,
+  aspectRatio,
+  thumbnail,
+  html,
+  ...props
+}) => {
+  let thumbnailSrc;
+  if (thumbnail != null) {
+    thumbnailSrc =
+      thumbnail.childImageSharp != null
+        ? thumbnail.childImageSharp.sizes.src
+        : `/${thumbnail.relativePath}`;
+  }
+
+  return (
+    <article {...props}>
+      <div>
+        <h2>{title}</h2>
+
+        <p
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
+
+      <Video src={source} aspectRatio={aspectRatio} poster={thumbnailSrc} controls />
+    </article>
+  );
+};
+
+Presentation.propTypes = {
+  title: PropTypes.string.isRequired,
+  presenterName: PropTypes.string.isRequired,
+  presenterRole: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+  aspectRatio: PropTypes.number.isRequired,
+  thumbnail: PropTypes.shape({}),
+  html: PropTypes.string.isRequired,
+};
+
+Presentation.defaultProps = {
+  thumbnail: undefined,
+};
+
 const PresentationsSection = ({ data }) => (
   <div id="presentations">
     <h1>Korábbi előadások</h1>
 
     <div
       className={css`
-        margin: -1rem 0;
-
-        ${mediaQueries.large`
-          margin: -1rem -3rem;
-        `};
+        margin: -1rem;
       `}
     >
-      {data.videos.edges.map(({ node: video }) => {
-        let thumbnailSrc;
-        if (video.frontmatter.thumbnail != null) {
-          thumbnailSrc =
-            video.frontmatter.thumbnail.childImageSharp != null
-              ? video.frontmatter.thumbnail.childImageSharp.sizes.src
-              : `/${video.frontmatter.thumbnail.relativePath}`;
-        }
+      {data.videos.edges.map(({ node: video }) => (
+        <Presentation
+          key={video.frontmatter.source}
+          title={video.frontmatter.title}
+          presenterName={video.frontmatter.presenterName}
+          presenterRole={video.frontmatter.presenterRole}
+          source={video.frontmatter.source}
+          aspectRatio={video.frontmatter.aspectRatio}
+          thumbnail={video.frontmatter.thumbnail}
+          html={video.html}
+          className={css`
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 1rem;
 
-        return (
-          <article
-            key={video.frontmatter.source}
-            className={css`
-              display: flex;
-              align-items: center;
-              flex-wrap: wrap;
-              margin: 1rem 0;
+            ${mediaQueries.large`
+              flex-wrap: nowrap;
+              margin: -1rem -3rem;
 
-              ${mediaQueries.large`
-                flex-wrap: nowrap;
+              & > * {
+                flex: 50%;
+                padding: 1rem 3rem;
+              }
 
-                & > * {
-                  flex: 50%;
-                  margin: 1rem 3rem;
-                }
-
-                &:nth-child(odd) {
-                  flex-direction: row-reverse;
-                }
-              `};
-            `}
-          >
-            <div>
-              <h2>{video.frontmatter.title}</h2>
-
-              <p
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: video.html }}
-              />
-            </div>
-
-            <Video
-              src={video.frontmatter.source}
-              aspectRatio={video.frontmatter.aspectRatio}
-              poster={thumbnailSrc}
-              controls
-            />
-          </article>
-        );
-      })}
+              &:nth-child(odd) {
+                flex-direction: row-reverse;
+              }
+            `};
+          `}
+        />
+      ))}
     </div>
   </div>
 );
 
 PresentationsSection.propTypes = {
   data: PropTypes.shape({}).isRequired,
+};
+
+const Album = ({
+  title, source, thumbnailSizes, ...props
+}) => (
+  <div {...props}>
+    <h2
+      className={css`
+        text-align: center;
+        margin-top: 0;
+      `}
+    >
+      {title}
+    </h2>
+
+    <a href={source} target="_blank" rel="noreferrer noopener">
+      <Img sizes={thumbnailSizes} />
+    </a>
+  </div>
+);
+
+Album.propTypes = {
+  title: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+  thumbnailSizes: PropTypes.shape({}).isRequired,
 };
 
 const GallerySection = ({ data }) => (
@@ -132,8 +185,11 @@ const GallerySection = ({ data }) => (
       `}
     >
       {data.galleries.edges.map(({ node: album }) => (
-        <div
+        <Album
           key={album.frontmatter.source}
+          title={album.frontmatter.title}
+          source={album.frontmatter.source}
+          thumbnailSizes={album.frontmatter.thumbnail.childImageSharp.sizes}
           className={css`
             flex: 100%;
             padding: 1rem;
@@ -142,20 +198,7 @@ const GallerySection = ({ data }) => (
               flex: 50%;
             `};
           `}
-        >
-          <h2
-            className={css`
-              text-align: center;
-              margin-top: 0;
-            `}
-          >
-            {album.frontmatter.title}
-          </h2>
-
-          <a href={album.frontmatter.source} target="_blank" rel="noreferrer noopener">
-            <Img sizes={album.frontmatter.thumbnail.childImageSharp.sizes} />
-          </a>
-        </div>
+        />
       ))}
     </div>
   </div>
