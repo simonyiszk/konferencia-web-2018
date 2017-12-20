@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'react-emotion';
 
-const AspectRatioBox = ({ aspectRatio, children, ...props }) => (
+const AspectRatioBox = ({
+  aspectRatio, children, className, ...props
+}) => (
   <div
     className={css`
       width: 100%;
+      ${className};
     `}
     {...props}
   >
@@ -35,6 +38,11 @@ const AspectRatioBox = ({ aspectRatio, children, ...props }) => (
 AspectRatioBox.propTypes = {
   aspectRatio: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+
+AspectRatioBox.defaultProps = {
+  className: undefined,
 };
 
 export default AspectRatioBox;
