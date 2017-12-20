@@ -235,16 +235,12 @@ const IndexPage = ({ data }) => (
             font-size: 1em;
           }
 
-          ${mediaQueries.medium`
+          ${mediaQueries.large`
             font-size: 1.25rem;
           `};
 
-          ${mediaQueries.large`
-            font-size: 1.5rem;
-          `};
-
           ${mediaQueries.xLarge`
-            font-size: 1.75rem;
+            font-size: 1.5rem;
           `};
         `}
       >
