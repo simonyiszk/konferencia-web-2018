@@ -235,12 +235,8 @@ const IndexPage = ({ data }) => (
             font-size: 1em;
           }
 
-          ${mediaQueries.large`
-            font-size: 1.25rem;
-          `};
-
           ${mediaQueries.xLarge`
-            font-size: 1.5rem;
+            font-size: 1.25rem;
           `};
         `}
       >
@@ -251,10 +247,6 @@ const IndexPage = ({ data }) => (
             & > :first-child {
               margin-top: 0;
             }
-
-            & > :last-child {
-              margin-bottom: 0;
-            }
           `}
         >
           <h1
@@ -264,40 +256,23 @@ const IndexPage = ({ data }) => (
           >
             {data.site.siteMetadata.title}
           </h1>
+
           <h2>2018. április 18.</h2>
+
           <h2>BME I épület</h2>
           <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
-        </div>
-
-        <div
-          className={css`
-            flex: 0 0 30%;
-            text-align: center;
-            display: none;
-
-            ${mediaQueries.medium`
-              display: block;
-            `};
-          `}
-        >
-          <img
-            src={SimonyiKonferenciaIcon}
-            alt=""
-            className={css`
-              filter: brightness(0) invert(1);
-              margin-bottom: 1.5em;
-            `}
-          />
 
           <a
             href="#todo"
             role="button"
             className={css`
               display: inline-block;
+              font-size: 1.25em;
+              font-weight: bold;
               padding: 0.5em 1em;
               border: 0.25em solid;
+              margin-top: 1em;
               color: inherit;
-              font-weight: bold;
 
               &:hover {
                 text-decoration: none;
@@ -314,6 +289,26 @@ const IndexPage = ({ data }) => (
           >
             <div>Regisztráció</div>
           </a>
+        </div>
+
+        <div
+          className={css`
+            flex: 0 0 30%;
+            display: none;
+
+            ${mediaQueries.medium`
+              display: block;
+            `};
+          `}
+        >
+          <img
+            src={SimonyiKonferenciaIcon}
+            alt=""
+            className={css`
+              filter: brightness(0) invert(1);
+              margin-bottom: 1.5em;
+            `}
+          />
         </div>
       </Container>
     </div>
