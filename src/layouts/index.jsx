@@ -44,6 +44,10 @@ injectGlobal`
     }
   }
 
+  p {
+    line-height: 1.5;
+  }
+
   /* Fix anchor scroll positioning */
   [id]::before {
     display: block;
