@@ -2,7 +2,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'react-emotion';
-import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
+import SimonyiKonferenciaIcon from '../../static/assets/icons/simonyi-konferencia.svg';
 import Container from '../components/Container';
 import Video from '../components/Video';
 import { mediaQueries } from '../utils/media-queries';
@@ -281,7 +281,7 @@ const IndexPage = ({ data }) => (
           `}
         >
           <img
-            src={SimonyiLogo}
+            src={SimonyiKonferenciaIcon}
             alt=""
             className={css`
               filter: brightness(0) invert(1);

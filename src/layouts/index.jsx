@@ -13,6 +13,7 @@ import FaInstagram from 'react-icons/lib/fa/instagram';
 
 import 'normalize.css';
 
+import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
 import SimonyiKonferenciaLogo from '../../static/assets/logos/simonyi-konferencia.svg';
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
@@ -124,7 +125,7 @@ class Header extends React.Component {
                     alt="Simonyi Konferencia"
                     className={css`
                       height: 2em;
-                      filter: invert(1);
+                      filter: brightness(0) invert(1);
                     `}
                   />
                 </Link>
@@ -259,12 +260,23 @@ const IndexLayout = ({ children, data }) => (
       className={css`
         background: #263238;
         color: white;
+        text-align: center;
         font-size: 2rem;
         padding: 0.5em 0;
         margin-top: 4rem;
       `}
     >
       <Container>
+        <img
+          src={SimonyiLogo}
+          alt="Simonyi Károly Szakkollégium"
+          className={css`
+            margin: 0.5em;
+            max-height: 2em;
+            filter: brightness(0) invert(1);
+          `}
+        />
+
         <div
           className={css`
             display: flex;
