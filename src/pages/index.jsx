@@ -247,7 +247,6 @@ const IndexPage = ({ data }) => (
         <div
           className={css`
             margin: 4em 0;
-            filter: brightness(0) invert(1);
 
             & > :first-child {
               margin-top: 0;
@@ -256,10 +255,6 @@ const IndexPage = ({ data }) => (
             & > :last-child {
               margin-bottom: 0;
             }
-
-            ${mediaQueries.medium`
-              background: url(${SimonyiLogo}) right / 38.2% no-repeat;
-            `};
           `}
         >
           <h1
@@ -272,6 +267,53 @@ const IndexPage = ({ data }) => (
           <h2>2018. április 18.</h2>
           <h2>BME I épület</h2>
           <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
+        </div>
+
+        <div
+          className={css`
+            flex: 0 0 30%;
+            text-align: center;
+            display: none;
+
+            ${mediaQueries.medium`
+              display: block;
+            `};
+          `}
+        >
+          <img
+            src={SimonyiLogo}
+            alt=""
+            className={css`
+              filter: brightness(0) invert(1);
+              margin-bottom: 1.5em;
+            `}
+          />
+
+          <a
+            href="#todo"
+            role="button"
+            className={css`
+              display: inline-block;
+              padding: 0.5em 1em;
+              border: 0.25em solid;
+              color: inherit;
+              font-weight: bold;
+
+              &:hover {
+                text-decoration: none;
+                background: white;
+
+                & div {
+                  background: linear-gradient(227.5deg, #00e676, #009688);
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                }
+              }
+            `}
+          >
+            <div>Regisztráció</div>
+          </a>
         </div>
       </Container>
     </div>
