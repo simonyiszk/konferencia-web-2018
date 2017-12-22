@@ -80,6 +80,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <Headroom
+        ref={(headroom) => {
+          this.headroom = headroom;
+        }}
         className={css`
           position: absolute;
           width: 100%;
@@ -228,7 +231,13 @@ class Navbar extends React.Component {
                   ['/#gallery', 'Galéria'],
                 ].map(([to, name]) => (
                   <li key={to}>
-                    <Link to={to} onClick={() => this.setState({ isNavExpanded: false })}>
+                    <Link
+                      to={to}
+                      onClick={() => {
+                        this.setState({ isNavExpanded: false });
+                        window.setTimeout(() => this.headroom.pin(), 0);
+                      }}
+                    >
                       {name}
                     </Link>
                   </li>
