@@ -222,93 +222,154 @@ const IndexPage = ({ data }) => (
           min-height: 100vh;
           display: flex;
           align-items: center;
-
-          & h1 {
-            font-size: 3em;
-          }
-
-          & h2 {
-            font-size: 1.5em;
-          }
-
-          & h3 {
-            font-size: 1em;
-          }
-
-          ${mediaQueries.xLarge`
-            font-size: 1.25rem;
-          `};
+          justify-content: center;
         `}
       >
         <div
           className={css`
-            margin: 4em 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 3em 0;
+            text-align: center;
 
-            & > :first-child {
-              margin-top: 0;
+            & h1 {
+              font-size: 1.5em;
             }
-          `}
-        >
-          <h1
-            className={css`
-              word-spacing: 100vw;
-            `}
-          >
-            {data.site.siteMetadata.title}
-          </h1>
 
-          <h2>2018. április 18.</h2>
+            & h2 {
+              font-size: 1em;
+            }
 
-          <h2>BME I épület</h2>
-          <h3>{data.site.siteMetadata.siteAddressPretty}</h3>
+            & h3 {
+              font-size: 0.67em;
+            }
 
-          <a
-            href="#todo"
-            role="button"
-            className={css`
-              display: inline-block;
-              font-size: 1.25em;
-              font-weight: bold;
-              padding: 0.5em 1em;
-              border: 0.25em solid;
-              margin-top: 1em;
-              color: inherit;
+            ${mediaQueries.large`
+              flex-wrap: nowrap;
+              text-align: left;
+              font-size: 1.5rem;
+            `};
 
-              &:hover {
-                text-decoration: none;
-                background: white;
-
-                & div {
-                  background: linear-gradient(227.5deg, #00e676, #009688);
-                  -webkit-background-clip: text;
-                  background-clip: text;
-                  color: transparent;
-                }
-              }
-            `}
-          >
-            <div>Regisztráció</div>
-          </a>
-        </div>
-
-        <div
-          className={css`
-            flex: 0 0 30%;
-            display: none;
-
-            ${mediaQueries.medium`
-              display: block;
+            ${mediaQueries.xLarge`
+              font-size: 1.75rem;
             `};
           `}
         >
-          <img
-            src={SimonyiKonferenciaIcon}
-            alt=""
+          <div
             className={css`
-              filter: brightness(0) invert(1);
-              margin-bottom: 1.5em;
+              flex: 0 0 100%;
+
+              ${mediaQueries.large`
+                order: 1;
+                flex: 0 0 30%;
+              `};
             `}
-          />
+          >
+            <img
+              src={SimonyiKonferenciaIcon}
+              alt=""
+              className={css`
+                width: 60%;
+                filter: brightness(0) invert(1);
+
+                ${mediaQueries.small`
+                  width: 30%;
+                `};
+
+                ${mediaQueries.large`
+                  width: 100%;
+                `};
+              `}
+            />
+          </div>
+
+          <div
+            className={css`
+              & h2 {
+                display: inline;
+                white-space: pre;
+
+                ${mediaQueries.large`
+                  display: block;
+                `};
+              }
+            `}
+          >
+            <h1
+              className={css`
+                ${mediaQueries.large`
+                  word-spacing: 100vw;
+                `};
+              `}
+            >
+              {data.site.siteMetadata.title}
+            </h1>
+
+            <div>
+              <h2>2018. április 18.</h2>
+
+              <h2
+                className={css`
+                  margin-bottom: 0;
+
+                  &::before {
+                    content: ' – ';
+
+                    ${mediaQueries.large`
+                    content: '';
+                  `};
+                  }
+                `}
+              >
+                BME I épület
+              </h2>
+            </div>
+
+            <h3
+              className={css`
+                display: none;
+
+                ${mediaQueries.large`
+                  display: block;
+                `};
+              `}
+            >
+              {data.site.siteMetadata.siteAddressPretty}
+            </h3>
+
+            <a
+              href="#todo"
+              role="button"
+              className={css`
+                display: inline-block;
+                font-weight: bold;
+                padding: 0.5em 1em;
+                border: 0.25em solid;
+                color: inherit;
+                margin-top: 1.5em;
+
+                &:hover {
+                  text-decoration: none;
+                  background: white;
+
+                  & div {
+                    background: linear-gradient(227.5deg, #00e676, #009688);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                  }
+                }
+
+                ${mediaQueries.large`
+                  margin-top: 1em;
+                `};
+              `}
+            >
+              <div>Regisztráció</div>
+            </a>
+          </div>
         </div>
       </Container>
     </div>
