@@ -330,6 +330,8 @@ const IndexPage = ({ data }) => (
             <h3
               className={css`
                 display: none;
+                margin-top: 0.5em;
+                margin-bottom: 0;
 
                 ${mediaQueries.large`
                   display: block;
@@ -346,28 +348,18 @@ const IndexPage = ({ data }) => (
                 display: inline-block;
                 font-weight: bold;
                 padding: 0.5em 1em;
-                border: 0.25em solid;
+                border: 0.25em solid white;
                 color: inherit;
                 margin-top: 1.5em;
 
                 &:hover {
                   text-decoration: none;
                   background: white;
-
-                  & div {
-                    background: linear-gradient(227.5deg, #00e676, #009688);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;
-                  }
+                  color: #009688;
                 }
-
-                ${mediaQueries.large`
-                  margin-top: 1em;
-                `};
               `}
             >
-              <div>Regisztráció</div>
+              Regisztráció
             </a>
           </div>
         </div>
