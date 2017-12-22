@@ -58,11 +58,11 @@ injectGlobal`
   }
 `;
 
-class Header extends React.Component {
+class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      isMenuOpen: false,
+      isNavExpanded: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -79,153 +79,165 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <Headroom
+      <Headroom
+        className={css`
+          position: absolute;
+          width: 100%;
+          color: white;
+        `}
+      >
+        <nav
           className={css`
-            position: absolute;
-            width: 100%;
-            color: white;
+            background: #009688;
+            transition: all 0.5s;
 
-            & .headroom--unfixed {
-              & > div {
-                background: transparent;
-              }
+            .headroom--unfixed & {
+              ${!this.state.isNavExpanded
+                ? 'background: transparent;'
+                : mediaQueries.large`
+                  background: transparent;
+                `};
             }
           `}
         >
-          <div
+          <Container
             className={css`
-              background: #009688;
-              transition: all 0.5s;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+
+              & a {
+                display: inline-block;
+                margin: 1rem 0;
+              }
             `}
           >
-            <Container
+            <div
               className={css`
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
+                flex: 1;
+                transition: all 0.5s;
 
-                & a {
-                  display: inline-block;
-                  margin: 1rem 0;
+                .headroom--unfixed & {
+                  opacity: 0;
+                  visibility: hidden;
                 }
               `}
             >
-              <div
-                className={css`
-                  flex: 1;
+              <Link to="/#home" onClick={() => this.setState({ isNavExpanded: false })}>
+                <img
+                  src={SimonyiKonferenciaLogo}
+                  alt="Simonyi Konferencia"
+                  className={css`
+                    height: 2em;
+                    filter: brightness(0) invert(1);
+                  `}
+                />
+              </Link>
+            </div>
 
-                  .headroom--unfixed & {
-                    visibility: hidden;
-                  }
-                `}
-              >
-                <Link to="/#home" onClick={() => this.setState({ isMenuOpen: false })}>
-                  <img
-                    src={SimonyiKonferenciaLogo}
-                    alt="Simonyi Konferencia"
-                    className={css`
-                      height: 2em;
-                      filter: brightness(0) invert(1);
-                    `}
-                  />
-                </Link>
-              </div>
+            <input
+              id="navbar-toggler"
+              name="isNavExpanded"
+              type="checkbox"
+              role="button"
+              checked={this.state.isNavExpanded}
+              aria-controls="navbar-collapse"
+              aria-expanded={this.state.isNavExpanded}
+              onChange={this.handleInputChange}
+              className={css`
+                display: none;
 
-              <input
-                id="menu-checkbox"
-                name="isMenuOpen"
-                type="checkbox"
-                checked={this.state.isMenuOpen}
-                onChange={this.handleInputChange}
-                className={css`
+                & ~ div > ul {
                   display: none;
 
-                  @media (max-width: 768px) {
-                    &:not(:checked) {
-                      & + label > svg:nth-child(1) {
-                        display: none;
-                      }
+                  ${mediaQueries.large`
+                    display: flex;
+                  `};
+                }
 
-                      & ~ nav > ul {
-                        display: none;
-                      }
-                    }
-
-                    &:checked {
-                      & + label > svg:nth-child(2) {
-                        display: none;
-                      }
-
-                      & ~ nav > ul {
-                        display: block;
-                      }
-                    }
-                  }
-                `}
-              />
-
-              {/* eslint-disable jsx-a11y/label-has-for */}
-              <label
-                htmlFor="menu-checkbox"
-                className={css`
-                  user-select: none;
-                  padding: 0.5rem;
-                  margin: -0.5rem;
-
-                  ${mediaQueries.medium`
+                &:not(:checked) {
+                  & + label > svg:nth-child(1) {
                     display: none;
+                  }
+                }
+
+                &:checked {
+                  & + label > svg:nth-child(2) {
+                    display: none;
+                  }
+
+                  & ~ div > ul {
+                    display: block;
+
+                    ${mediaQueries.large`
+                      display: flex;
+                    `};
+                  }
+                }
+              `}
+            />
+
+            <label
+              htmlFor="navbar-toggler"
+              aria-label="Navigáció mutatása/elrejtése"
+              className={css`
+                user-select: none;
+                padding: 0.5rem;
+                margin: -0.5rem;
+
+                ${mediaQueries.large`
+                  display: none;
+                `};
+              `}
+            >
+              <FaChevronUp />
+              <FaChevronDown />
+            </label>
+
+            <div
+              id="navbar-collapse"
+              className={css`
+                width: 100%; /* Wrap component onto a new line */
+
+                ${mediaQueries.large`
+                  width: auto;
+                `};
+              `}
+            >
+              <ul
+                className={css`
+                  list-style-type: none;
+                  padding: 0;
+                  margin: 0;
+
+                  && a {
+                    padding: 0.5rem;
+                    margin: 1rem -0.5rem;
+                  }
+
+                  ${mediaQueries.large`
+                    & > li {
+                      margin-left: 3rem;
+                    }
                   `};
                 `}
               >
-                {/* eslint-enable jsx-a11y/label-has-for */}
-                <FaChevronUp />
-                <FaChevronDown />
-              </label>
-
-              <nav
-                className={css`
-                  @media (max-width: 768px) {
-                    width: 100%; /* Wrap component onto a new line */
-                  }
-                `}
-              >
-                <ul
-                  className={css`
-                    display: flex;
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-
-                    && a {
-                      padding: 0.5rem;
-                      margin: 1rem -0.5rem;
-                    }
-
-                    ${mediaQueries.medium`
-                      & > li {
-                        margin-left: 3rem;
-                      }
-                    `};
-                  `}
-                >
-                  {[
-                    ['/#about', 'A Konferenciáról'],
-                    ['/#presentations', 'Előadások'],
-                    ['/#gallery', 'Galéria'],
-                  ].map(([to, name]) => (
-                    <li key={to}>
-                      <Link to={to} onClick={() => this.setState({ isMenuOpen: false })}>
-                        {name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </Container>
-          </div>
-        </Headroom>
-      </header>
+                {[
+                  ['/#about', 'A Konferenciáról'],
+                  ['/#presentations', 'Előadások'],
+                  ['/#gallery', 'Galéria'],
+                ].map(([to, name]) => (
+                  <li key={to}>
+                    <Link to={to} onClick={() => this.setState({ isNavExpanded: false })}>
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Container>
+        </nav>
+      </Headroom>
     );
   }
 }
@@ -247,7 +259,9 @@ const IndexLayout = ({ children, data }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Helmet>
 
-    <Header />
+    <header>
+      <Navbar />
+    </header>
 
     <main
       className={css`
