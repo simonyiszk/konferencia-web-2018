@@ -23,6 +23,7 @@ injectGlobal`
   body {
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
+    scroll-behavior: smooth;
   }
 
   *,
