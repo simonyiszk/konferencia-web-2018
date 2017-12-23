@@ -121,9 +121,11 @@ class Navbar extends React.Component {
                 transition: all 0.5s;
 
                 .headroom--unfixed & {
-                  opacity: 0;
-                  visibility: hidden;
-                }
+                  ${!this.state.isNavExpanded &&
+                    `
+                    opacity: 0;
+                    visibility: hidden;
+                  `}
               `}
             >
               <Link to="/#home" onClick={() => this.setState({ isNavExpanded: false })}>
