@@ -161,13 +161,13 @@ class Navbar extends React.Component {
                 }
 
                 &:not(:checked) {
-                  & + label > svg:nth-child(1) {
+                  & + label > :nth-child(1) {
                     display: none;
                   }
                 }
 
                 &:checked {
-                  & + label > svg:nth-child(2) {
+                  & + label > :nth-child(2) {
                     display: none;
                   }
 

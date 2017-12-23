@@ -15,25 +15,24 @@ const AboutSection = ({ data }) => (
       className={css`
         display: flex;
         flex-wrap: wrap;
-        margin: 1em -2em;
 
-        & section {
-          padding: 0 2em;
-          flex: 100%;
-
-          ${mediaQueries.medium`
-            flex: 50%;
-          `};
-        }
+        ${mediaQueries.large`
+          margin: -0.5rem -3rem;
+        `};
       `}
     >
       {data.highlights.edges.map(({ node: highlight }) => (
-        <section key={highlight.frontmatter.title}>
+        <section
+          key={highlight.frontmatter.title}
+          className={css`
+            ${mediaQueries.large`
+              flex: 50%;
+              padding: 0.5rem 3rem;
+            `};
+          `}
+        >
           <h2>
-            <span role="img">
-              {highlight.frontmatter.symbol}
-            </span>{' '}
-            {highlight.frontmatter.title}
+            <span role="img">{highlight.frontmatter.symbol}</span> {highlight.frontmatter.title}
           </h2>
 
           <div
@@ -60,6 +59,7 @@ const Presentation = ({
   aspectRatio,
   thumbnail,
   html,
+  className,
   ...props
 }) => {
   let thumbnailSrc;
@@ -71,7 +71,30 @@ const Presentation = ({
   }
 
   return (
-    <article {...props}>
+    <article
+      {...props}
+      className={css`
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        ${mediaQueries.large`
+          flex-wrap: nowrap;
+          margin: 0 -3rem;
+
+          &:nth-of-type(odd) {
+            flex-direction: row-reverse;
+          }
+
+          & > * {
+            padding: 0 3rem;
+            flex: 50%;
+          }
+        `};
+
+        ${className};
+      `}
+    >
       <div>
         <h2>{title}</h2>
 
@@ -94,12 +117,14 @@ Presentation.propTypes = {
   aspectRatio: PropTypes.number.isRequired,
   thumbnail: PropTypes.shape({}),
   html: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 Presentation.defaultProps = {
   presenterName: undefined,
   presenterRole: undefined,
   thumbnail: undefined,
+  className: undefined,
 };
 
 const PresentationsSection = ({ data }) => (
@@ -109,6 +134,10 @@ const PresentationsSection = ({ data }) => (
     <div
       className={css`
         margin: -1rem;
+
+        ${mediaQueries.large`
+          margin: -2rem -1rem;
+        `};
       `}
     >
       {data.videos.edges.map(({ node: video }) => (
@@ -122,23 +151,10 @@ const PresentationsSection = ({ data }) => (
           thumbnail={video.frontmatter.thumbnail}
           html={video.html}
           className={css`
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
             padding: 1rem;
 
             ${mediaQueries.large`
-              flex-wrap: nowrap;
-              margin: -1rem -3rem;
-
-              & > * {
-                flex: 50%;
-                padding: 1rem 3rem;
-              }
-
-              &:nth-child(odd) {
-                flex-direction: row-reverse;
-              }
+              padding: 2rem 1rem;
             `};
           `}
         />
@@ -197,7 +213,7 @@ const GallerySection = ({ data }) => (
             flex: 100%;
             padding: 1rem;
 
-            ${mediaQueries.medium`
+            ${mediaQueries.large`
               flex: 50%;
             `};
           `}
@@ -426,7 +442,7 @@ export const query = graphql`
             thumbnail {
               relativePath
               childImageSharp {
-                sizes(maxWidth: 544) {
+                sizes(maxWidth: 688) {
                   src
                 }
               }
@@ -447,7 +463,7 @@ export const query = graphql`
             source
             thumbnail {
               childImageSharp {
-                sizes(maxWidth: 544) {
+                sizes(maxWidth: 688) {
                   ...GatsbyImageSharpSizes
                 }
               }
