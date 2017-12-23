@@ -7,7 +7,7 @@ import Container from '../components/Container';
 import Video from '../components/Video';
 import { mediaQueries } from '../utils/media-queries';
 
-const AboutSection = () => (
+const AboutSection = ({ data }) => (
   <div id="about">
     <h1> A Konferenciáról</h1>
 
@@ -27,27 +27,28 @@ const AboutSection = () => (
         }
       `}
     >
-      {Array.from({ length: 4 }).map(() => (
-        <section>
+      {data.highlights.edges.map(({ node: highlight }) => (
+        <section key={highlight.frontmatter.title}>
           <h2>
             <span role="img" aria-label="Grinning Face">
-              😀
+              {highlight.frontmatter.symbol}
             </span>{' '}
-            Lorem ipsum
+            {highlight.frontmatter.title}
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
+
+          <div
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: highlight.html }}
+          />
         </section>
       ))}
     </div>
   </div>
 );
+
+AboutSection.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
 
 const Presentation = ({
   title,
@@ -87,8 +88,8 @@ const Presentation = ({
 
 Presentation.propTypes = {
   title: PropTypes.string.isRequired,
-  presenterName: PropTypes.string.isRequired,
-  presenterRole: PropTypes.string.isRequired,
+  presenterName: PropTypes.string,
+  presenterRole: PropTypes.string,
   source: PropTypes.string.isRequired,
   aspectRatio: PropTypes.number.isRequired,
   thumbnail: PropTypes.shape({}),
@@ -96,6 +97,8 @@ Presentation.propTypes = {
 };
 
 Presentation.defaultProps = {
+  presenterName: undefined,
+  presenterRole: undefined,
   thumbnail: undefined,
 };
 
@@ -184,7 +187,7 @@ const GallerySection = ({ data }) => (
         margin: -1rem;
       `}
     >
-      {data.galleries.edges.map(({ node: album }) => (
+      {data.albums.edges.map(({ node: album }) => (
         <Album
           key={album.frontmatter.source}
           title={album.frontmatter.title}
@@ -373,7 +376,7 @@ const IndexPage = ({ data }) => (
         }
       `}
     >
-      <AboutSection />
+      <AboutSection data={data} />
       <PresentationsSection data={data} />
       <GallerySection data={data} />
     </Container>
@@ -392,6 +395,20 @@ export const query = graphql`
       siteMetadata {
         title
         siteAddressPretty
+      }
+    }
+    highlights: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/highlights/" } }
+      sort: { fields: [fileAbsolutePath] }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            symbol
+          }
+          html
+        }
       }
     }
     videos: allMarkdownRemark(
@@ -419,7 +436,7 @@ export const query = graphql`
         }
       }
     }
-    galleries: allMarkdownRemark(
+    albums: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/albums/" } }
       sort: { fields: [fileAbsolutePath], order: DESC }
     ) {
