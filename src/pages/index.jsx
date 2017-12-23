@@ -30,7 +30,7 @@ const AboutSection = ({ data }) => (
       {data.highlights.edges.map(({ node: highlight }) => (
         <section key={highlight.frontmatter.title}>
           <h2>
-            <span role="img" aria-label="Grinning Face">
+            <span role="img">
               {highlight.frontmatter.symbol}
             </span>{' '}
             {highlight.frontmatter.title}
