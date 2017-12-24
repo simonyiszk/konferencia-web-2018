@@ -80,9 +80,6 @@ class Navbar extends React.Component {
     if (typeof window !== 'undefined') {
       // Keep headroom pinned during smooth scroll
       window.addEventListener('hashchange', () => {
-        // Clear previous timeout
-        window.clearTimeout(this.headroomEnableUnpinTimeoutID);
-
         // Disable headroom unpinning caused by scrolling downwards
         this.setState({ headroomDownTolerance: Number.POSITIVE_INFINITY });
         this.headroom.pin();
@@ -98,6 +95,7 @@ class Navbar extends React.Component {
           } else {
             framesWithoutPageOffsetChange += 1;
             if (framesWithoutPageOffsetChange > SCROLL_MAX_FRAMES_WITHOUT_PAGE_OFFSET_CHANGE) {
+              // Restore downTolerance of the headroom
               this.setState({ headroomDownTolerance: 0 });
               return;
             }
