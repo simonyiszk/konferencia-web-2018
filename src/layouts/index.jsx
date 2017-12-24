@@ -9,7 +9,6 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
-import SmoothScroll from 'smooth-scroll';
 
 import 'normalize.css';
 
@@ -20,7 +19,11 @@ import { mediaQueries } from '../utils/media-queries';
 
 const SMOOTH_SCROLL_INTERVAL = 1000;
 
-SmoothScroll('a[href*="#"]');
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]');
+}
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -73,21 +76,23 @@ class Navbar extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
 
-    // Keep headroom pinned during smooth scroll
-    window.addEventListener('hashchange', () => {
-      // Clear previous timeout
-      window.clearTimeout(this.headroomEnableUnpinTimeoutID);
+    if (typeof window !== 'undefined') {
+      // Keep headroom pinned during smooth scroll
+      window.addEventListener('hashchange', () => {
+        // Clear previous timeout
+        window.clearTimeout(this.headroomEnableUnpinTimeoutID);
 
-      // Disable headroom unpinning caused by scrolling downwards
-      this.setState({ headroomDownTolerance: Number.POSITIVE_INFINITY });
-      this.headroom.pin();
+        // Disable headroom unpinning caused by scrolling downwards
+        this.setState({ headroomDownTolerance: Number.POSITIVE_INFINITY });
+        this.headroom.pin();
 
-      // Re-enable headroom unpinning after smooth scroll
-      this.headroomEnableUnpinTimeoutID = window.setTimeout(
-        () => this.setState({ headroomDownTolerance: 0 }),
-        SMOOTH_SCROLL_INTERVAL,
-      );
-    });
+        // Re-enable headroom unpinning after smooth scroll
+        this.headroomEnableUnpinTimeoutID = window.setTimeout(
+          () => this.setState({ headroomDownTolerance: 0 }),
+          SMOOTH_SCROLL_INTERVAL,
+        );
+      });
+    }
   }
 
   handleInputChange(event) {
