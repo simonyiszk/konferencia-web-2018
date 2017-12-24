@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import raf from 'raf';
 import React from 'react';
 import { css, injectGlobal } from 'react-emotion';
 import Headroom from 'react-headroom';
@@ -17,7 +18,7 @@ import SimonyiKonferenciaLogo from '../../static/assets/logos/simonyi-konferenci
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
-const SMOOTH_SCROLL_INTERVAL = 1000;
+const SCROLL_MAX_FRAMES_WITHOUT_PAGE_OFFSET_CHANGE = 30;
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
@@ -87,10 +88,25 @@ class Navbar extends React.Component {
         this.headroom.pin();
 
         // Re-enable headroom unpinning after smooth scroll
-        this.headroomEnableUnpinTimeoutID = window.setTimeout(
-          () => this.setState({ headroomDownTolerance: 0 }),
-          SMOOTH_SCROLL_INTERVAL,
-        );
+        let prevPageYOffset = window.pageYOffset;
+        let framesWithoutPageOffsetChange = 0;
+        const checkScrollState = () => {
+          // Check whether scrolling is still in progress
+          if (window.pageYOffset !== prevPageYOffset) {
+            prevPageYOffset = window.pageYOffset;
+            framesWithoutPageOffsetChange = 0;
+          } else {
+            framesWithoutPageOffsetChange += 1;
+            if (framesWithoutPageOffsetChange > SCROLL_MAX_FRAMES_WITHOUT_PAGE_OFFSET_CHANGE) {
+              this.setState({ headroomDownTolerance: 0 });
+              return;
+            }
+          }
+
+          raf(checkScrollState);
+        };
+
+        raf(checkScrollState);
       });
     }
   }

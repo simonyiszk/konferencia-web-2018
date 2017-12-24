@@ -20,6 +20,7 @@
     "gatsby-transformer-remark": "^1.7.22",
     "gatsby-transformer-sharp": "^1.6.15",
     "normalize.css": "^7.0.0",
+    "raf": "^3.4.0",
     "react-emotion": "^8.0.12",
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
