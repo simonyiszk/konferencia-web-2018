@@ -1,4 +1,3 @@
-import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css, injectGlobal } from 'react-emotion';
@@ -10,6 +9,7 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
+import SmoothScroll from 'smooth-scroll';
 
 import 'normalize.css';
 
@@ -17,6 +17,10 @@ import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
 import SimonyiKonferenciaLogo from '../../static/assets/logos/simonyi-konferencia.svg';
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
+
+const SMOOTH_SCROLL_INTERVAL = 1000;
+
+SmoothScroll('a[href*="#"]');
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -64,9 +68,26 @@ class Navbar extends React.Component {
     super();
     this.state = {
       isNavExpanded: false,
+      headroomDownTolerance: 0,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+
+    // Keep headroom pinned during smooth scroll
+    window.addEventListener('hashchange', () => {
+      // Clear previous timeout
+      window.clearTimeout(this.headroomEnableUnpinTimeoutID);
+
+      // Disable headroom unpinning caused by scrolling downwards
+      this.setState({ headroomDownTolerance: Number.POSITIVE_INFINITY });
+      this.headroom.pin();
+
+      // Re-enable headroom unpinning after smooth scroll
+      this.headroomEnableUnpinTimeoutID = window.setTimeout(
+        () => this.setState({ headroomDownTolerance: 0 }),
+        SMOOTH_SCROLL_INTERVAL,
+      );
+    });
   }
 
   handleInputChange(event) {
@@ -84,6 +105,7 @@ class Navbar extends React.Component {
         ref={(headroom) => {
           this.headroom = headroom;
         }}
+        downTolerance={this.state.headroomDownTolerance}
         className={css`
           position: absolute;
           width: 100%;
@@ -129,7 +151,7 @@ class Navbar extends React.Component {
                   `}
               `}
             >
-              <Link to="/#home" onClick={() => this.setState({ isNavExpanded: false })}>
+              <a href="/#home" onClick={() => this.setState({ isNavExpanded: false })}>
                 <img
                   src={SimonyiKonferenciaLogo}
                   alt="Simonyi Konferencia"
@@ -138,7 +160,7 @@ class Navbar extends React.Component {
                     filter: brightness(0) invert(1);
                   `}
                 />
-              </Link>
+              </a>
             </div>
 
             <input
@@ -234,15 +256,9 @@ class Navbar extends React.Component {
                   ['/#gallery', 'Galéria'],
                 ].map(([to, name]) => (
                   <li key={to}>
-                    <Link
-                      to={to}
-                      onClick={() => {
-                        this.setState({ isNavExpanded: false });
-                        window.setTimeout(() => this.headroom.pin(), 0);
-                      }}
-                    >
+                    <a href={to} onClick={() => this.setState({ isNavExpanded: false })}>
                       {name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
