@@ -5,14 +5,14 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/firefox.svg
 ---
 
-Az utóbbi években nagy vita volt a webes és natív fejlesztés között. És hogy
+Az utóbbi években nagy vita volt a webes és natív fejlesztés között. Hogy
 őszinték legyünk, ez sosem volt kiegyenlített játék. A web mindig le volt maradva:
 nem volt lehetőség offline működésre, lehetetlen volt OS integrációt megoldani,
 és nem férhettél hozzá olyan funkciókhoz, amelyek egy telefont menővé tesznek,
 mint például szenzorok vagy a GSM rádió. Most ez meg fog változni, a Mozilla által fejlesztett
-Firefox OS-el, amely egy kizórlag webes technológiákra épülő mobil operációs rendszer.
+Firefox OS-szel, amely egy kizórlag webes technológiákra épülő mobil operációs rendszer.
 Ez új API-kat jelent, azokhoz a dolgokhoz, amelyek eddig hiányoztak a webből.
-Beszélgetés szenzorokkal, hívásindítás, stb. Minden JavaScriptből.
+Szenzorok adatainak feldolgozása, hívásindítás, stb. Minden JavaScriptből.
 
 De egy kliens oldali alkalmazásból (JS-ben) egy hívás, hogyan is kerül átirányításra
 a valódi hardware-re? Ebben az előadásban Jan Jonbool végigvezet egy JavaScript
