@@ -7,7 +7,7 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/esa.svg
 ---
 
-The European satellite navigation infrastructures EGNOS and Galileo are up and
-running. Satellite navigation will facilitate autonomous driving, support to the
-Internet-of-Things, advanced logistics, asset management and traffic management
-in sectors like railways and aviation.
+Az európai műholdas navigáció infrastruktúrái az EGNOS és a Galileo megfelelően
+üzemelnek. A műholdas navigáció fogja lehetővé tenni az önvezetést, támogatni
+az IoT-t, fejlett logisztikát, eszköz kezelést és forgalomirányítást a
+vasúti és légi szektorban.

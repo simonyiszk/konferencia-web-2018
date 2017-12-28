@@ -5,16 +5,16 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/firefox.svg
 ---
 
-Puts fingers in ears and sings la-la-la-la-la-la. In recent years there has been
-a big debate over web vs. native. And to be fair, it was never an even game. The
-web was always lacking behind: there was no story for offline; it was impossible
-to make a nice OS integration; and you could not access the features that make a
-phone so cool like sensors, or the GSM radio. Now that is going to change,
-Mozilla is building Firefox OS, a mobile operating system solely built on top of
-web technology. And that means: new APIs for all the things missing on the web!
-Talking to sensors, making a phone call, etc. All from JavaScript.
+Az utóbbi években nagy vita volt a webes és natív fejlesztés között. Hogy
+őszinték legyünk, ez sosem volt kiegyenlített játék. A web mindig le volt maradva:
+nem volt lehetőség offline működésre, lehetetlen volt OS integrációt megoldani,
+és nem férhettél hozzá olyan funkciókhoz, amelyek egy telefont menővé tesznek,
+mint például szenzorok vagy a GSM rádió. Most ez meg fog változni, a Mozilla által fejlesztett
+Firefox OS-szel, amely egy kizórlag webes technológiákra épülő mobil operációs rendszer.
+Ez új API-kat jelent, azokhoz a dolgokhoz, amelyek eddig hiányoztak a webből.
+Szenzorok adatainak feldolgozása, hívásindítás, stb. Minden JavaScriptből.
 
-But, how does a call from a client side application (in JS) gets routed to the
-actual hardware? In this presentation Jan Jongboom will guide you from calling a
-JavaScript functions all the way down to the radio chipset, explaining the
-architecture of Firefox OS on the way.
+De egy kliens oldali alkalmazásból (JS-ben) egy hívás, hogyan is kerül átirányításra
+a valódi hardware-re? Ebben az előadásban Jan Jonbool végigvezet egy JavaScript
+függvényhívástól egészen a rádió chip-ig, útközben pedig elmagyarázza a FirefoxOS
+architekrúrájának a működését.

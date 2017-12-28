@@ -7,7 +7,7 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/nasa.svg
 ---
 
-With the discovery of seven planets around the ultra-cool dwarf star TRAPPIST-1,
-Gillon et al. have made a dramatic leap forward in our effort to answer a key
-question: Are we alone? I will describe the discovery and future plans to better
-characterize this star system.
+A TRAPPIST-1 törpecsillag körül található 7 bolygó felfedezése drámai előrelépés
+abban a törekvésben, hogy megválaszoljuk a kulcskérdést: Egyedül vagyunk a világban?
+El fogom magyarázni a felfedezés folyamatát és jövőbeli terveket arra, hogy
+jobban jellemezzük ezt a csillagrendszert.
