@@ -5,11 +5,13 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/ten-tenths-consulting.png
 ---
 
-Yesterday’s single-threaded code is a dead-end. Servers, laptops and even phones
-now have 2, 4, or 8 cores; in the future it will be 32, 64 or more. Taking
-advantage of multiple cores means multiple threads. But writing multi-threaded
-code is hard; much harder than you think. So hard, in fact, that almost all
-multi-threaded code is broken. In this talk, I’ll show you why. And then I’ll
-show you how approaches (like functional programming, actors, CSP and
-Software-Transactional Memory) avoid these problems and allow you to write
-multi-threaded code that actually works.
+A tegnap egyszálú kódja egy zsákutca. A szerverek, a laptopok, sőt még
+a mobiltelfonok is már 2, 4 vagy 8 processzormaggal rendelkeznek és a
+jövőben ez 32, 64 vagy több lesz. A több mag előnyeinek kihasználása
+több szálat jelent, de többszálú alkalmazást fejleszteni nehéz, sokkal
+nehezebb, mint gondolnád. Annyira nehéz, hogy valójában majdnem minden
+többszálú kód hibás. Ebben az előadás bemutatom, hogy miért, majd
+megmutatom, hogy egyes megközelítések (mint a funkcionális programozás,
+actorok, CSP és Software-Transactional Memory) hogyan kerülik el ezeket
+a problémákat és segítenek abban, hogy olyan többszálú alkalmazást
+fejlessz, ami valóban működik.

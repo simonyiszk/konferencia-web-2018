@@ -5,15 +5,14 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/kuka.svg
 ---
 
-The robotics world as known today lays within a period of transition which is
-caused by changing market and working conditions. In the last decades robots
-were mainly used for high volume mass production in high-wage countries. Within
-the next years the necessity for more flexible robotic solutions is increasing
-because of market globalization and consumer demands for customized individual
-products, this leads at the end to a very high product variety. Additionally,
-due to an ageing society, the number of workers is decreasing within more and
-more countries, which leads to robotics solutions aiming to support or replace
-non-ergonomic manual labor. The KUKA group as a technology driver is taking care
-of these challenges and provides therefore the new "KUKA Mobile Robotic iiwa" as
-new intelligent mobile assistant, this combines the KUKA lightweight robot (LBR)
-and the KUKA omnidirectional mobile platform.
+A robotika világa, ahogy ma ismerjük, egy átmeneti időszakban helyezkedik el, amit
+a piac és a munkaviszonyok változása okozott. Az utolsó évtizedben robotokat főként
+nagy mennyiségű termelésben használtak magas bérezésű országokban. A következő években
+a megnövekedik az igény a rugalmasabb robotikai megoldásokra a piac globalizálódása 
+és a fogyasztók személyre szabott, egyedeti termék iránti igénye miatt, ami végül
+a termékek sokszínűségéhez vezet. Emellett, az öregedő társadalom miatt, egyre több
+országban csökken a munkaerő, ami olyan robotikai megoldásokhoz vezet, amelyek
+célja támogatni vagy helyettesíteni a nem ergonómikus fizikai munkavégzést.
+A KUKA group, mint technológiai vezető gondoskodik ezekről a kihívásokról és bemutatja
+az új "KUKA Mobile Robotic iiwa"-t, mint új intelligens mobil asszisztensét, amely
+ötvözi a KUKA lightwaight robotot (LBR) és a KUKA többirányú mobilplatformot.
