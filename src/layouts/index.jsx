@@ -271,7 +271,7 @@ class Navbar extends React.Component {
               >
                 {[
                   ['/#about', 'A Konferenciáról'],
-                  ['/#presentations', 'Előadások'],
+                  ['/#presentations', 'Korábbi előadások'],
                   ['/#gallery', 'Galéria'],
                 ].map(([to, name]) => (
                   <li key={to}>
