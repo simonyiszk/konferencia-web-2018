@@ -352,9 +352,6 @@ const IndexLayout = ({ children, data }) => (
             }
           `}
         >
-          <a href={data.site.siteMetadata.siteEmailURL}>
-            <FaEnvelope />
-          </a>
           <a
             href={data.site.siteMetadata.siteFacebookURL}
             target="_blank"
@@ -371,6 +368,9 @@ const IndexLayout = ({ children, data }) => (
             rel="noreferrer noopener"
           >
             <FaInstagram />
+          </a>
+          <a href={data.site.siteMetadata.siteEmailURL}>
+            <FaEnvelope />
           </a>
         </div>
       </Container>
