@@ -170,21 +170,21 @@ PresentationsSection.propTypes = {
 const Album = ({
   title, source, thumbnailSizes, ...props
 }) => (
-  <div {...props}>
-    <h2
-      className={css`
+    <div {...props}>
+      <h2
+        className={css`
         text-align: center;
         margin-top: 0;
       `}
-    >
-      {title}
-    </h2>
+      >
+        {title}
+      </h2>
 
-    <a href={source} target="_blank" rel="noreferrer noopener">
-      <Img sizes={thumbnailSizes} />
-    </a>
-  </div>
-);
+      <a href={source} target="_blank" rel="noreferrer noopener">
+        <Img sizes={thumbnailSizes} />
+      </a>
+    </div>
+  );
 
 Album.propTypes = {
   title: PropTypes.string.isRequired,
@@ -361,7 +361,8 @@ const IndexPage = ({ data }) => (
             </h3>
 
             <a
-              href="#todo"
+              href="https://www.eventbrite.com/e/xv-simonyi-konferencia-tickets-41605153133?aff=web"
+              target="_BLANK"
               role="button"
               className={css`
                 display: inline-block;
