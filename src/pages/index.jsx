@@ -387,6 +387,8 @@ const IndexPage = ({ data }) => (
 
     <Container
       className={css`
+        margin-top: 2rem;
+
         & h1 {
           text-align: center;
         }
