@@ -269,6 +269,14 @@ const IndexPage = ({ data }) => (
               flex-wrap: nowrap;
               text-align: left;
               font-size: 1.5rem;
+
+              & h1 {
+                font-size: 2em;
+              }
+
+              & * > :first-child {
+                margin-top: 0;
+              }
             `};
 
             ${mediaQueries.xLarge`
