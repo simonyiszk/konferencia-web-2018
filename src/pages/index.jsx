@@ -256,6 +256,9 @@ class Album extends React.Component {
           backdropClosesModal
           showImageCount={false}
           showThumbnails
+          closeButtonTitle="Bezárás (Esc)"
+          leftArrowTitle="Előző (Balra nyíl)"
+          rightArrowTitle="Következő (Jobbra nyíl)"
           onClose={this.closeLightbox}
           onClickPrev={this.lightboxGoToPrev}
           onClickNext={this.lightboxGoToNext}
