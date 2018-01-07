@@ -10,7 +10,7 @@ a mobiltelfonok is már 2, 4 vagy 8 processzormaggal rendelkeznek és a
 jövőben ez 32, 64 vagy több lesz. A több mag előnyeinek kihasználása
 több szálat jelent, de többszálú alkalmazást fejleszteni nehéz, sokkal
 nehezebb, mint gondolnád. Annyira nehéz, hogy valójában majdnem minden
-többszálú kód hibás. Ebben az előadás bemutatom, hogy miért, majd
+többszálú kód hibás. Ebben az előadásban bemutatom, hogy miért, majd
 megmutatom, hogy egyes megközelítések (mint a funkcionális programozás,
 actorok, CSP és Software-Transactional Memory) hogyan kerülik el ezeket
 a problémákat és segítenek abban, hogy olyan többszálú alkalmazást

@@ -14,7 +14,7 @@ Firefox OS-szel, amely egy kizórlag webes technológiákra épülő mobil oper�
 Ez új API-kat jelent, azokhoz a dolgokhoz, amelyek eddig hiányoztak a webből.
 Szenzorok adatainak feldolgozása, hívásindítás, stb. Minden JavaScriptből.
 
-De egy kliens oldali alkalmazásból (JS-ben) egy hívás, hogyan is kerül átirányításra
+De egy kliens oldali alkalmazásból (JS-ben) egy hívás hogyan is kerül átirányításra
 a valódi hardware-re? Ebben az előadásban Jan Jonbool végigvezet egy JavaScript
 függvényhívástól egészen a rádió chip-ig, útközben pedig elmagyarázza a FirefoxOS
 architekrúrájának a működését.
