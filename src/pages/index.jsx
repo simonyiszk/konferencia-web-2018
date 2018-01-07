@@ -291,7 +291,7 @@ const GallerySection = ({ data }) => (
           title={album.frontmatter.title}
           source={album.frontmatter.source}
           thumbnail={album.frontmatter.thumbnail.childImageSharp.sizes}
-          images={album.frontmatter.images.map(image => image.childImageSharp.sizes)}
+          images={album.frontmatter.images.map(image => image.path.childImageSharp.sizes)}
           className={css`
             flex: 100%;
             padding: 1rem;
@@ -564,10 +564,12 @@ export const query = graphql`
               }
             }
             images {
-              childImageSharp {
-                sizes(maxWidth: 1024) {
-                  src
-                  srcSet
+              path {
+                childImageSharp {
+                  sizes(maxWidth: 1024, jpegProgressive: true) {
+                    src
+                    srcSet
+                  }
                 }
               }
             }
