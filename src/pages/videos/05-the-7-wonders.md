@@ -7,7 +7,4 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/nasa.svg
 ---
 
-A TRAPPIST-1 törpecsillag körül található 7 bolygó felfedezése drámai előrelépés
-abban a törekvésben, hogy megválaszoljuk a kulcskérdést: Egyedül vagyunk a világban?
-El fogom magyarázni a felfedezés folyamatát és jövőbeli terveket arra, hogy
-jobban jellemezzük ezt a csillagrendszert.
+Egyedül vagyunk a világban? Dr. Kartik Sheth előadásából nem csak erre kapunk választ, hanem a TRAPPIST-1 törpecsillag körül található 7 bolygó felfedezésének folyamatáról és a NASA jövőbeli terveiről is.

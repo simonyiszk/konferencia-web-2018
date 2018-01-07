@@ -7,7 +7,4 @@ aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/esa.svg
 ---
 
-Az európai műholdas navigáció infrastruktúrái az EGNOS és a Galileo megfelelően
-üzemelnek. A műholdas navigáció fogja lehetővé tenni az önvezetést, támogatni
-az IoT-t, fejlett logisztikát, eszköz kezelést és forgalomirányítást a
-vasúti és légi szektorban.
+Paul Verhoef, a Galileo Program igazgatója ismerteti, hogy az európai műholdas navigáció infrastruktúrái hogyan teszik lehetővé az önvezetést. Az EGNOS és a Galileo támogatják az IoT-t, a fejlett logisztikát, eszközkezelést és forgalomirányítást a vasúti és légi szektorban.
