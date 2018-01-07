@@ -2,6 +2,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { css } from 'react-emotion';
+import Lightbox from 'react-images';
 import SimonyiKonferenciaIcon from '../../static/assets/icons/simonyi-konferencia.svg';
 import Container from '../components/Container';
 import Video from '../components/Video';
@@ -167,29 +168,110 @@ PresentationsSection.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
-const Album = ({
-  title, source, thumbnailSizes, ...props
-}) => (
-  <div {...props}>
-    <h2
-      className={css`
-        text-align: center;
-        margin-top: 0;
-      `}
-    >
-      {title}
-    </h2>
+class Album extends React.Component {
+  constructor() {
+    super();
 
-    <a href={source} target="_blank" rel="noreferrer noopener">
-      <Img sizes={thumbnailSizes} />
-    </a>
-  </div>
-);
+    this.state = {
+      isLightboxOpen: false,
+      currentImage: 0,
+    };
+
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.lightboxGoToPrev = this.lightboxGoToPrev.bind(this);
+    this.lightboxGoToNext = this.lightboxGoToNext.bind(this);
+    this.lightboxGoToIndex = this.lightboxGoToIndex.bind(this);
+    this.handleClickThumbnail = this.handleClickThumbnail.bind(this);
+    this.handleLightboxClickImage = this.handleLightboxClickImage.bind(this);
+  }
+
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      isLightboxOpen: false,
+    });
+  }
+
+  lightboxGoToPrev() {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  }
+
+  lightboxGoToNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  }
+
+  lightboxGoToIndex(index) {
+    this.setState({
+      currentImage: index,
+    });
+  }
+
+  handleClickThumbnail(event) {
+    event.preventDefault();
+    this.setState({
+      isLightboxOpen: true,
+    });
+  }
+
+  handleLightboxClickImage() {
+    if (this.state.currentImage < this.props.images.length - 1) {
+      this.lightboxGoToNext();
+    }
+  }
+
+  render() {
+    const {
+      title, source, thumbnail, images, ...props
+    } = this.props;
+    const { isLightboxOpen } = this.state;
+
+    return (
+      <div {...props}>
+        <h2
+          className={css`
+            text-align: center;
+            margin-top: 0;
+          `}
+        >
+          {title}
+        </h2>
+
+        <a
+          href={source}
+          target="_blank"
+          rel="noreferrer noopener"
+          onClick={this.handleClickThumbnail}
+        >
+          <Img sizes={thumbnail} />
+        </a>
+
+        <Lightbox
+          images={images.map(({ src, srcSet }) => ({ src, srcSet: srcSet.split(',\n') }))}
+          currentImage={this.state.currentImage}
+          isOpen={isLightboxOpen}
+          backdropClosesModal
+          showImageCount={false}
+          showThumbnails
+          onClose={this.closeLightbox}
+          onClickPrev={this.lightboxGoToPrev}
+          onClickNext={this.lightboxGoToNext}
+          onClickImage={this.handleLightboxClickImage}
+          onClickThumbnail={this.lightboxGoToIndex}
+        />
+      </div>
+    );
+  }
+}
 
 Album.propTypes = {
   title: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
-  thumbnailSizes: PropTypes.shape({}).isRequired,
+  thumbnail: PropTypes.shape({}).isRequired,
+  images: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const GallerySection = ({ data }) => (
@@ -208,7 +290,8 @@ const GallerySection = ({ data }) => (
           key={album.frontmatter.source}
           title={album.frontmatter.title}
           source={album.frontmatter.source}
-          thumbnailSizes={album.frontmatter.thumbnail.childImageSharp.sizes}
+          thumbnail={album.frontmatter.thumbnail.childImageSharp.sizes}
+          images={album.frontmatter.images.map(image => image.childImageSharp.sizes)}
           className={css`
             flex: 100%;
             padding: 1rem;
@@ -477,6 +560,14 @@ export const query = graphql`
               childImageSharp {
                 sizes(maxWidth: 688) {
                   ...GatsbyImageSharpSizes
+                }
+              }
+            }
+            images {
+              childImageSharp {
+                sizes(maxWidth: 1024) {
+                  src
+                  srcSet
                 }
               }
             }

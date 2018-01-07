@@ -25,6 +25,7 @@
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "react-images": "^0.5.14",
     "smooth-scroll": "^12.1.5"
   },
   "devDependencies": {
