@@ -10,16 +10,21 @@ const Video = ({
   aspectRatio, poster, className, ...props
 }) => (
   <AspectRatioBox aspectRatio={aspectRatio}>
-    <video
+    <div
       className={css`
-        width: 100%;
-        height: 100%;
         background: url(${poster}) center / contain no-repeat;
-        ${className};
       `}
-      {...props}
-      poster={transparentPixelSrc}
-    />
+    >
+      <video
+        className={css`
+          width: 100%;
+          height: 100%;
+          ${className};
+        `}
+        {...props}
+        poster={transparentPixelSrc}
+      />
+    </div>
   </AspectRatioBox>
 );
 
