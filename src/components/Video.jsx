@@ -12,6 +12,8 @@ const Video = ({
   <AspectRatioBox aspectRatio={aspectRatio}>
     <div
       className={css`
+        width: 100%;
+        height: 100%;
         background: url(${poster}) center / contain no-repeat;
       `}
     >
