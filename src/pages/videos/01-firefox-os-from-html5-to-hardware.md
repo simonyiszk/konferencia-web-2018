@@ -2,7 +2,7 @@
 title: "Firefox OS: From HTML5 to hardware"
 presenterName: Jan Jongboom
 presenterRole: IoT Engineer, Telenor
-source: http://coding.sch.bme.hu:8080/bss_vagott_web_16a9_HD/high_quality/20140415_simonyikonf2014_ib28_03_hq_HD.mp4
+source: https://coding.sch.bme.hu/bss_vagott_web_16a9_HD/high_quality/20140415_simonyikonf2014_ib28_03_hq_HD.mp4
 aspectRatio: 1.7777777777777777
 thumbnail: ../../../static/assets/logos/firefox.svg
 ---
