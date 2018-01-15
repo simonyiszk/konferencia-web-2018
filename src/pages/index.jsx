@@ -227,7 +227,7 @@ class Album extends React.Component {
     const {
       title, source, thumbnail, images, ...props
     } = this.props;
-    const { isLightboxOpen } = this.state;
+    const { isLightboxOpen, currentImage } = this.state;
 
     return (
       <div {...props}>
@@ -251,8 +251,8 @@ class Album extends React.Component {
 
         <Lightbox
           images={images.map(({ src, srcSet }) => ({ src, srcSet: srcSet.split(',\n') }))}
-          currentImage={this.state.currentImage}
           isOpen={isLightboxOpen}
+          currentImage={currentImage}
           backdropClosesModal
           showImageCount={false}
           showThumbnails
