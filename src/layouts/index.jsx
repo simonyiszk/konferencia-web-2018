@@ -277,12 +277,12 @@ class Navbar extends React.Component {
                 `}
               >
                 {[
-                  ['/about/', 'A Konferenciáról'],
-                  ['/presentations/', 'Korábbi előadások'],
-                  ['/gallery/', 'Galéria'],
-                ].map(([to, name]) => (
-                  <li key={to}>
-                    <Link to={to} onClick={() => this.setState({ isNavExpanded: false })}>
+                  ['/#about', 'A Konferenciáról'],
+                  ['/presentations', 'Korábbi előadások'],
+                  ['/gallery', 'Galéria'],
+                ].map(([href, name]) => (
+                  <li key={href}>
+                    <Link to={href} onClick={() => this.setState({ isNavExpanded: false })}>
                       {name}
                     </Link>
                   </li>

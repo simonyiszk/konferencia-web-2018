@@ -5,6 +5,52 @@ import SimonyiKonferenciaIcon from '../../static/assets/icons/simonyi-konferenci
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
+const AboutSection = ({ data, ...props }) => (
+  <div {...props}>
+    <h1
+      className={css`
+        text-align: center;
+      `}
+    >
+      A Konferenciáról
+    </h1>
+
+    <div
+      className={css`
+        display: flex;
+        flex-wrap: wrap;
+        ${mediaQueries.large`
+          margin: -0.5rem -3rem;
+        `};
+      `}
+    >
+      {data.highlights.edges.map(({ node: highlight }) => (
+        <section
+          key={highlight.frontmatter.title}
+          className={css`
+            ${mediaQueries.large`
+              flex: 50%;
+              padding: 0.5rem 3rem;
+            `};
+          `}
+        >
+          <h2>
+            <span role="img">{highlight.frontmatter.symbol}</span> {highlight.frontmatter.title}
+          </h2>
+          <div
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: highlight.html }}
+          />
+        </section>
+      ))}
+    </div>
+  </div>
+);
+
+AboutSection.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 const IndexPage = ({ data }) => (
   <div>
     <div
@@ -172,6 +218,10 @@ const IndexPage = ({ data }) => (
         </div>
       </Container>
     </div>
+
+    <Container>
+      <AboutSection id="about" data={data} />
+    </Container>
   </div>
 );
 
@@ -187,6 +237,21 @@ export const query = graphql`
       siteMetadata {
         title
         siteAddressPretty
+      }
+    }
+
+    highlights: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/highlights/" } }
+      sort: { fields: [fileAbsolutePath] }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            symbol
+          }
+          html
+        }
       }
     }
   }
