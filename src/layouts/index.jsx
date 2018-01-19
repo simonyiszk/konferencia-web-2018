@@ -130,7 +130,7 @@ class Navbar extends React.Component {
         className={css`
           position: absolute;
           width: 100%;
-          color: black;
+          color: white;
         `}
       >
         <nav
