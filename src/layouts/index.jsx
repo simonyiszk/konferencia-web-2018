@@ -120,7 +120,8 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const isHomepage = window.location.pathname === withPrefix('/');
+    const { isTransparentWhenUnfixed } = this.props;
+
     return (
       <Headroom
         ref={(headroom) => {
@@ -138,15 +139,15 @@ class Navbar extends React.Component {
             background: #009688;
             transition: all 0.5s;
 
-            ${isHomepage &&
+            ${isTransparentWhenUnfixed &&
               `.headroom--unfixed & {
-              ${
-                !this.state.isNavExpanded
-                  ? 'background: transparent;'
-                  : mediaQueries.large`
-                  background: transparent;
-                `
-              };
+                ${
+                  !this.state.isNavExpanded
+                    ? 'background: transparent;'
+                    : mediaQueries.large`
+                      background: transparent;
+                    `
+                };
               }`};
           `}
         >
@@ -168,8 +169,8 @@ class Navbar extends React.Component {
                 transition: all 0.5s;
 
                 .headroom--unfixed & {
-                  ${!this.state.isNavExpanded &&
-                    isHomepage &&
+                  ${isTransparentWhenUnfixed &&
+                    !this.state.isNavExpanded &&
                     `
                     opacity: 0;
                     visibility: hidden;
@@ -295,98 +296,111 @@ class Navbar extends React.Component {
   }
 }
 
-const IndexLayout = ({ children, data }) => (
-  <div
-    className={css`
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    `}
-  >
-    <Helmet
-      defaultTitle={data.site.siteMetadata.title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-    >
-      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+Navbar.propTypes = {
+  isTransparentWhenUnfixed: PropTypes.bool.isRequired,
+};
 
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </Helmet>
+const IndexLayout = ({ children, data, location }) => {
+  const isHomepage = location.pathname === withPrefix('/');
 
-    <header>
-      <Navbar />
-    </header>
-
-    <main
+  return (
+    <div
       className={css`
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       `}
     >
-      {children()}
-    </main>
+      <Helmet
+        defaultTitle={data.site.siteMetadata.title}
+        titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+      >
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 
-    <footer
-      className={css`
-        background: #263238;
-        color: white;
-        text-align: center;
-        font-size: 2rem;
-        padding: 0.5em 0;
-        margin-top: 4rem;
-      `}
-    >
-      <Container>
-        <img
-          src={SimonyiLogo}
-          alt="Simonyi Károly Szakkollégium"
-          className={css`
-            margin: 0.5em;
-            max-height: 2em;
-            filter: brightness(0) invert(1);
-          `}
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
 
-        <div
-          className={css`
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            min-width: 40%;
-            max-width: 10em;
+      <header>
+        <Navbar isTransparentWhenUnfixed={isHomepage} />
+      </header>
 
-            & a {
+      <main
+        className={css`
+          flex: 1;
+        `}
+      >
+        {children()}
+      </main>
+
+      <footer
+        className={css`
+          background: #263238;
+          color: white;
+          text-align: center;
+          font-size: 2rem;
+          padding: 0.5em 0;
+          margin-top: 4rem;
+        `}
+      >
+        <Container>
+          <img
+            src={SimonyiLogo}
+            alt="Simonyi Károly Szakkollégium"
+            className={css`
               margin: 0.5em;
-            }
-          `}
-        >
-          <a
-            href={data.site.siteMetadata.siteFacebookURL}
-            target="_blank"
-            rel="noreferrer noopener"
+              max-height: 2em;
+              filter: brightness(0) invert(1);
+            `}
+          />
+
+          <div
+            className={css`
+              display: flex;
+              justify-content: space-between;
+              margin: 0 auto;
+              min-width: 40%;
+              max-width: 10em;
+
+              & a {
+                margin: 0.5em;
+              }
+            `}
           >
-            <FaFacebookOfficial />
-          </a>
-          <a href={data.site.siteMetadata.siteYouTubeURL} target="_blank" rel="noreferrer noopener">
-            <FaYouTubePlay />
-          </a>
-          <a
-            href={data.site.siteMetadata.siteInstagramURL}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <FaInstagram />
-          </a>
-          <a href={data.site.siteMetadata.siteEmailURL}>
-            <FaEnvelope />
-          </a>
-        </div>
-      </Container>
-    </footer>
-  </div>
-);
+            <a
+              href={data.site.siteMetadata.siteFacebookURL}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <FaFacebookOfficial />
+            </a>
+            <a
+              href={data.site.siteMetadata.siteYouTubeURL}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <FaYouTubePlay />
+            </a>
+            <a
+              href={data.site.siteMetadata.siteInstagramURL}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <FaInstagram />
+            </a>
+            <a href={data.site.siteMetadata.siteEmailURL}>
+              <FaEnvelope />
+            </a>
+          </div>
+        </Container>
+      </footer>
+    </div>
+  );
+};
 
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,
   data: PropTypes.shape({}).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default IndexLayout;
