@@ -10,7 +10,7 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
-import Link from 'gatsby-link';
+import Link, { withPrefix } from 'gatsby-link';
 
 import 'normalize.css';
 
@@ -120,6 +120,7 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const isHomepage = window.location.pathname === withPrefix('/');
     return (
       <Headroom
         ref={(headroom) => {
@@ -129,7 +130,7 @@ class Navbar extends React.Component {
         className={css`
           position: absolute;
           width: 100%;
-          color: white;
+          color: black;
         `}
       >
         <nav
@@ -137,12 +138,14 @@ class Navbar extends React.Component {
             background: #009688;
             transition: all 0.5s;
 
-            .headroom--unfixed & {
+            ${isHomepage &&
+            `.headroom--unfixed & {
               ${!this.state.isNavExpanded
               ? 'background: transparent;'
               : mediaQueries.large`
                   background: transparent;
                 `};
+              }`
             }
           `}
         >
@@ -164,7 +167,7 @@ class Navbar extends React.Component {
                 transition: all 0.5s;
 
                 .headroom--unfixed & {
-                  ${!this.state.isNavExpanded &&
+                  ${(!this.state.isNavExpanded && isHomepage) &&
                 `
                     opacity: 0;
                     visibility: hidden;
