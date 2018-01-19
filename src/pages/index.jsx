@@ -5,7 +5,6 @@ import SimonyiKonferenciaIcon from '../../static/assets/icons/simonyi-konferenci
 import Container from '../components/Container';
 import { mediaQueries } from '../utils/media-queries';
 
-
 const IndexPage = ({ data }) => (
   <div>
     <div
