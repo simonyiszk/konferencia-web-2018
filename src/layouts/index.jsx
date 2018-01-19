@@ -10,6 +10,7 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
+import Link, { withPrefix } from 'gatsby-link';
 
 import 'normalize.css';
 
@@ -119,6 +120,7 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const isHomepage = window.location.pathname === withPrefix('/');
     return (
       <Headroom
         ref={(headroom) => {
@@ -128,7 +130,7 @@ class Navbar extends React.Component {
         className={css`
           position: absolute;
           width: 100%;
-          color: white;
+          color: black;
         `}
       >
         <nav
@@ -136,12 +138,14 @@ class Navbar extends React.Component {
             background: #009688;
             transition: all 0.5s;
 
-            .headroom--unfixed & {
+            ${isHomepage &&
+            `.headroom--unfixed & {
               ${!this.state.isNavExpanded
-                ? 'background: transparent;'
-                : mediaQueries.large`
+              ? 'background: transparent;'
+              : mediaQueries.large`
                   background: transparent;
                 `};
+              }`
             }
           `}
         >
@@ -163,14 +167,14 @@ class Navbar extends React.Component {
                 transition: all 0.5s;
 
                 .headroom--unfixed & {
-                  ${!this.state.isNavExpanded &&
-                    `
+                  ${(!this.state.isNavExpanded && isHomepage) &&
+                `
                     opacity: 0;
                     visibility: hidden;
                   `}
               `}
             >
-              <a href="/#home" onClick={() => this.setState({ isNavExpanded: false })}>
+              <Link to="/" onClick={() => this.setState({ isNavExpanded: false })}>
                 <img
                   src={SimonyiKonferenciaLogo}
                   alt="Simonyi Konferencia"
@@ -179,7 +183,7 @@ class Navbar extends React.Component {
                     filter: brightness(0) invert(1);
                   `}
                 />
-              </a>
+              </Link>
             </div>
 
             <input
@@ -270,14 +274,14 @@ class Navbar extends React.Component {
                 `}
               >
                 {[
-                  ['/#about', 'A Konferenciáról'],
-                  ['/#presentations', 'Korábbi előadások'],
-                  ['/#gallery', 'Galéria'],
+                  ['/about/', 'A Konferenciáról'],
+                  ['/presentations/', 'Korábbi előadások'],
+                  ['/gallery/', 'Galéria'],
                 ].map(([to, name]) => (
                   <li key={to}>
-                    <a href={to} onClick={() => this.setState({ isNavExpanded: false })}>
+                    <Link to={to} onClick={() => this.setState({ isNavExpanded: false })}>
                       {name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -387,11 +391,11 @@ export default IndexLayout;
 
 export const query = graphql`
   query IndexLayoutQuery {
-    site {
-      siteMetadata {
-        title
+            site {
+          siteMetadata {
+            title
         siteEmailURL
-        siteFacebookURL
+          siteFacebookURL
         siteYouTubeURL
         siteInstagramURL
       }
