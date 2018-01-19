@@ -139,14 +139,15 @@ class Navbar extends React.Component {
             transition: all 0.5s;
 
             ${isHomepage &&
-            `.headroom--unfixed & {
-              ${!this.state.isNavExpanded
-              ? 'background: transparent;'
-              : mediaQueries.large`
+              `.headroom--unfixed & {
+              ${
+                !this.state.isNavExpanded
+                  ? 'background: transparent;'
+                  : mediaQueries.large`
                   background: transparent;
-                `};
-              }`
-            }
+                `
+              };
+              }`};
           `}
         >
           <Container
@@ -167,8 +168,9 @@ class Navbar extends React.Component {
                 transition: all 0.5s;
 
                 .headroom--unfixed & {
-                  ${(!this.state.isNavExpanded && isHomepage) &&
-                `
+                  ${!this.state.isNavExpanded &&
+                    isHomepage &&
+                    `
                     opacity: 0;
                     visibility: hidden;
                   `}
@@ -391,11 +393,11 @@ export default IndexLayout;
 
 export const query = graphql`
   query IndexLayoutQuery {
-            site {
-          siteMetadata {
-            title
+    site {
+      siteMetadata {
+        title
         siteEmailURL
-          siteFacebookURL
+        siteFacebookURL
         siteYouTubeURL
         siteInstagramURL
       }

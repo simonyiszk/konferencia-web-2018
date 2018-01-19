@@ -4,7 +4,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "format": "prettier-eslint --write \"src/**/*.{js,jsx}\" \"**/*.md\""
+    "format": "prettier-eslint --write \"src/**/*.{js,jsx}\" \"**/*.json\" \"**/*.md\""
   },
   "dependencies": {
     "emotion": "^8.0.12",
