@@ -123,7 +123,6 @@ const IndexPage = ({ data }) => (
               alt=""
               className={css`
                 width: 60%;
-                filter: brightness(0) invert(1);
 
                 ${mediaQueries.small`
                   width: 30%;

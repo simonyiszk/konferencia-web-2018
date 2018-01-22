@@ -183,7 +183,6 @@ class Navbar extends React.Component {
                   alt="Simonyi Konferencia"
                   className={css`
                     height: 2em;
-                    filter: brightness(0) invert(1);
                   `}
                 />
               </Link>
