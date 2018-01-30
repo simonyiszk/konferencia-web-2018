@@ -119,8 +119,6 @@ const GalleryPage = ({ data }) => (
   <div>
     <Container
       className={css`
-        margin-top: 5rem;
-
         & h1 {
           text-align: center;
         }

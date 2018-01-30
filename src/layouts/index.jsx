@@ -129,13 +129,12 @@ class Navbar extends React.Component {
         }}
         downTolerance={this.state.headroomDownTolerance}
         className={css`
-          position: absolute;
-          width: 100%;
-          color: white;
+          ${isTransparentWhenUnfixed && 'position: absolute;'} width: 100%;
         `}
       >
         <nav
           className={css`
+            color: white;
             background: #009688;
             transition: all 0.5s;
 
