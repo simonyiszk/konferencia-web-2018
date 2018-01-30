@@ -278,6 +278,7 @@ class Navbar extends React.Component {
                   ['/#about', 'A Konferenciáról'],
                   ['/presentations', 'Korábbi előadások'],
                   ['/gallery', 'Galéria'],
+                  ['/contact', 'Kapcsolat'],
                 ].map(([href, name]) => (
                   <li key={href}>
                     <Link to={href} onClick={() => this.setState({ isNavExpanded: false })}>
