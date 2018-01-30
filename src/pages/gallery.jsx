@@ -178,7 +178,7 @@ export const query = graphql`
             source
             thumbnail {
               childImageSharp {
-                sizes(maxWidth: 688) {
+                sizes(maxWidth: 690, maxHeight: 460, cropFocus: EAST) {
                   ...GatsbyImageSharpSizes
                 }
               }
