@@ -12,7 +12,8 @@ import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import Link, { withPrefix } from 'gatsby-link';
 
-import 'normalize.css';
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+import normalizeCSS from '!raw-loader!normalize.css';
 
 import SimonyiLogo from '../../static/assets/logos/simonyi.svg';
 import SimonyiKonferenciaLogo from '../../static/assets/logos/simonyi-konferencia.svg';
@@ -29,6 +30,8 @@ if (typeof window !== 'undefined') {
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
+  ${normalizeCSS}
+
   body {
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
@@ -129,7 +132,8 @@ class Navbar extends React.Component {
         }}
         downTolerance={this.state.headroomDownTolerance}
         className={css`
-          ${isTransparentWhenUnfixed && 'position: absolute;'} width: 100%;
+          width: 100%;
+          ${isTransparentWhenUnfixed && 'position: absolute;'};
         `}
       >
         <nav
