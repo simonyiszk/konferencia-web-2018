@@ -325,6 +325,10 @@ const IndexLayout = ({ children, data, location }) => {
       <main
         className={css`
           flex: 1;
+
+          h1 {
+            text-align: center;
+          }
         `}
       >
         {children()}

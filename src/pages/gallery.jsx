@@ -117,13 +117,7 @@ Album.propTypes = {
 
 const GalleryPage = ({ data }) => (
   <div>
-    <Container
-      className={css`
-        & h1 {
-          text-align: center;
-        }
-      `}
-    >
+    <Container>
       <div id="gallery">
         <h1>Galéria</h1>
 

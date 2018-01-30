@@ -85,13 +85,7 @@ Presentation.defaultProps = {
 
 const PresentationsPage = ({ data }) => (
   <div>
-    <Container
-      className={css`
-        & h1 {
-          text-align: center;
-        }
-      `}
-    >
+    <Container>
       <div id="presentations">
         <h1>Korábbi előadások</h1>
 

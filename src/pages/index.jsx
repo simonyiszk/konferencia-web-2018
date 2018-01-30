@@ -96,6 +96,7 @@ const IndexPage = ({ data }) => (
 
               & h1 {
                 font-size: 2em;
+                text-align: left;
               }
 
               & * > :first-child {
