@@ -1,3 +1,110 @@
+- title: "2017"
+  source: https://spot.sch.bme.hu/photo/2017/20170413_simonyi_konferencia
+  thumbnail: ./2017/20170413_180147_martzi.jpg
+  images:
+    - path: ./2017/20170413_125210_martzi.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_125210_martzi.jpg
+    - path: ./2017/20170413_130241_kovi.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_130241_kovi.jpg
+    - path: ./2017/20170413_132856_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_132856_barni.jpg
+    - path: ./2017/20170413_133035_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_133035_barni.jpg
+    - path: ./2017/20170413_134833_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_134833_barni.jpg
+    - path: ./2017/20170413_142721_dori.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_142721_dori.jpg
+    - path: ./2017/20170413_144022_kovi.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_144022_kovi.jpg
+    - path: ./2017/20170413_144340_laci.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_144340_laci.jpg
+    - path: ./2017/20170413_161320_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_161320_barni.jpg
+    - path: ./2017/20170413_163032_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_163032_barni.jpg
+    - path: ./2017/20170413_165256_barni.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_165256_barni.jpg
+    - path: ./2017/20170413_171919_dori.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_171919_dori.jpg
+    - path: ./2017/20170413_175013_laci.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_175013_laci.jpg
+    - path: ./2017/20170413_180147_martzi.jpg
+      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_180147_martzi.jpg
+
+- title: "2016"
+  source: https://spot.sch.bme.hu/photo/2016/20160420_simonyi_konferencia
+  thumbnail: ./2016/0420-112417-csenge.jpg
+  images:
+    - path: ./2016/0420-105017-hoci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-105017-hoci.jpg
+    - path: ./2016/0420-111208-hoci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-111208-hoci.jpg
+    - path: ./2016/0420-112417-csenge.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/werk/2048/0420-112417-csenge.jpg
+    - path: ./2016/0420-113911-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-113911-kmarci.jpg
+    - path: ./2016/0420-115226-norbi.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-115226-norbi.jpg
+    - path: ./2016/0420-122032-csenge.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-122032-csenge.jpg
+    - path: ./2016/0420-122103-norbi.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-122103-norbi.jpg
+    - path: ./2016/0420-123258-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-123258-kmarci.jpg
+    - path: ./2016/0420-124555-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-124555-kmarci.jpg
+    - path: ./2016/0420-130040-imi.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-130040-imi.jpg
+    - path: ./2016/0420-131115-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-131115-kmarci.jpg
+    - path: ./2016/0420-134603-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-134603-kmarci.jpg
+    - path: ./2016/0420-141359-kmarci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-141359-kmarci.jpg
+    - path: ./2016/0420-142859-laci.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-142859-laci.jpg
+    - path: ./2016/0420-150028-dori.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-150028-dori.jpg
+    - path: ./2016/0420-151314-dori.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-151314-dori.jpg
+    - path: ./2016/0420-153102-juhi.jpg
+      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-153102-juhi.jpg
+
+- title: "2015"
+  source: https://spot.sch.bme.hu/photo/2015/20150421_simonyi_konferencia
+  thumbnail: ./2015/0421-152909-barni.jpg
+  images:
+    - path: ./2015/0421-131738-bazs.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-131738-bazs.jpg
+    - path: ./2015/0421-133957-picur.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-133957-picur.jpg
+    - path: ./2015/0421-135709-bazs.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-135709-bazs.jpg
+    - path: ./2015/0421-141841-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-141841-barni.jpg
+    - path: ./2015/0421-143606-laci.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-143606-laci.jpg
+    - path: ./2015/0421-144723-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-144723-barni.jpg
+    - path: ./2015/0421-145810-picur.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-145810-picur.jpg
+    - path: ./2015/0421-150558-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-150558-barni.jpg
+    - path: ./2015/0421-151237-bazs.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-151237-bazs.jpg
+    - path: ./2015/0421-152909-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-152909-barni.jpg
+    - path: ./2015/0421-163648-laci.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-163648-laci.jpg
+    - path: ./2015/0421-174957-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-174957-barni.jpg
+    - path: ./2015/0421-175335-50d.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-175335-50d.jpg
+    - path: ./2015/0421-175955-barni.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-175955-barni.jpg
+    - path: ./2015/0421-180146-50d.jpg
+      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-180146-50d.jpg
+
 - title: "2014"
   source: https://spot.sch.bme.hu/photo/2014/20140415_simonyi_konferencia
   thumbnail: ./2014/0415-170527-nedi.jpg
@@ -46,110 +153,3 @@
       source: https://spot.sch.bme.hu/photos/2014/20140415_simonyi_konferencia/rendezveny_es_werk/2048/0415-170527-nedi.jpg
     - path: ./2014/0415-174404-kaadam.jpg
       source: https://spot.sch.bme.hu/photos/2014/20140415_simonyi_konferencia/ib028/2048/0415-174404-kaadam.jpg
-
-- title: "2015"
-  source: https://spot.sch.bme.hu/photo/2015/20150421_simonyi_konferencia
-  thumbnail: ./2015/0421-152909-barni.jpg
-  images:
-    - path: ./2015/0421-131738-bazs.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-131738-bazs.jpg
-    - path: ./2015/0421-133957-picur.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-133957-picur.jpg
-    - path: ./2015/0421-135709-bazs.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-135709-bazs.jpg
-    - path: ./2015/0421-141841-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-141841-barni.jpg
-    - path: ./2015/0421-143606-laci.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-143606-laci.jpg
-    - path: ./2015/0421-144723-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-144723-barni.jpg
-    - path: ./2015/0421-145810-picur.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-145810-picur.jpg
-    - path: ./2015/0421-150558-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib026/2048/0421-150558-barni.jpg
-    - path: ./2015/0421-151237-bazs.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-151237-bazs.jpg
-    - path: ./2015/0421-152909-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-152909-barni.jpg
-    - path: ./2015/0421-163648-laci.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/rendezveny/2048/0421-163648-laci.jpg
-    - path: ./2015/0421-174957-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-174957-barni.jpg
-    - path: ./2015/0421-175335-50d.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-175335-50d.jpg
-    - path: ./2015/0421-175955-barni.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-175955-barni.jpg
-    - path: ./2015/0421-180146-50d.jpg
-      source: https://spot.sch.bme.hu/photos/2015/20150421_simonyi_konferencia/ib028/2048/0421-180146-50d.jpg
-
-- title: "2016"
-  source: https://spot.sch.bme.hu/photo/2016/20160420_simonyi_konferencia
-  thumbnail: ./2016/0420-112417-csenge.jpg
-  images:
-    - path: ./2016/0420-105017-hoci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-105017-hoci.jpg
-    - path: ./2016/0420-111208-hoci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-111208-hoci.jpg
-    - path: ./2016/0420-112417-csenge.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/werk/2048/0420-112417-csenge.jpg
-    - path: ./2016/0420-113911-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-113911-kmarci.jpg
-    - path: ./2016/0420-115226-norbi.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-115226-norbi.jpg
-    - path: ./2016/0420-122032-csenge.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-122032-csenge.jpg
-    - path: ./2016/0420-122103-norbi.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-122103-norbi.jpg
-    - path: ./2016/0420-123258-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-123258-kmarci.jpg
-    - path: ./2016/0420-124555-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-124555-kmarci.jpg
-    - path: ./2016/0420-130040-imi.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-130040-imi.jpg
-    - path: ./2016/0420-131115-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/kiallitas/2048/0420-131115-kmarci.jpg
-    - path: ./2016/0420-134603-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-134603-kmarci.jpg
-    - path: ./2016/0420-141359-kmarci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-141359-kmarci.jpg
-    - path: ./2016/0420-142859-laci.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-142859-laci.jpg
-    - path: ./2016/0420-150028-dori.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-150028-dori.jpg
-    - path: ./2016/0420-151314-dori.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib028/2048/0420-151314-dori.jpg
-    - path: ./2016/0420-153102-juhi.jpg
-      source: https://spot.sch.bme.hu/photos/2016/20160420_simonyi_konferencia/ib025/2048/0420-153102-juhi.jpg
-
-- title: "2017"
-  source: https://spot.sch.bme.hu/photo/2017/20170413_simonyi_konferencia
-  thumbnail: ./2017/20170413_180147_martzi.jpg
-  images:
-    - path: ./2017/20170413_125210_martzi.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_125210_martzi.jpg
-    - path: ./2017/20170413_130241_kovi.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_130241_kovi.jpg
-    - path: ./2017/20170413_132856_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_132856_barni.jpg
-    - path: ./2017/20170413_133035_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_133035_barni.jpg
-    - path: ./2017/20170413_134833_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_134833_barni.jpg
-    - path: ./2017/20170413_142721_dori.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_142721_dori.jpg
-    - path: ./2017/20170413_144022_kovi.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_144022_kovi.jpg
-    - path: ./2017/20170413_144340_laci.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_144340_laci.jpg
-    - path: ./2017/20170413_161320_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_161320_barni.jpg
-    - path: ./2017/20170413_163032_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_163032_barni.jpg
-    - path: ./2017/20170413_165256_barni.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_165256_barni.jpg
-    - path: ./2017/20170413_171919_dori.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_171919_dori.jpg
-    - path: ./2017/20170413_175013_laci.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_175013_laci.jpg
-    - path: ./2017/20170413_180147_martzi.jpg
-      source: https://spot.sch.bme.hu/photos/2017/20170413_simonyi_konferencia/2048/20170413_180147_martzi.jpg
