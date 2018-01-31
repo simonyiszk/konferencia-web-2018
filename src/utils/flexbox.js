@@ -7,6 +7,6 @@ export const gap = value => `
     .join(' ')};
 
   > * {
-    margin: ${value};
+    padding: ${value};
   }
 `;
