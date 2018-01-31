@@ -21,7 +21,7 @@ const GalleryPage = ({ data }) => (
       className={css`
         display: flex;
         flex-wrap: wrap;
-        ${gap('1em')};
+        ${gap('1rem')};
       `}
     >
       {data.allAlbumsYaml.edges.map(({ node }) => (
