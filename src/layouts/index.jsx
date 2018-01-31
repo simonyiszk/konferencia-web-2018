@@ -1,4 +1,5 @@
 import { css, injectGlobal } from 'emotion';
+import { withPrefix } from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -49,107 +50,119 @@ injectGlobal`
   }
 `;
 
-const IndexLayout = ({ children, data }) => (
-  <div
-    className={css`
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    `}
-  >
-    <Helmet
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-      defaultTitle={data.site.siteMetadata.title}
-    >
-      <html lang="hu" />
+const IndexLayout = ({ children, location, data }) => {
+  const isHomepage = location.pathname === withPrefix('/');
 
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-      <link
-        href="https://fonts.googleapis.com/css?family=Montserrat"
-        rel="stylesheet"
-      />
-    </Helmet>
-
-    <header>TODO</header>
-
-    <main
+  return (
+    <div
       className={css`
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       `}
     >
-      {children()}
-    </main>
+      <Helmet
+        titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+        defaultTitle={data.site.siteMetadata.title}
+      >
+        <html lang="hu" />
 
-    <footer
-      className={css`
-        background: #263238;
-        color: white;
-        text-align: center;
-        font-size: 2rem;
-        padding: 0.5em 0;
-      `}
-    >
-      <Container
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet"
+        />
+      </Helmet>
+
+      {/* TODO: A navigation bar inside a HTML `<header>` element */}
+
+      <main
         className={css`
-          a,
-          img {
-            margin: 0.5em;
-          }
+          flex: 1;
+
+          ${!isHomepage &&
+            css`
+              h1 {
+                text-align: center;
+              }
+            `};
         `}
       >
-        <img
-          src={SimonyiSzakkollegiumLogo}
-          alt="Simonyi Károly Szakkollégium"
-          className={css`
-            max-height: 2em;
-            filter: brightness(0) invert(1);
-          `}
-        />
+        {children()}
+      </main>
 
-        <div
+      <footer
+        className={css`
+          background: #263238;
+          color: white;
+          text-align: center;
+          font-size: 2rem;
+          padding: 0.5em 0;
+        `}
+      >
+        <Container
           className={css`
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            max-width: 12em;
+            a,
+            img {
+              margin: 0.5em;
+            }
           `}
         >
-          <a
-            href={data.site.siteMetadata.siteFacebookURL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookOfficial />
-          </a>
+          <img
+            src={SimonyiSzakkollegiumLogo}
+            alt="Simonyi Károly Szakkollégium"
+            className={css`
+              max-height: 2em;
+              filter: brightness(0) invert(1);
+            `}
+          />
 
-          <a
-            href={data.site.siteMetadata.siteYouTubeURL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
+            className={css`
+              display: flex;
+              justify-content: space-between;
+              margin: 0 auto;
+              max-width: 12em;
+            `}
           >
-            <FaYouTubePlay />
-          </a>
+            <a
+              href={data.site.siteMetadata.siteFacebookURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookOfficial />
+            </a>
 
-          <a
-            href={data.site.siteMetadata.siteInstagramURL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a>
+            <a
+              href={data.site.siteMetadata.siteYouTubeURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYouTubePlay />
+            </a>
 
-          <a href={data.site.siteMetadata.siteEmailURL}>
-            <FaEnvelope />
-          </a>
-        </div>
-      </Container>
-    </footer>
-  </div>
-);
+            <a
+              href={data.site.siteMetadata.siteInstagramURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+
+            <a href={data.site.siteMetadata.siteEmailURL}>
+              <FaEnvelope />
+            </a>
+          </div>
+        </Container>
+      </footer>
+    </div>
+  );
+};
 
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,
+  location: PropTypes.shape({}).isRequired,
   data: PropTypes.shape({}).isRequired,
 };
 
