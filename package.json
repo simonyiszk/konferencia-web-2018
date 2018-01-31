@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "format": "prettier-eslint --write \"**/*.{js,jsx,json,css,md}\""
+  },
+  "dependencies": {
+    "emotion": "^8.0.12",
+    "emotion-server": "^8.0.12",
+    "gatsby": "^1.9.175",
+    "gatsby-link": "^1.6.35",
+    "gatsby-plugin-emotion": "^1.1.11",
+    "gatsby-plugin-react-helmet": "^2.0.4",
+    "normalize.css": "^7.0.0",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "prettier-eslint-cli": "^4.7.0"
+  }
+}
