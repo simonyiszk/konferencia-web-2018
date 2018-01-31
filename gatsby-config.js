@@ -8,5 +8,18 @@ module.exports = {
     siteYouTubeURL: 'https://youtube.com/user/SimonyiSzakkoli',
     siteInstagramURL: 'https://instagram.com/simonyikonferencia',
   },
-  plugins: ['gatsby-plugin-emotion', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-yaml',
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+  ],
 };
