@@ -40,6 +40,7 @@ class Album extends React.Component {
         <h2
           className={css`
             text-align: center;
+            margin-top: 0;
           `}
         >
           {title}
