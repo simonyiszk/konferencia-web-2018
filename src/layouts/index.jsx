@@ -10,7 +10,7 @@ import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
 import normalizeCSS from '!raw-loader!normalize.css';
 
-import SimonyiSzakkollegiumLogo from '../../data/logos/simonyi-szakkollegium.svg';
+import SimonyiSzakkollegiumLogo from '../data/logos/simonyi-szakkollegium.svg';
 import Container from '../components/Container';
 
 // eslint-disable-next-line no-unused-expressions
