@@ -86,8 +86,8 @@ const IndexLayout = ({ children, data }) => (
         background: #263238;
         color: white;
         text-align: center;
-        font-size: 2em;
-        padding: 0.5em 0;
+        font-size: 2rem;
+        padding: 0.5rem 0;
       `}
     >
       <Container
@@ -102,7 +102,7 @@ const IndexLayout = ({ children, data }) => (
           src={SimonyiSzakkollegiumLogo}
           alt="Simonyi Károly Szakkollégium"
           className={css`
-            max-height: 2em;
+            max-height: 2rem;
             filter: brightness(0) invert(1);
           `}
         />
