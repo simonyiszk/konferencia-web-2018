@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Album from '../components/Album';
-import Container from '../components/Container';
+import PageContentContainer from '../components/PageContentContainer';
 import { gap } from '../utils/flexbox';
 import { mediaQueries } from '../utils/media-queries';
 
@@ -12,7 +12,7 @@ export const frontmatter = {
 };
 
 const GalleryPage = ({ data }) => (
-  <Container>
+  <PageContentContainer>
     <Helmet title={frontmatter.title} />
 
     <h1>{frontmatter.title}</h1>
@@ -45,7 +45,7 @@ const GalleryPage = ({ data }) => (
         />
       ))}
     </div>
-  </Container>
+  </PageContentContainer>
 );
 
 GalleryPage.propTypes = {

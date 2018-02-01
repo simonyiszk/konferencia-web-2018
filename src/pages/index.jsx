@@ -4,6 +4,7 @@ import React from 'react';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
+import PageContentContainer from '../components/PageContentContainer';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import { gap } from '../utils/flexbox';
 import { mediaQueries } from '../utils/media-queries';
@@ -108,13 +109,7 @@ const IndexPage = ({ data }) => (
       </Container>
     </Hero>
 
-    <Container
-      className={css`
-        h1 {
-          text-align: center;
-        }
-      `}
-    >
+    <PageContentContainer>
       <h1>A Konferenciáról</h1>
 
       <div
@@ -145,7 +140,7 @@ const IndexPage = ({ data }) => (
           />
         ))}
       </div>
-    </Container>
+    </PageContentContainer>
   </div>
 );
 
