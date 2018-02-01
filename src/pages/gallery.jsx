@@ -22,6 +22,10 @@ const GalleryPage = ({ data }) => (
         display: flex;
         flex-wrap: wrap;
         ${gap('1rem')};
+
+        ${mediaQueries.large(css`
+          ${gap('1rem 3rem')};
+        `)};
       `}
     >
       {data.allAlbumsYaml.edges.map(({ node }) => (
