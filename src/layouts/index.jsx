@@ -3,16 +3,11 @@ import Link, { withPrefix } from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import FaEnvelope from 'react-icons/lib/fa/envelope';
-import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
-import FaInstagram from 'react-icons/lib/fa/instagram';
-import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
 import normalizeCSS from '!raw-loader!normalize.css';
 
-import Container from '../components/Container';
-import SimonyiSzakkollegiumLogoSrc from '../data/logos/simonyi-szakkollegium.svg';
+import Footer from '../components/Footer';
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -111,70 +106,20 @@ const IndexLayout = ({ children, location, data }) => {
         {children()}
       </main>
 
-      <footer
+      <Footer
+        siteEmailURL={data.site.siteMetadata.siteEmailURL}
+        siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
+        siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
+        siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
         className={css`
           background: #263238;
           color: white;
-          text-align: center;
-          font-size: 2rem;
-          padding: 0.5em 0;
+
+          img {
+            filter: brightness(0) invert(1);
+          }
         `}
-      >
-        <Container
-          className={css`
-            a,
-            img {
-              margin: 0.5em;
-            }
-          `}
-        >
-          <img
-            src={SimonyiSzakkollegiumLogoSrc}
-            alt="Simonyi Károly Szakkollégium"
-            className={css`
-              max-height: 2em;
-              filter: brightness(0) invert(1);
-            `}
-          />
-
-          <div
-            className={css`
-              display: flex;
-              justify-content: space-between;
-              margin: 0 auto;
-              max-width: 12em;
-            `}
-          >
-            <a
-              href={data.site.siteMetadata.siteFacebookURL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookOfficial />
-            </a>
-
-            <a
-              href={data.site.siteMetadata.siteYouTubeURL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYouTubePlay />
-            </a>
-
-            <a
-              href={data.site.siteMetadata.siteInstagramURL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-
-            <a href={data.site.siteMetadata.siteEmailURL}>
-              <FaEnvelope />
-            </a>
-          </div>
-        </Container>
-      </footer>
+      />
     </div>
   );
 };
