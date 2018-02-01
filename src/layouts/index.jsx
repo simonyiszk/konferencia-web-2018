@@ -1,5 +1,5 @@
 import { css, injectGlobal } from 'emotion';
-import { withPrefix } from 'gatsby-link';
+import Link, { withPrefix } from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -75,7 +75,26 @@ const IndexLayout = ({ children, location, data }) => {
         />
       </Helmet>
 
-      {/* TODO: A navigation bar inside a HTML `<header>` element */}
+      {/* TODO: A proper navigation bar */}
+      <header
+        className={css`
+          position: absolute;
+        `}
+      >
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Kezdőlap</Link>
+            </li>
+            <li>
+              <Link to="/former-presentations">Korábbi előadások</Link>
+            </li>
+            <li>
+              <Link to="/gallery">Galéria</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
       <main
         className={css`
