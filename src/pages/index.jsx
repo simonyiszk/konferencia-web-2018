@@ -28,16 +28,21 @@ const IndexPage = ({ data }) => (
           ${mediaQueries.large(css`
             flex-wrap: nowrap;
             flex-direction: row-reverse;
+            font-size: 1.5rem;
             text-align: left;
+          `)};
+
+          ${mediaQueries.xLarge(css`
+            font-size: 1.75rem;
           `)};
         `}
       >
         <div
           className={css`
-            flex: 0 0 100%;
+            flex: 100%;
 
             ${mediaQueries.large(css`
-              flex-basis: 30%;
+              flex: none;
             `)};
           `}
         >
@@ -45,14 +50,11 @@ const IndexPage = ({ data }) => (
             src={SimonyiKonferenciaIconSrc}
             alt=""
             className={css`
-              width: 50%;
-
-              ${mediaQueries.small(css`
-                width: 30%;
-              `)};
+              height: 100vh;
+              max-height: 8em;
 
               ${mediaQueries.large(css`
-                width: 100%;
+                max-height: 12em;
               `)};
             `}
           />
@@ -78,15 +80,9 @@ const IndexPage = ({ data }) => (
             }
 
             ${mediaQueries.large(css`
-              font-size: 1.5rem;
-
               h1 {
                 font-size: 2em;
               }
-            `)};
-
-            ${mediaQueries.xLarge(css`
-              font-size: 1.75rem;
             `)};
           `}
         >
