@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'XV. Simonyi Konferencia',
+    eventDate: '2018-04-18',
+    eventVenue: 'BME I épület',
     siteAddressURL: 'https://goo.gl/maps/HrUqACf9FNF2',
     siteAddressPretty: 'Budapest, Magyar tudósok körútja 2, 1117',
     siteEmailURL: 'mailto:konferencia@simonyi.bme.hu',

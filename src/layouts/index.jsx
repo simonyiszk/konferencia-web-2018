@@ -12,7 +12,7 @@ import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import normalizeCSS from '!raw-loader!normalize.css';
 
 import Container from '../components/Container';
-import SimonyiSzakkollegiumLogo from '../data/logos/simonyi-szakkollegium.svg';
+import SimonyiSzakkollegiumLogoSrc from '../data/logos/simonyi-szakkollegium.svg';
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -110,7 +110,7 @@ const IndexLayout = ({ children, location, data }) => {
           `}
         >
           <img
-            src={SimonyiSzakkollegiumLogo}
+            src={SimonyiSzakkollegiumLogoSrc}
             alt="Simonyi Károly Szakkollégium"
             className={css`
               max-height: 2em;
