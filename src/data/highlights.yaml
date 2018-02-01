@@ -1,15 +1,19 @@
 - title: Hallgatóktól hallgatóknak
   symbol: 🎓
+  symbolLabel: talár sapka
   text: A Simonyi Konferencia Magyarország legnagyobb, kizárólag egyetemi hallgatók által rendezett éves szakmai rendezvénye. A rendezvény célja, hogy az érdeklődők számára bemutassa a villamosmérnöki és informatikai szakma legújabb fejlesztéseit és kihívásait olyan előadások keretében, amelyek szakterülettől függetlenül mindenki számára könnyen érthetőek és élvezhetőek.
 
 - title: Simonyi Károly Szakkollégium
   symbol: 📚
+  symbolLabel: egy halom könyv
   text: A Simonyi Konferencia szervezője a Budapesti Műszaki és Gazdaságtudományi Egyetem Villamosmérnöki és Informatikai Karán működő Simonyi Károly Szakkollégium. Célunk, hogy a kar hallgatói számára az egyetemi tanulmányokon felül további szakmai tudást adjunk át, mindezt gyakorlati keretek között, különböző projektmunkák által.
 
 - title: Naprakész témák
   symbol: 🚀
+  symbolLabel: rakéta
   text: A program összeállítása során elsődleges célunk, hogy olyan témákat hozzunk el a látogatóknak, amelyek aktuálisak és érdekesek. Külföldi szervezetek bevonásával, mint a NASA vagy ESA, a legújabb felfedezésekről és technológiákról első kézből értesülhetünk. Emellett a Konferencia lehetőséget ad szakkollégiumi projetjeink bemutatására is.
 
 - title: Támogatókkal együtt
   symbol: 💎
+  symbolLabel: drágakő
   text: A XV. Simonyi Konferenciát a korábbi rendezvényekhez hasonlóan támogatóink segítségével valósíthatjuk meg, amelyek között évről évre Magyarország legnagyobb vállalatai mellett egyre több kisebb céget is köszönthetünk. Szponzorainkkal előadásaikon túl a Konferencia területén található kiállításon is találkozhatnak az érdeklődők.

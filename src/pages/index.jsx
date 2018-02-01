@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
+import Highlight from '../components/Highlight';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
+import { gap } from '../utils/flexbox';
 import { mediaQueries } from '../utils/media-queries';
 
 const IndexPage = ({ data }) => (
@@ -105,6 +107,45 @@ const IndexPage = ({ data }) => (
         </div>
       </Container>
     </Hero>
+
+    <Container
+      className={css`
+        h1 {
+          text-align: center;
+        }
+      `}
+    >
+      <h1>A Konferenciáról</h1>
+
+      <div
+        className={css`
+          display: flex;
+          flex-wrap: wrap;
+          ${gap('0.6225rem')};
+
+          ${mediaQueries.large(css`
+            ${gap('1rem 3rem')};
+          `)};
+        `}
+      >
+        {data.allHighlightsYaml.edges.map(({ node }) => (
+          <Highlight
+            key={node.title}
+            title={node.title}
+            symbol={node.symbol}
+            symbolLabel={node.symbolLabel}
+            text={node.text}
+            className={css`
+              flex: 100%;
+
+              ${mediaQueries.large(css`
+                flex: 50%;
+              `)};
+            `}
+          />
+        ))}
+      </div>
+    </Container>
   </div>
 );
 
@@ -122,6 +163,17 @@ export const query = graphql`
         eventDate(formatString: "LL", locale: "hu")
         eventVenue
         siteAddressPretty
+      }
+    }
+
+    allHighlightsYaml {
+      edges {
+        node {
+          title
+          symbol
+          symbolLabel
+          text
+        }
       }
     }
   }
