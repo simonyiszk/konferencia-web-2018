@@ -2,15 +2,14 @@ import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from '../components/Container';
+import Hero from '../components/Hero';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import { mediaQueries } from '../utils/media-queries';
 
 const IndexPage = ({ data }) => (
   <div>
-    <div
+    <Hero
       className={css`
-        display: flex;
-        align-items: center;
         min-height: 100vh;
         padding: 4rem 0;
         background: linear-gradient(227.5deg, #00e676, #009688);
@@ -28,12 +27,7 @@ const IndexPage = ({ data }) => (
           ${mediaQueries.large(css`
             flex-wrap: nowrap;
             flex-direction: row-reverse;
-            font-size: 1.5rem;
             text-align: left;
-          `)};
-
-          ${mediaQueries.xLarge(css`
-            font-size: 1.75rem;
           `)};
         `}
       >
@@ -62,28 +56,13 @@ const IndexPage = ({ data }) => (
 
         <div
           className={css`
-            h1 {
-              font-size: 1.5em;
-            }
-
             h2 {
               display: inline;
-              font-size: 1em;
 
               ${mediaQueries.large(css`
                 display: block;
               `)};
             }
-
-            h3 {
-              font-size: 0.67em;
-            }
-
-            ${mediaQueries.large(css`
-              h1 {
-                font-size: 2em;
-              }
-            `)};
           `}
         >
           <h1
@@ -125,7 +104,7 @@ const IndexPage = ({ data }) => (
           </h3>
         </div>
       </Container>
-    </div>
+    </Hero>
   </div>
 );
 
