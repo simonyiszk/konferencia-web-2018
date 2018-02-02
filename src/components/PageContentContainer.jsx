@@ -1,30 +1,10 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from './Container';
+import styles from './PageContentContainer.module.scss';
 
 const PageContentContainer = ({ children, className, ...props }) => (
-  <Container
-    className={css`
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-
-      h1 {
-        text-align: center;
-      }
-
-      > :first-child {
-        margin-top: 0;
-      }
-
-      > :last-child {
-        margin-bottom: 0;
-      }
-
-      ${className};
-    `}
-    {...props}
-  >
+  <Container className={`${styles.root} ${className}`} {...props}>
     {children}
   </Container>
 );

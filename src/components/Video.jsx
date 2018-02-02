@@ -1,7 +1,7 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import AspectRatioBox from './AspectRatioBox';
+import styles from './Video.module.scss';
 
 const transparentPixelSrc =
   'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
@@ -11,23 +11,16 @@ const Video = ({
 }) => (
   <AspectRatioBox aspectRatio={aspectRatio}>
     <div
-      className={css`
-        width: 100%;
-        height: 100%;
-
-        ${poster != null &&
-          css`
-            background: url(${poster}) center / contain no-repeat;
-          `};
-      `}
+      className={styles.fillParent}
+      style={
+        poster && {
+          background: `url(${poster}) center / contain no-repeat`,
+        }
+      }
     >
       <video
-        {...poster != null && { poster: transparentPixelSrc }}
-        className={css`
-          width: 100%;
-          height: 100%;
-          ${className};
-        `}
+        {...poster && { poster: transparentPixelSrc }}
+        className={`${styles.fillParent} ${className}`}
         {...props}
       />
     </div>
@@ -41,7 +34,7 @@ Video.propTypes = {
 };
 
 Video.defaultProps = {
-  poster: null,
+  poster: '',
   className: '',
 };
 

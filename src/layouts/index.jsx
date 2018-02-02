@@ -1,58 +1,13 @@
-import { css, injectGlobal } from 'emotion';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
-import normalizeCSS from '!raw-loader!normalize.css';
-
 import Footer from '../components/Footer';
-
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  ${normalizeCSS};
-
-  body {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  a {
-    color: #0288d1;
-    text-decoration: none;
-
-    :hover {
-      text-decoration: underline;
-    }
-
-    header &,
-    footer & {
-      color: inherit;
-    }
-  }
-
-  p {
-    line-height: 1.5;
-  }
-`;
+import styles from './index.module.scss';
+import './index.scss';
 
 const IndexLayout = ({ children, data }) => (
-  <div
-    className={css`
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    `}
-  >
+  <div className={styles.root}>
     <Helmet
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       defaultTitle={data.site.siteMetadata.title}
@@ -68,11 +23,7 @@ const IndexLayout = ({ children, data }) => (
     </Helmet>
 
     {/* TODO: A proper navigation bar */}
-    <header
-      className={css`
-        position: absolute;
-      `}
-    >
+    <header className={styles.header}>
       <nav>
         <ul>
           <li>
@@ -88,27 +39,14 @@ const IndexLayout = ({ children, data }) => (
       </nav>
     </header>
 
-    <main
-      className={css`
-        flex: 1;
-      `}
-    >
-      {children()}
-    </main>
+    <main className={styles.main}>{children()}</main>
 
     <Footer
       siteEmailURL={data.site.siteMetadata.siteEmailURL}
       siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
       siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
       siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
-      className={css`
-        background: #263238;
-        color: white;
-
-        img {
-          filter: brightness(0) invert(1);
-        }
-      `}
+      className={styles.footer}
     />
   </div>
 );

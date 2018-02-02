@@ -1,0 +1,20 @@
+@import '../utils/breakpoints';
+@import '../utils/flexbox';
+
+.albumsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  @include gap(1rem);
+
+  @include media-breakpoint-up(lg) {
+    @include gap(1rem 3rem);
+  }
+}
+
+.album {
+  flex: 100%;
+
+  @include media-breakpoint-up(lg) {
+    flex: 50%;
+  }
+}

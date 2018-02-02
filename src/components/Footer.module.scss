@@ -1,0 +1,21 @@
+.root {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0.5em 0;
+
+  a,
+  img {
+    margin: 0.5em;
+  }
+}
+
+.logo {
+  max-height: 2em;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 12em;
+}

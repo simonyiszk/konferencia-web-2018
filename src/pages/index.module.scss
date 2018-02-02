@@ -1,0 +1,96 @@
+@import '../utils/breakpoints';
+@import '../utils/flexbox';
+
+.hero {
+  min-height: 100vh;
+  padding: 4rem 0;
+  background: linear-gradient(227.5deg, #00e676, #009688);
+  color: white;
+}
+
+.heroContentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+}
+
+.iconContainer {
+  flex: 100%;
+
+  @include media-breakpoint-up(lg) {
+    flex: none;
+  }
+}
+
+.icon {
+  height: 100vh;
+  max-height: 8em;
+
+  @include media-breakpoint-up(lg) {
+    max-height: 12em;
+  }
+}
+
+.title {
+  @include media-breakpoint-up(lg) {
+    word-spacing: 100vw;
+  }
+}
+
+%h2 {
+  display: inline;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.eventDate {
+  @extend %h2;
+}
+
+.eventVenue {
+  @extend %h2;
+
+  &::before {
+    content: ' – ';
+
+    @include media-breakpoint-up(lg) {
+      content: '';
+    }
+  }
+}
+
+.eventAddress {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.highlightsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  @include gap(0.6225rem);
+
+  @include media-breakpoint-up(lg) {
+    @include gap(1rem 3rem);
+  }
+}
+
+.highlight {
+  flex: 100%;
+
+  @include media-breakpoint-up(lg) {
+    flex: 50%;
+  }
+}

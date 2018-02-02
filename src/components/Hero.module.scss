@@ -1,0 +1,30 @@
+@import '../utils/breakpoints';
+
+.root {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: 1.5em;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2em;
+    }
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 0.67em;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.75rem;
+  }
+}

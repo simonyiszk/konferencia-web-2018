@@ -1,0 +1,16 @@
+.root {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

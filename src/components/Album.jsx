@@ -1,7 +1,7 @@
-import { css } from 'emotion';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './Album.module.scss';
 import Lightbox from './Lightbox';
 
 class Album extends React.Component {
@@ -37,14 +37,7 @@ class Album extends React.Component {
 
     return (
       <div {...props}>
-        <h2
-          className={css`
-            text-align: center;
-            margin-top: 0;
-          `}
-        >
-          {title}
-        </h2>
+        <h2 className={styles.title}>{title}</h2>
 
         <a
           href={source}

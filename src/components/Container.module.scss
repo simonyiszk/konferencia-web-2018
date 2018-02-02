@@ -1,0 +1,13 @@
+@import '../utils/breakpoints';
+
+.root {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @each $key in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($key) {
+      max-width: map-get($container-max-widths, $key);
+    }
+  }
+}

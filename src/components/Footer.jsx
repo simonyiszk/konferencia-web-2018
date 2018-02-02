@@ -1,4 +1,3 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaEnvelope from 'react-icons/lib/fa/envelope';
@@ -7,6 +6,7 @@ import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
 import SimonyiSzakkollegiumLogoSrc from '../data/logos/simonyi-szakkollegium.svg';
 import Container from './Container';
+import styles from './Footer.module.scss';
 
 const Footer = ({
   siteEmailURL,
@@ -16,39 +16,15 @@ const Footer = ({
   className,
   ...props
 }) => (
-  <footer
-    className={css`
-      text-align: center;
-      font-size: 2rem;
-      padding: 0.5em 0;
-      ${className};
-    `}
-    {...props}
-  >
-    <Container
-      className={css`
-        a,
-        img {
-          margin: 0.5em;
-        }
-      `}
-    >
+  <footer className={`${styles.root} ${className}`} {...props}>
+    <Container>
       <img
         src={SimonyiSzakkollegiumLogoSrc}
         alt="Simonyi Károly Szakkollégium"
-        className={css`
-          max-height: 2em;
-        `}
+        className={styles.logo}
       />
 
-      <div
-        className={css`
-          display: flex;
-          justify-content: space-between;
-          margin: 0 auto;
-          max-width: 12em;
-        `}
-      >
+      <div className={styles.iconsContainer}>
         <a href={siteFacebookURL} target="_blank" rel="noopener noreferrer">
           <FaFacebookOfficial />
         </a>

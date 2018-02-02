@@ -1,8 +1,6 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { gap } from '../utils/flexbox';
-import { mediaQueries } from '../utils/media-queries';
+import styles from './PresentationVideo.module.scss';
 import Video from './Video';
 
 const PresentationVideo = ({
@@ -14,39 +12,9 @@ const PresentationVideo = ({
   className,
   ...props
 }) => (
-  <article
-    {...props}
-    className={css`
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-
-      > * {
-        flex: 100%;
-      }
-
-      ${mediaQueries.large(css`
-        flex-wrap: nowrap;
-        ${gap('0 3rem')};
-
-        > * {
-          flex: 50%;
-        }
-
-        :nth-of-type(odd) {
-          flex-direction: row-reverse;
-        }
-      `)};
-    `}
-  >
+  <article className={`${styles.root} ${className}`} {...props}>
     <div>
-      <h2
-        className={css`
-          margin-top: 0;
-        `}
-      >
-        {title}
-      </h2>
+      <h2 className={styles.title}>{title}</h2>
 
       <p>{abstract}</p>
     </div>

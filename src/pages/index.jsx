@@ -1,4 +1,3 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from '../components/Container';
@@ -6,103 +5,28 @@ import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContentContainer from '../components/PageContentContainer';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
-import { gap } from '../utils/flexbox';
-import { mediaQueries } from '../utils/media-queries';
+import styles from './index.module.scss';
 
 const IndexPage = ({ data }) => (
   <div>
-    <Hero
-      className={css`
-        min-height: 100vh;
-        padding: 4rem 0;
-        background: linear-gradient(227.5deg, #00e676, #009688);
-        color: white;
-      `}
-    >
-      <Container
-        className={css`
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-
-          ${mediaQueries.large(css`
-            flex-wrap: nowrap;
-            flex-direction: row-reverse;
-            text-align: left;
-          `)};
-        `}
-      >
-        <div
-          className={css`
-            flex: 100%;
-
-            ${mediaQueries.large(css`
-              flex: none;
-            `)};
-          `}
-        >
-          <img
-            src={SimonyiKonferenciaIconSrc}
-            alt=""
-            className={css`
-              height: 100vh;
-              max-height: 8em;
-
-              ${mediaQueries.large(css`
-                max-height: 12em;
-              `)};
-            `}
-          />
+    <Hero className={styles.hero}>
+      <Container className={styles.heroContentContainer}>
+        <div className={styles.iconContainer}>
+          <img src={SimonyiKonferenciaIconSrc} alt="" className={styles.icon} />
         </div>
 
-        <div
-          className={css`
-            h2 {
-              display: inline;
+        <div>
+          <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
-              ${mediaQueries.large(css`
-                display: block;
-              `)};
-            }
-          `}
-        >
-          <h1
-            className={css`
-              ${mediaQueries.large(css`
-                word-spacing: 100vw;
-              `)};
-            `}
-          >
-            {data.site.siteMetadata.title}
-          </h1>
+          <h2 className={styles.eventDate}>
+            {data.site.siteMetadata.eventDate}
+          </h2>
 
-          <h2>{data.site.siteMetadata.eventDate}</h2>
-
-          <h2
-            className={css`
-              ::before {
-                content: ' – ';
-
-                ${mediaQueries.large(css`
-                  content: '';
-                `)};
-              }
-            `}
-          >
+          <h2 className={styles.eventVenue}>
             {data.site.siteMetadata.eventVenue}
           </h2>
 
-          <h3
-            className={css`
-              display: none;
-
-              ${mediaQueries.large(css`
-                display: block;
-              `)};
-            `}
-          >
+          <h3 className={styles.eventAddress}>
             {data.site.siteMetadata.siteAddressPretty}
           </h3>
         </div>
@@ -112,17 +36,7 @@ const IndexPage = ({ data }) => (
     <PageContentContainer>
       <h1>A Konferenciáról</h1>
 
-      <div
-        className={css`
-          display: flex;
-          flex-wrap: wrap;
-          ${gap('0.6225rem')};
-
-          ${mediaQueries.large(css`
-            ${gap('1rem 3rem')};
-          `)};
-        `}
-      >
+      <div className={styles.highlightsContainer}>
         {data.allHighlightsYaml.edges.map(({ node }) => (
           <Highlight
             key={node.title}
@@ -130,13 +44,7 @@ const IndexPage = ({ data }) => (
             symbol={node.symbol}
             symbolLabel={node.symbolLabel}
             text={node.text}
-            className={css`
-              flex: 100%;
-
-              ${mediaQueries.large(css`
-                flex: 50%;
-              `)};
-            `}
+            className={styles.highlight}
           />
         ))}
       </div>

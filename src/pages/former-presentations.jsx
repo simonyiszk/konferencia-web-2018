@@ -1,11 +1,9 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import PageContentContainer from '../components/PageContentContainer';
 import PresentationVideo from '../components/PresentationVideo';
-import { gap } from '../utils/flexbox';
-import { mediaQueries } from '../utils/media-queries';
+import styles from './former-presentations.module.scss';
 
 export const frontmatter = {
   title: 'Korábbi előadások',
@@ -17,15 +15,7 @@ const FormerPresentationsPage = ({ data }) => (
 
     <h1>{frontmatter.title}</h1>
 
-    <div
-      className={css`
-        ${gap('1rem')};
-
-        ${mediaQueries.large(css`
-          ${gap('2rem 1rem')};
-        `)};
-      `}
-    >
+    <div className={styles.presentationVideosContainer}>
       {data.allVideosYaml.edges.map(({ node }) => (
         <PresentationVideo
           key={node.source}

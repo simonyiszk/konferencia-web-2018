@@ -1,31 +1,23 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './AspectRatioBox.module.scss';
 
 const AspectRatioBox = ({
-  aspectRatio, children, className, ...props
+  aspectRatio,
+  children,
+  className,
+  style,
+  ...props
 }) => (
   <div
-    className={css`
-      position: relative;
-      overflow: hidden;
-      height: 0;
-      padding-top: ${100 / aspectRatio}%;
-      ${className};
-    `}
+    className={`${styles.root} ${className}`}
+    style={{
+      paddingTop: `${100 / aspectRatio}%`,
+      ...style,
+    }}
     {...props}
   >
-    <div
-      className={css`
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      `}
-    >
-      {children}
-    </div>
+    <div className={styles.inner}>{children}</div>
   </div>
 );
 
@@ -33,10 +25,12 @@ AspectRatioBox.propTypes = {
   aspectRatio: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  style: PropTypes.shape({}),
 };
 
 AspectRatioBox.defaultProps = {
   className: '',
+  style: {},
 };
 
 export default AspectRatioBox;

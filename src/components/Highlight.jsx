@@ -1,29 +1,19 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './Highlight.module.scss';
 
 const Highlight = ({
   title, symbol, symbolLabel, text, ...props
 }) => (
   <section {...props}>
-    <h2
-      className={css`
-        margin-top: 0;
-      `}
-    >
+    <h2 className={styles.title}>
       <span role="img" aria-label={symbolLabel}>
         {symbol}
       </span>{' '}
       {title}
     </h2>
 
-    <p
-      className={css`
-        margin-bottom: 0;
-      `}
-    >
-      {text}
-    </p>
+    <p className={styles.text}>{text}</p>
   </section>
 );
 

@@ -1,11 +1,9 @@
-import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Album from '../components/Album';
 import PageContentContainer from '../components/PageContentContainer';
-import { gap } from '../utils/flexbox';
-import { mediaQueries } from '../utils/media-queries';
+import styles from './gallery.module.scss';
 
 export const frontmatter = {
   title: 'Galéria',
@@ -17,17 +15,7 @@ const GalleryPage = ({ data }) => (
 
     <h1>{frontmatter.title}</h1>
 
-    <div
-      className={css`
-        display: flex;
-        flex-wrap: wrap;
-        ${gap('1rem')};
-
-        ${mediaQueries.large(css`
-          ${gap('1rem 3rem')};
-        `)};
-      `}
-    >
+    <div className={styles.albumsContainer}>
       {data.allAlbumsYaml.edges.map(({ node }) => (
         <Album
           key={node.source}
@@ -35,13 +23,7 @@ const GalleryPage = ({ data }) => (
           source={node.source}
           thumbnail={node.thumbnail.childImageSharp.sizes}
           images={node.images.map(image => image.path.childImageSharp.sizes)}
-          className={css`
-            flex: 100%;
-
-            ${mediaQueries.large(css`
-              flex: 50%;
-            `)};
-          `}
+          className={styles.album}
         />
       ))}
     </div>

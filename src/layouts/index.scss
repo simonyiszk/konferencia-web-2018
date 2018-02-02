@@ -1,0 +1,32 @@
+@import '~normalize.css';
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #0288d1;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  header &,
+  footer & {
+    color: inherit;
+  }
+}
+
+p {
+  line-height: 1.5;
+}

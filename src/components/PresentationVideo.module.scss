@@ -1,0 +1,29 @@
+@import '../utils/breakpoints';
+@import '../utils/flexbox';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > * {
+    flex: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+    @include gap(0 3rem);
+
+    > * {
+      flex: 50%;
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.title {
+  margin-top: 0;
+}

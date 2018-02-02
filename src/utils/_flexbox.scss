@@ -1,0 +1,9 @@
+@import './list';
+
+@mixin gap($list) {
+  margin: negate($list);
+
+  > * {
+    padding: $list;
+  }
+}

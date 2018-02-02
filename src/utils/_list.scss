@@ -1,0 +1,7 @@
+@function negate($list) {
+  @for $i from 1 through length($list) {
+    $list: set-nth($list, $i, -#{nth($list, $i)});
+  }
+
+  @return $list;
+}
