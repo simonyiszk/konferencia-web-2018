@@ -11,13 +11,12 @@
 .heroContentContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
 
   @include media-breakpoint-up(lg) {
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
+    flex-flow: row-reverse nowrap;
     text-align: left;
   }
 }
@@ -80,6 +79,7 @@
 .highlightsContainer {
   display: flex;
   flex-wrap: wrap;
+
   @include gap(0.6225rem);
 
   @include media-breakpoint-up(lg) {

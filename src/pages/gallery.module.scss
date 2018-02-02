@@ -4,6 +4,7 @@
 .albumsContainer {
   display: flex;
   flex-wrap: wrap;
+
   @include gap(1rem);
 
   @include media-breakpoint-up(lg) {

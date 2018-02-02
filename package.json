@@ -3,7 +3,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "lint": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
+    "lint:js": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint": "yarn lint:js && yarn lint:css",
     "format": "prettier-eslint --write \"**/*.{js,jsx,json,scss,md}\""
   },
   "dependencies": {
@@ -28,6 +30,10 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "prettier-eslint-cli": "^4.7.0"
+    "prettier-eslint-cli": "^4.7.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-idiomatic-order": "^5.0.0",
+    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-scss": "^2.2.0"
   }
 }

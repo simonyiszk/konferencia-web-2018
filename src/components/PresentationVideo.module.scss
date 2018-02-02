@@ -12,6 +12,7 @@
 
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
+
     @include gap(0 3rem);
 
     > * {

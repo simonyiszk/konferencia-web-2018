@@ -3,8 +3,8 @@
 body {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -17,13 +17,13 @@ a {
   color: #0288d1;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
   header &,
   footer & {
     color: inherit;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 

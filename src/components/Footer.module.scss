@@ -1,7 +1,7 @@
 .root {
-  text-align: center;
-  font-size: 2rem;
   padding: 0.5em 0;
+  font-size: 2rem;
+  text-align: center;
 
   a,
   img {
@@ -15,7 +15,7 @@
 
 .iconsContainer {
   display: flex;
+  max-width: 12em;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 12em;
 }
