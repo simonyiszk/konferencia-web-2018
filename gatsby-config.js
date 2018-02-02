@@ -20,6 +20,13 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/data/icons/favicon.png',
+        icons: {},
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
