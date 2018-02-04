@@ -59,6 +59,8 @@
 .eventVenue {
   @extend %h2;
 
+  margin-bottom: 0;
+
   &::before {
     content: ' – ';
 
@@ -70,6 +72,7 @@
 
 .eventAddress {
   display: none;
+  margin-top: 0.5em;
 
   @include media-breakpoint-up(lg) {
     display: block;
