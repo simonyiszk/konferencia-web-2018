@@ -25,19 +25,19 @@ const Footer = ({
       />
 
       <div className={styles.iconsContainer}>
-        <a href={siteFacebookURL} target="_blank" rel="noopener noreferrer">
+        <a href={siteFacebookURL} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <FaFacebookOfficial />
         </a>
 
-        <a href={siteYouTubeURL} target="_blank" rel="noopener noreferrer">
+        <a href={siteYouTubeURL} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
           <FaYouTubePlay />
         </a>
 
-        <a href={siteInstagramURL} target="_blank" rel="noopener noreferrer">
+        <a href={siteInstagramURL} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <FaInstagram />
         </a>
 
-        <a href={siteEmailURL}>
+        <a href={siteEmailURL} aria-label="E-mail">
           <FaEnvelope />
         </a>
       </div>
