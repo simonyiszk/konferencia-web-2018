@@ -18,17 +18,29 @@ const IndexPage = ({ data }) => (
         <div>
           <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
-          <h2 className={styles.eventDate}>
-            {data.site.siteMetadata.eventDate}
-          </h2>
+          <div>
+            <h2 className={styles.eventDate}>
+              {data.site.siteMetadata.eventDate}
+            </h2>
 
-          <h2 className={styles.eventVenue}>
-            {data.site.siteMetadata.eventVenue}
-          </h2>
+            <h2 className={styles.eventVenue}>
+              {data.site.siteMetadata.eventVenue}
+            </h2>
 
-          <h3 className={styles.eventAddress}>
-            {data.site.siteMetadata.siteAddressPretty}
-          </h3>
+            <h3 className={styles.eventAddress}>
+              {data.site.siteMetadata.siteAddressPretty}
+            </h3>
+          </div>
+
+          <a
+            href={data.site.siteMetadata.siteEventbriteURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="button"
+            className={styles.registrationButton}
+          >
+            Regisztráció
+          </a>
         </div>
       </Container>
     </Hero>
@@ -66,6 +78,7 @@ export const query = graphql`
         eventDate(formatString: "LL", locale: "hu")
         eventVenue
         siteAddressPretty
+        siteEventbriteURL
       }
     }
 
