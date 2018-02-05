@@ -41,6 +41,7 @@
 
 .title {
   @include media-breakpoint-up(lg) {
+    margin-top: 0;
     word-spacing: 100vw;
   }
 }
