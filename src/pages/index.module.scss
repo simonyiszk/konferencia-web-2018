@@ -1,6 +1,7 @@
 @import '../utils/breakpoints';
 @import '../utils/button';
 @import '../utils/flexbox';
+@import '../utils/item-grid';
 
 .hero {
   min-height: 100vh;
@@ -89,20 +90,5 @@
 }
 
 .highlightsContainer {
-  display: flex;
-  flex-wrap: wrap;
-
-  @include gap(0.6225rem);
-
-  @include media-breakpoint-up(lg) {
-    @include gap(1rem 3rem);
-  }
-}
-
-.highlight {
-  flex: 100%;
-
-  @include media-breakpoint-up(lg) {
-    flex: 50%;
-  }
+  @include item-grid;
 }

@@ -1,0 +1,21 @@
+@import './breakpoints';
+@import './flexbox';
+
+@mixin item-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include gap(0.6225rem);
+
+  @include media-breakpoint-up(lg) {
+    @include gap(1rem 3rem);
+  }
+
+  > * {
+    flex: 100%;
+
+    @include media-breakpoint-up(lg) {
+      flex: 50%;
+    }
+  }
+}
