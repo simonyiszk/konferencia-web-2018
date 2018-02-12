@@ -4,6 +4,7 @@ import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContentContainer from '../components/PageContentContainer';
+import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 
@@ -60,6 +61,21 @@ const IndexPage = ({ data }) => (
           />
         ))}
       </div>
+
+      <h1>Előadások</h1>
+
+      <div className={styles.presentationsContainer}>
+        {data.allPresentationsYaml.edges.map(({ node }) => (
+          <Presentation
+            key={node.title}
+            title={node.title}
+            presenterName={node.presenterName}
+            presenterRole={node.presenterRole}
+            presenterImage={node.presenterImage.childImageSharp.resolutions}
+            abstract={node.abstract}
+          />
+        ))}
+      </div>
     </PageContentContainer>
   </div>
 );
@@ -89,6 +105,24 @@ export const query = graphql`
           symbol
           symbolLabel
           text
+        }
+      }
+    }
+
+    allPresentationsYaml {
+      edges {
+        node {
+          title
+          presenterName
+          presenterRole
+          presenterImage {
+            childImageSharp {
+              resolutions(width: 192, height: 192, cropFocus: CENTER) {
+                ...GatsbyImageSharpResolutions
+              }
+            }
+          }
+          abstract
         }
       }
     }

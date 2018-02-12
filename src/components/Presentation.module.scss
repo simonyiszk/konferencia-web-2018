@@ -1,0 +1,37 @@
+@import '../utils/breakpoints';
+@import '../utils/flexbox';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+
+    @include gap(0 2rem);
+  }
+}
+
+.presenterImageContainer {
+  flex: 100%;
+  text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    flex: initial;
+  }
+}
+
+.presenterImage {
+  clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%);
+}
+
+@include media-breakpoint-up(lg) {
+  .title {
+    margin-top: 0;
+  }
+
+  .abstract {
+    margin-bottom: 0;
+  }
+}
