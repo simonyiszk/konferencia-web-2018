@@ -1,10 +1,19 @@
 @import '../utils/breakpoints';
 @import '../utils/flexbox';
+@import '../utils/item-grid';
 
 .presentationVideosContainer {
   @include gap(1rem);
 
+  margin-bottom: 1rem;
+
   @include media-breakpoint-up(lg) {
-    @include gap(2rem 1rem);
+    @include gap(2rem);
+
+    margin-bottom: 1rem;
   }
+}
+
+.albumsContainer {
+  @include item-grid;
 }

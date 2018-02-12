@@ -30,10 +30,7 @@ const IndexLayout = ({ children, data }) => (
             <Link to="/">Kezdőlap</Link>
           </li>
           <li>
-            <Link to="/former-presentations">Korábbi előadások</Link>
-          </li>
-          <li>
-            <Link to="/gallery">Galéria</Link>
+            <Link to="/retrospective">Visszatekintés</Link>
           </li>
         </ul>
       </nav>

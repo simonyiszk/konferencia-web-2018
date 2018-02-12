@@ -3,17 +3,33 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Album from '../components/Album';
 import PageContentContainer from '../components/PageContentContainer';
-import styles from './gallery.module.scss';
+import PresentationVideo from '../components/PresentationVideo';
+import styles from './retrospective.module.scss';
 
 export const frontmatter = {
-  title: 'Galéria',
+  title: 'Visszatekintő',
 };
 
-const GalleryPage = ({ data }) => (
+const RetrospectivePage = ({ data }) => (
   <PageContentContainer>
     <Helmet title={frontmatter.title} />
 
-    <h1>{frontmatter.title}</h1>
+    <h1>Korábbi előadások</h1>
+
+    <div className={styles.presentationVideosContainer}>
+      {data.allVideosYaml.edges.map(({ node }) => (
+        <PresentationVideo
+          key={node.source}
+          title={node.title}
+          source={node.source}
+          aspectRatio={node.aspectRatio}
+          thumbnail={node.thumbnail}
+          abstract={node.abstract}
+        />
+      ))}
+    </div>
+
+    <h1>Galéria</h1>
 
     <div className={styles.albumsContainer}>
       {data.allAlbumsYaml.edges.map(({ node }) => (
@@ -30,14 +46,28 @@ const GalleryPage = ({ data }) => (
   </PageContentContainer>
 );
 
-GalleryPage.propTypes = {
+RetrospectivePage.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
-export default GalleryPage;
+export default RetrospectivePage;
 
 export const query = graphql`
-  query GalleryPageQuery {
+  query RetrospectivePageQuery {
+    allVideosYaml {
+      edges {
+        node {
+          title
+          source
+          aspectRatio
+          thumbnail {
+            src: publicURL
+          }
+          abstract
+        }
+      }
+    }
+
     allAlbumsYaml {
       edges {
         node {
