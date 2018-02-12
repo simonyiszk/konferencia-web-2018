@@ -5,12 +5,8 @@
 .presentationVideosContainer {
   @include gap(1rem);
 
-  margin-bottom: 1rem;
-
   @include media-breakpoint-up(lg) {
     @include gap(2rem);
-
-    margin-bottom: 1rem;
   }
 }
 
