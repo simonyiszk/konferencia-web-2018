@@ -54,10 +54,7 @@ class Lightbox extends React.Component {
 
     return (
       <LightboxBase
-        images={images.map(({ srcSet, ...rest }) => ({
-          srcSet: srcSet.split(',\n'),
-          ...rest,
-        }))}
+        images={images}
         currentImage={currentImage}
         backdropClosesModal
         showImageCount={false}
