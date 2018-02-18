@@ -2,11 +2,15 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PageContentContainer from '../components/PageContentContainer';
 
+export const frontmatter = {
+  title: 'Expo',
+};
+
 const ExpoPage = () => (
   <PageContentContainer>
-    <Helmet title="Expo" />
+    <Helmet title={frontmatter.title} />
 
-    <h1>Expo</h1>
+    <h1>{frontmatter.title}</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
