@@ -76,6 +76,23 @@ const IndexPage = ({ data }) => (
           />
         ))}
       </div>
+
+      <h1>Támogatók</h1>
+
+      <h3 className="text-center">Főtámogatók</h3>
+      <div className="text-center" style={{ height: '30vh' }}>
+        Lorem ipsum TODO
+      </div>
+
+      <h3 className="text-center">Kiemelt támogatók</h3>
+      <div className="text-center" style={{ height: '20vh' }}>
+        Lorem ipsum TODO
+      </div>
+
+      <h3 className="text-center">További támogatók</h3>
+      <div className="text-center" style={{ height: '10vh' }}>
+        Lorem ipsum TODO
+      </div>
     </PageContentContainer>
   </div>
 );
