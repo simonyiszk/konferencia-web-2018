@@ -77,6 +77,21 @@ const IndexPage = ({ data }) => (
         ))}
       </div>
 
+      <h1>Helyszín</h1>
+      <div className="text-center" style={{ height: '50vh' }}>
+        TODO: Megközelíthetőség térképpel
+      </div>
+
+      <h1>Nyereményjáték</h1>
+      <div className="text-center" style={{ height: '50vh' }}>
+        TODO
+      </div>
+
+      <h1>Kapcsolat</h1>
+      <div className="text-center" style={{ height: '50vh' }}>
+        TODO: Fő kapcsolattartók hozzáadása
+      </div>
+
       <h1>Támogatók</h1>
 
       <h3 className="text-center">Főtámogatók</h3>
