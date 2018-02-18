@@ -32,6 +32,9 @@ const IndexLayout = ({ children, data }) => (
           <li>
             <Link to="/retrospective">Visszatekintés</Link>
           </li>
+          <li>
+            <Link to="/expo">Expo</Link>
+          </li>
         </ul>
       </nav>
     </header>
