@@ -7,7 +7,7 @@ import PresentationVideo from '../components/PresentationVideo';
 import styles from './retrospective.module.scss';
 
 export const frontmatter = {
-  title: 'Visszatekintő',
+  title: 'Visszatekintés',
 };
 
 const RetrospectivePage = ({ data }) => (
