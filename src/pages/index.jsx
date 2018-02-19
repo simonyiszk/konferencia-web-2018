@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
+import PresentationsAssetSrc from '../data/assets/presentations.svg';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 
@@ -62,22 +63,33 @@ const IndexPage = ({ data }) => (
             />
           ))}
         </div>
-
-        <h1>Előadások</h1>
-
-        <div className={styles.presentationsContainer}>
-          {data.allPresentationsYaml.edges.map(({ node }) => (
-            <Presentation
-              key={node.title}
-              title={node.title}
-              presenterName={node.presenterName}
-              presenterRole={node.presenterRole}
-              presenterImage={node.presenterImage.childImageSharp.resolutions}
-              abstract={node.abstract}
-            />
-          ))}
-        </div>
       </Container>
+
+      <img
+        // TODO: Avoid hacky workarounds
+        style={{ marginTop: '2em', marginBottom: '-1em' }}
+        src={PresentationsAssetSrc}
+        alt=""
+      />
+
+      <div style={{ background: '#eee' }}>
+        <Container>
+          <h1 style={{ marginTop: 0 }}>Előadások</h1>
+
+          <div className={styles.presentationsContainer}>
+            {data.allPresentationsYaml.edges.map(({ node }) => (
+              <Presentation
+                key={node.title}
+                title={node.title}
+                presenterName={node.presenterName}
+                presenterRole={node.presenterRole}
+                presenterImage={node.presenterImage.childImageSharp.resolutions}
+                abstract={node.abstract}
+              />
+            ))}
+          </div>
+        </Container>
+      </div>
 
       <h1>Helyszín</h1>
       <iframe
