@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
-import PageContentContainer from '../components/PageContentContainer';
+import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import styles from './index.module.scss';
@@ -46,36 +46,38 @@ const IndexPage = ({ data }) => (
       </Container>
     </Hero>
 
-    <PageContentContainer>
-      <h1>A Konferenciáról</h1>
+    <PageContent>
+      <Container>
+        <h1>A Konferenciáról</h1>
 
-      <div className={styles.highlightsContainer}>
-        {data.allHighlightsYaml.edges.map(({ node }) => (
-          <Highlight
-            key={node.title}
-            title={node.title}
-            symbol={node.symbol}
-            symbolLabel={node.symbolLabel}
-            text={node.text}
-            className={styles.highlight}
-          />
-        ))}
-      </div>
+        <div className={styles.highlightsContainer}>
+          {data.allHighlightsYaml.edges.map(({ node }) => (
+            <Highlight
+              key={node.title}
+              title={node.title}
+              symbol={node.symbol}
+              symbolLabel={node.symbolLabel}
+              text={node.text}
+              className={styles.highlight}
+            />
+          ))}
+        </div>
 
-      <h1>Előadások</h1>
+        <h1>Előadások</h1>
 
-      <div className={styles.presentationsContainer}>
-        {data.allPresentationsYaml.edges.map(({ node }) => (
-          <Presentation
-            key={node.title}
-            title={node.title}
-            presenterName={node.presenterName}
-            presenterRole={node.presenterRole}
-            presenterImage={node.presenterImage.childImageSharp.resolutions}
-            abstract={node.abstract}
-          />
-        ))}
-      </div>
+        <div className={styles.presentationsContainer}>
+          {data.allPresentationsYaml.edges.map(({ node }) => (
+            <Presentation
+              key={node.title}
+              title={node.title}
+              presenterName={node.presenterName}
+              presenterRole={node.presenterRole}
+              presenterImage={node.presenterImage.childImageSharp.resolutions}
+              abstract={node.abstract}
+            />
+          ))}
+        </div>
+      </Container>
 
       <h1>Helyszín</h1>
       <iframe
@@ -84,33 +86,35 @@ const IndexPage = ({ data }) => (
         className={styles.mapFrame}
       />
 
-      <h1>Nyereményjáték</h1>
-      <div className="text-center" style={{ height: '50vh' }}>
-        TODO
-      </div>
+      <Container>
+        <h1>Nyereményjáték</h1>
+        <div className="text-center" style={{ height: '50vh' }}>
+          TODO
+        </div>
 
-      <h1>Kapcsolat</h1>
-      <div className="text-center" style={{ height: '50vh' }}>
-        TODO: Fő kapcsolattartók hozzáadása
-      </div>
+        <h1>Kapcsolat</h1>
+        <div className="text-center" style={{ height: '50vh' }}>
+          TODO: Fő kapcsolattartók hozzáadása
+        </div>
 
-      <h1>Támogatók</h1>
+        <h1>Támogatók</h1>
 
-      <h3 className="text-center">Főtámogatók</h3>
-      <div className="text-center" style={{ height: '30vh' }}>
-        Lorem ipsum TODO
-      </div>
+        <h3 className="text-center">Főtámogatók</h3>
+        <div className="text-center" style={{ height: '30vh' }}>
+          Lorem ipsum TODO
+        </div>
 
-      <h3 className="text-center">Kiemelt támogatók</h3>
-      <div className="text-center" style={{ height: '20vh' }}>
-        Lorem ipsum TODO
-      </div>
+        <h3 className="text-center">Kiemelt támogatók</h3>
+        <div className="text-center" style={{ height: '20vh' }}>
+          Lorem ipsum TODO
+        </div>
 
-      <h3 className="text-center">További támogatók</h3>
-      <div className="text-center" style={{ height: '10vh' }}>
-        Lorem ipsum TODO
-      </div>
-    </PageContentContainer>
+        <h3 className="text-center">További támogatók</h3>
+        <div className="text-center" style={{ height: '10vh' }}>
+          Lorem ipsum TODO
+        </div>
+      </Container>
+    </PageContent>
   </div>
 );
 
