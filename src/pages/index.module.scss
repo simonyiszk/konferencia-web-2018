@@ -103,3 +103,11 @@
     @include gap(2rem);
   }
 }
+
+.mapFrame {
+  display: block;
+  width: 100%;
+  height: 30em;
+  border: none;
+  margin: 0 auto;
+}

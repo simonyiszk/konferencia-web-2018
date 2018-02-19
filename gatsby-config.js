@@ -3,7 +3,8 @@ module.exports = {
     title: 'XV. Simonyi Konferencia',
     eventDate: '2018-04-18',
     eventVenue: 'BME I épület',
-    siteAddressURL: 'https://goo.gl/maps/HrUqACf9FNF2',
+    siteAddressURL:
+      'https://www.google.com/maps/embed/v1/place?q=BME+I+épület&key=AIzaSyAY1JmvJcaJ3j_gKHAsKbOrkSZSp_P8wEg',
     siteAddressPretty: 'Budapest, Magyar tudósok körútja 2, 1117',
     siteEventbriteURL:
       'https://www.eventbrite.com/e/xv-simonyi-konferencia-tickets-41605153133?aff=web',

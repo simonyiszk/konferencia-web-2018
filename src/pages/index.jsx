@@ -78,9 +78,11 @@ const IndexPage = ({ data }) => (
       </div>
 
       <h1>Helyszín</h1>
-      <div className="text-center" style={{ height: '50vh' }}>
-        TODO: Megközelíthetőség térképpel
-      </div>
+      <iframe
+        src={data.site.siteMetadata.siteAddressURL}
+        title="Térkép"
+        className={styles.mapFrame}
+      />
 
       <h1>Nyereményjáték</h1>
       <div className="text-center" style={{ height: '50vh' }}>
@@ -125,6 +127,7 @@ export const query = graphql`
         title
         eventDate(formatString: "LL", locale: "hu")
         eventVenue
+        siteAddressURL
         siteAddressPretty
         siteEventbriteURL
       }
