@@ -1,0 +1,20 @@
+- category: Főtámogató
+  logosHeight: 8em
+  organizations:
+    - name: NNG
+- category: Kiemelt támogatók
+  logosHeight: 5em
+  organizations:
+    - name: Bosch
+    - name: NI
+    - name: Accenture
+      logo: ./logos/accenture.svg
+    - name: Vodafone
+    - name: Lightware
+      logo: ./logos/lightware.svg
+    - name: OTP
+      logo: ./logos/otp-bank.svg
+- category: További támogatók
+  logosHeight: 3em
+  organizations:
+    - name: Sicontact

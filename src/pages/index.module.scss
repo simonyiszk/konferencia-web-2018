@@ -111,3 +111,9 @@
   border: none;
   margin: 0 auto;
 }
+
+.sponsorLogosContainer {
+  text-align: center;
+
+  @include gap(1rem);
+}
