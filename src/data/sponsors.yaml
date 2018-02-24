@@ -1,9 +1,10 @@
 - category: Főtámogató
-  logosHeight: 8em
+  logosHeight: 6em
   organizations:
     - name: NNG
+      logo: ./logos/nng.svg
 - category: Kiemelt támogatók
-  logosHeight: 5em
+  logosHeight: 3em
   organizations:
     - name: Bosch
     - name: NI
@@ -15,6 +16,6 @@
     - name: OTP
       logo: ./logos/otp-bank.svg
 - category: További támogatók
-  logosHeight: 3em
+  logosHeight: 2em
   organizations:
     - name: Sicontact

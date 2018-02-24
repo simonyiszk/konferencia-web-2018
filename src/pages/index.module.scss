@@ -114,7 +114,10 @@
 }
 
 .sponsorLogosContainer {
+  margin: -1rem;
   text-align: center;
 
-  @include gap(1rem);
+  > * {
+    margin: 1rem;
+  }
 }
