@@ -1,0 +1,32 @@
+@import '../utils/breakpoints';
+@import '../utils/colors';
+
+.root {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background: $color-primary;
+}
+
+.navItemsContainer {
+  padding: 0;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+    margin: 0 -1em;
+  }
+}
+
+.navItem {
+  display: block;
+  margin: 2em 1em;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+    margin: 1em;
+  }
+}
+
+.navLink {
+  padding: 0.5em 0;
+}

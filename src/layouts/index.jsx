@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import SimonyiKonferenciaLogoSrc from '../data/logos/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 import './index.scss';
 
@@ -30,22 +32,14 @@ const IndexLayout = ({ children, data, location }) => {
         className={styles.header}
         style={{ color: isHomepage && 'white' }}
       >
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Kezdőlap</Link>
-            </li>
-            <li>
-              <Link to="/retrospective">Visszatekintés</Link>
-            </li>
-            <li>
-              <Link to="/expo">Expo</Link>
-            </li>
-            <li>
-              <Link to="/pressroom">Sajtószoba</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar
+          brand={() => <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />}
+        >
+          <Link to="/">Kezdőlap</Link>
+          <Link to="/retrospective">Visszatekintés</Link>
+          <Link to="/expo">Expo</Link>
+          <Link to="/pressroom">Sajtószoba</Link>
+        </Navbar>
       </header>
 
       <main className={styles.main}>{children()}</main>
@@ -64,7 +58,7 @@ const IndexLayout = ({ children, data, location }) => {
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,
   data: PropTypes.shape({}).isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default IndexLayout;

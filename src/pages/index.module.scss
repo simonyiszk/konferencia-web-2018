@@ -1,12 +1,13 @@
 @import '../utils/breakpoints';
 @import '../utils/button';
+@import '../utils/colors';
 @import '../utils/flexbox';
 @import '../utils/item-grid';
 
 .hero {
   min-height: 100vh;
   padding: 4rem 0;
-  background: linear-gradient(137.5deg, #25255c, #771215);
+  background: linear-gradient(137.5deg, $color-secondary, $color-primary);
   color: white;
 }
 
@@ -83,7 +84,7 @@
 }
 
 .registrationButton {
-  @include outline-button(white, #25255c);
+  @include outline-button(white, $color-secondary);
 
   margin-top: 1.25em;
   font-weight: bold;
