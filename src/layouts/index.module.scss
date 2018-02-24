@@ -1,4 +1,4 @@
-@import '../utils/colors';
+@import '../utils/theme';
 
 .root {
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .footer {
-  background: $color-dark;
+  background: $footer-background;
   color: white;
 
   img {
