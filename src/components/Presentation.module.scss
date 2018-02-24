@@ -24,8 +24,8 @@
 
 .presenterImage {
   // TODO: Remove vendor prefix
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%);
-  clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
 }
 
 @include media-breakpoint-up(lg) {
