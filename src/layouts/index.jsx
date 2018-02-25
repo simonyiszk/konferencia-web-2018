@@ -28,12 +28,10 @@ const IndexLayout = ({ children, data, location }) => {
       </Helmet>
 
       {/* TODO: A proper navigation bar */}
-      <header
-        className={styles.header}
-        style={{ color: !isHomepage && 'inherit' }}
-      >
+      <header className={styles.header}>
         <Navbar
           brand={() => <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />}
+          allocateSpace={!isHomepage}
         >
           <Link to="/">Kezdőlap</Link>
           <Link to="/retrospective">Visszatekintés</Link>

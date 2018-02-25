@@ -6,7 +6,7 @@ import styles from './Navbar.module.scss';
 const Navbar = ({
   brand, children, allocateSpace, className, ...props
 }) => (
-  <div style={allocateSpace && { marginBottom: '4rem' }}>
+  <div style={allocateSpace ? { marginBottom: '4rem' } : {}}>
     <div className={`${styles.root} ${className}`} {...props}>
       <Container className={styles.mainContainer}>
         <div className={styles.brandContainer}>{brand()}</div>
