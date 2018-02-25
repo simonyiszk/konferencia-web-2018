@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import AspectRatioBox from '../components/AspectRatioBox';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
@@ -65,12 +66,19 @@ const IndexPage = ({ data }) => (
         </div>
       </Container>
 
-      <img
-        // TODO: Avoid hacky workarounds
-        style={{ marginTop: '2em', marginBottom: '-1em' }}
-        src={PresentationsAssetSrc}
-        alt=""
-      />
+      <AspectRatioBox aspectRatio={5}>
+        <img
+          // TODO: Avoid hacky workarounds
+          style={{
+            marginTop: '2em',
+            marginBottom: '-1em',
+            width: '100%',
+            height: '100%',
+          }}
+          src={PresentationsAssetSrc}
+          alt=""
+        />
+      </AspectRatioBox>
 
       <div style={{ background: '#eee' }}>
         <Container>
