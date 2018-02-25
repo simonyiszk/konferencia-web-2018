@@ -7,15 +7,13 @@ const Navbar = ({
   brand, children, className, ...props
 }) => (
   <div className={`${styles.root} ${className}`} {...props}>
-    <Container>
+    <Container className={styles.mainContainer}>
+      <div className={styles.brandContainer}>{brand()}</div>
+
       <nav>
         <ul className={styles.navItemsContainer}>
           {React.Children.map(children, navLink => (
-            <li className={styles.navItem}>
-              {React.cloneElement(navLink, {
-                className: styles.navLink,
-              })}
-            </li>
+            <li className={styles.navItem}>{navLink}</li>
           ))}
         </ul>
       </nav>

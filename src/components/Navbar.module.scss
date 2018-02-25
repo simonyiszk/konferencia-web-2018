@@ -5,7 +5,27 @@
   position: fixed;
   z-index: 1;
   width: 100%;
+  padding: 1rem 0;
   background: $color-primary;
+}
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandContainer {
+  flex: 100%;
+
+  img {
+    height: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex: initial;
+  }
 }
 
 .navItemsContainer {
@@ -19,14 +39,18 @@
 
 .navItem {
   display: block;
-  margin: 2em 1em;
+  margin: 2em 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    padding: 0.5em 0;
+  }
 
   @include media-breakpoint-up(lg) {
     display: inline-block;
-    margin: 1em;
+    margin: 0 1em;
   }
-}
-
-.navLink {
-  padding: 0.5em 0;
 }

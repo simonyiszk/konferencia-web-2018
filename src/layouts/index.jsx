@@ -30,7 +30,7 @@ const IndexLayout = ({ children, data, location }) => {
       {/* TODO: A proper navigation bar */}
       <header
         className={styles.header}
-        style={{ color: isHomepage && 'white' }}
+        style={{ color: !isHomepage && 'inherit' }}
       >
         <Navbar
           brand={() => <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />}
