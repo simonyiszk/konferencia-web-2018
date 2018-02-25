@@ -8,62 +8,91 @@ import SimonyiKonferenciaLogoSrc from '../data/logos/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 import './index.scss';
 
-const IndexLayout = ({ children, data, location }) => {
-  const isHomepage = location.pathname === withPrefix('/');
+export default class IndexLayout extends React.Component {
+  constructor() {
+    super();
 
-  return (
-    <div className={styles.root}>
-      <Helmet
-        titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-        defaultTitle={data.site.siteMetadata.title}
-      >
-        <html lang="hu" />
+    window.addEventListener('scroll', () => {
+      this.setState({ windowScrollY: window.scrollY });
+    });
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    window.addEventListener('resize', () => {
+      this.setState({ windowInnerHeight: window.innerHeight });
+    });
 
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat"
-          rel="stylesheet"
-        />
-      </Helmet>
+    this.state = {
+      windowScrollY: window.scrollY,
+      windowInnerHeight: window.innerHeight,
+    };
+  }
 
-      {/* TODO: A proper navigation bar */}
-      <header className={styles.header}>
-        <Navbar
-          brand={() => (
-            <Link to="/">
-              <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />
-            </Link>
-          )}
-          allocateSpace={!isHomepage}
+  render() {
+    const { children, data, location } = this.props;
+    const { windowScrollY, windowInnerHeight } = this.state;
+    const isHomepage = location.pathname === withPrefix('/');
+
+    return (
+      <div className={styles.root}>
+        <Helmet
+          titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+          defaultTitle={data.site.siteMetadata.title}
         >
-          <Link to="/">Kezdőlap</Link>
-          <Link to="/retrospective">Visszatekintés</Link>
-          <Link to="/expo">Expo</Link>
-          <Link to="/pressroom">Sajtószoba</Link>
-        </Navbar>
-      </header>
+          <html lang="hu" />
 
-      <main className={styles.main}>{children()}</main>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <Footer
-        siteEmailURL={data.site.siteMetadata.siteEmailURL}
-        siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
-        siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
-        siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
-        className={styles.footer}
-      />
-    </div>
-  );
-};
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          />
+        </Helmet>
+
+        {/* TODO: A proper navigation bar */}
+        <header className={styles.header}>
+          <Navbar
+            brand={() => (
+              <Link to="/">
+                <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />
+              </Link>
+            )}
+            allocateSpace={!isHomepage}
+            style={
+              isHomepage
+                ? {
+                    background: `rgba(119, 18, 21, ${Math.min(
+                      windowScrollY / (windowInnerHeight / 2),
+                      1,
+                    )})`,
+                  }
+                : {}
+            }
+          >
+            <Link to="/">Kezdőlap</Link>
+            <Link to="/retrospective">Visszatekintés</Link>
+            <Link to="/expo">Expo</Link>
+            <Link to="/pressroom">Sajtószoba</Link>
+          </Navbar>
+        </header>
+
+        <main className={styles.main}>{children()}</main>
+
+        <Footer
+          siteEmailURL={data.site.siteMetadata.siteEmailURL}
+          siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
+          siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
+          siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
+          className={styles.footer}
+        />
+      </div>
+    );
+  }
+}
 
 IndexLayout.propTypes = {
   children: PropTypes.func.isRequired,
   data: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
 };
-
-export default IndexLayout;
 
 export const query = graphql`
   query IndexLayoutQuery {
