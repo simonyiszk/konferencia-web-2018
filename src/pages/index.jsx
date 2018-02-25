@@ -92,6 +92,24 @@ const IndexPage = ({ data }) => (
       </div>
 
       <h1>Helyszín</h1>
+
+      <Container>
+        <p>
+          <span role="img" aria-label="Térkép jelölő">
+            📍
+          </span>{' '}
+          {data.site.siteMetadata.siteAddressPretty}
+          <br />
+          <span role="img" aria-label="Parkoló jel">
+            🅿️
+          </span>{' '}
+          A helyszínen parkolási lehetőség csak korlátozott mennyiségben érhető
+          el.<br />
+          Tömegközlekedéssel a legközelebbi villamosmegállók: a 4-6-os villamos
+          vonalán: Petőfi híd, budai hídfő 1-es villamos vonalán: Infopark
+        </p>
+      </Container>
+
       <iframe
         src={data.site.siteMetadata.siteAddressURL}
         title="Térkép"
@@ -100,9 +118,14 @@ const IndexPage = ({ data }) => (
 
       <Container>
         <h1>Nyereményjáték</h1>
-        <div className="text-center" style={{ height: '50vh' }}>
-          TODO
-        </div>
+        <p>
+          Szokásunkhoz híven a látogatók között idén is kisorsulunk értékes
+          nyereményeket. A játékban való részvétel követelménye két – egy a
+          Simonyi Károly Szakkollégium tagjai által és egy a rendezvény
+          támogatói által biztosított – stand meglátogatása. Az említett standok
+          felkeresésekor a telefonos applikáció – vagy az e-mailben kiküldött
+          QR-kód – segítségével kerülhet be a nevünk a virtuális kalapba.
+        </p>
 
         <h1>Kapcsolat</h1>
         <div className="text-center" style={{ height: '50vh' }}>
