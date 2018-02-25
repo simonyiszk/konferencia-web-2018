@@ -8,22 +8,31 @@ import SimonyiKonferenciaLogoSrc from '../data/logos/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 import './index.scss';
 
+const colorPrimaryRGB = [119, 18, 21];
+
 export default class IndexLayout extends React.Component {
   constructor() {
     super();
 
-    window.addEventListener('scroll', () => {
-      this.setState({ windowScrollY: window.scrollY });
-    });
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        this.setState({ windowScrollY: window.scrollY });
+      });
 
-    window.addEventListener('resize', () => {
-      this.setState({ windowInnerHeight: window.innerHeight });
-    });
+      window.addEventListener('resize', () => {
+        this.setState({ windowInnerHeight: window.innerHeight });
+      });
 
-    this.state = {
-      windowScrollY: window.scrollY,
-      windowInnerHeight: window.innerHeight,
-    };
+      this.state = {
+        windowScrollY: window.scrollY,
+        windowInnerHeight: window.innerHeight,
+      };
+    } else {
+      this.state = {
+        windowScrollY: 1,
+        windowInnerHeight: 1,
+      };
+    }
   }
 
   render() {
@@ -59,7 +68,7 @@ export default class IndexLayout extends React.Component {
             style={
               isHomepage
                 ? {
-                    background: `rgba(119, 18, 21, ${Math.min(
+                    background: `rgba(${colorPrimaryRGB}, ${Math.min(
                       windowScrollY / (windowInnerHeight / 2),
                       1,
                     )})`,
