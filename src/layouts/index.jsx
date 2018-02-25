@@ -30,7 +30,11 @@ const IndexLayout = ({ children, data, location }) => {
       {/* TODO: A proper navigation bar */}
       <header className={styles.header}>
         <Navbar
-          brand={() => <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />}
+          brand={() => (
+            <Link to="/">
+              <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />
+            </Link>
+          )}
           allocateSpace={!isHomepage}
         >
           <Link to="/">Kezdőlap</Link>
