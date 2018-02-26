@@ -1,3 +1,5 @@
 .image {
-  border-radius: 50%;
+  // TODO: Remove vendor prefix
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
 }
