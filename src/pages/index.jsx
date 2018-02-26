@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import AspectRatioBox from '../components/AspectRatioBox';
+import ContactInfo from '../components/ContactInfo';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
@@ -136,8 +137,19 @@ const IndexPage = ({ data }) => (
         </p>
 
         <h1>Kapcsolat</h1>
-        <div className="text-center" style={{ height: '50vh' }}>
-          TODO: Fő kapcsolattartók hozzáadása
+
+        <div className={styles.contactInfosContainer}>
+          {data.allContactsYaml.edges.map(({ node }) => (
+            <ContactInfo
+              key={node.name}
+              name={node.name}
+              role={node.role}
+              email={node.email}
+              telephone={node.telephone}
+              image={node.image.childImageSharp.resolutions}
+              className={styles.contactInfo}
+            />
+          ))}
         </div>
 
         <h1>Támogatók</h1>
@@ -207,6 +219,24 @@ export const query = graphql`
             }
           }
           abstract
+        }
+      }
+    }
+
+    allContactsYaml {
+      edges {
+        node {
+          name
+          role
+          email
+          telephone
+          image {
+            childImageSharp {
+              resolutions(width: 256, height: 256, cropFocus: CENTER) {
+                ...GatsbyImageSharpResolutions
+              }
+            }
+          }
         }
       }
     }

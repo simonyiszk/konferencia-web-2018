@@ -1,12 +1,13 @@
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './ContactInfo.module.scss';
 
 const ContactInfo = ({
-  name, role, email, telephone, image,
+  name, role, email, telephone, image, ...props
 }) => (
-  <div>
-    <Img resolutions={image} />
+  <div {...props}>
+    <Img resolutions={image} className={styles.image} />
     <h2>{name}</h2>
     <h3>{role}</h3>
     <p>{email}</p>
