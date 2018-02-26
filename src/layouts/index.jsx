@@ -8,7 +8,7 @@ import SimonyiKonferenciaLogoSrc from '../data/logos/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 import './index.scss';
 
-const colorPrimaryRGB = [119, 18, 21];
+const colorPrimaryRGB = [78, 28, 57];
 
 export default class IndexLayout extends React.Component {
   constructor() {

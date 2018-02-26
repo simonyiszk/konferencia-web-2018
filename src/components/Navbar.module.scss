@@ -6,7 +6,7 @@
   z-index: 1;
   width: 100%;
   padding: 1rem 0;
-  background: $color-primary;
+  background: mix($color-primary, $color-secondary, 50%);
 }
 
 .mainContainer {
