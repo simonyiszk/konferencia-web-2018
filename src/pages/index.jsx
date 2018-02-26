@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import MdDesktopWindows from 'react-icons/lib/md/desktop-windows';
+import MdTabletMac from 'react-icons/lib/md/tablet-mac';
 import AspectRatioBox from '../components/AspectRatioBox';
 import ContactInfo from '../components/ContactInfo';
 import Container from '../components/Container';
@@ -130,6 +132,11 @@ const IndexPage = ({ data }) => (
           felkeresésekor a telefonos applikáció – vagy az e-mailben kiküldött
           QR-kód – segítségével kerülhet be a nevünk a virtuális kalapba.
         </p>
+
+        <div className={styles.sweepstakeIconsContainer}>
+          <MdTabletMac />
+          <MdDesktopWindows />
+        </div>
 
         <h1>Kapcsolat</h1>
 
