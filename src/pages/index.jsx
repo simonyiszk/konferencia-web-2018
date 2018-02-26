@@ -103,51 +103,21 @@ const IndexPage = ({ data }) => (
       <h1>Helyszín</h1>
 
       <Container>
-        <ul className={styles.locationMainList}>
-          <li>
-            <span
-              role="img"
-              aria-label="Térkép jelölő"
-              className={styles.emojiContainer}
-            >
-              📍
-            </span>{' '}
-            {data.site.siteMetadata.siteAddressPretty}
-          </li>
-
-          <li>
-            <span
-              role="img"
-              aria-label="Parkoló jel"
-              className={styles.emojiContainer}
-            >
-              🅿️
-            </span>{' '}
-            A helyszínen parkolási lehetőség csak korlátozott mennyiségben
-            érhető el
-          </li>
-
-          <li>
-            <span
-              role="img"
-              aria-label="Villamos"
-              className={styles.emojiContainer}
-            >
-              🚊
-            </span>{' '}
-            Tömegközlekedéssel a legközelebbi villamosmegállók:
-            <ul>
-              <li>A 4-6-os villamos vonalán: Petőfi híd, budai hídfő</li>
-              <li>Az 1-es villamos vonalán: Infopark</li>
-            </ul>
-          </li>
-        </ul>
-
         <iframe
           src={data.site.siteMetadata.siteAddressURL}
           title="Térkép"
           className={styles.mapFrame}
         />
+
+        <p className="text-center">
+          <span role="img" aria-label="Parkoló jel">
+            🅿️
+          </span>{' '}
+          <em>
+            A helyszínen parkolási lehetőség csak korlátozott mennyiségben
+            érhető el
+          </em>
+        </p>
       </Container>
 
       <Container>
