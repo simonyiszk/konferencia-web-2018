@@ -105,6 +105,22 @@
   }
 }
 
+.locationMainList {
+  padding: 0;
+  line-height: 1.5;
+  list-style-type: none;
+
+  > li {
+    margin-bottom: 1em;
+  }
+}
+
+.emojiContainer {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+}
+
 .mapFrame {
   display: block;
   width: 100%;
