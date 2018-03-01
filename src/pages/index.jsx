@@ -9,7 +9,6 @@ import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
-import PresentationsAssetSrc from '../data/assets/presentations.svg';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 
@@ -67,50 +66,26 @@ const IndexPage = ({ data }) => (
             />
           ))}
         </div>
+
+        <h1>Előadások</h1>
+
+        <div className={styles.presentationsContainer}>
+          {data.allPresentationsYaml.edges.map(({ node }) => (
+            <Presentation
+              key={node.title}
+              title={node.title}
+              presenterName={node.presenterName}
+              presenterRole={node.presenterRole}
+              presenterImage={node.presenterImage.childImageSharp.resolutions}
+              abstract={node.abstract}
+            />
+          ))}
+        </div>
       </Container>
-
-      <AspectRatioBox aspectRatio={5}>
-        <img
-          // TODO: Avoid hacky workarounds
-          style={{
-            marginTop: '2em',
-            marginBottom: '-1em',
-            width: '100%',
-            height: '100%',
-          }}
-          src={PresentationsAssetSrc}
-          alt=""
-        />
-      </AspectRatioBox>
-
-      <div style={{ background: '#eee' }}>
-        <Container>
-          <h1 style={{ marginTop: 0 }}>Előadások</h1>
-
-          <div className={styles.presentationsContainer}>
-            {data.allPresentationsYaml.edges.map(({ node }) => (
-              <Presentation
-                key={node.title}
-                title={node.title}
-                presenterName={node.presenterName}
-                presenterRole={node.presenterRole}
-                presenterImage={node.presenterImage.childImageSharp.resolutions}
-                abstract={node.abstract}
-              />
-            ))}
-          </div>
-        </Container>
-      </div>
 
       <h1>Helyszín</h1>
 
       <Container>
-        <iframe
-          src={data.site.siteMetadata.siteAddressURL}
-          title="Térkép"
-          className={styles.mapFrame}
-        />
-
         <p className="text-center">
           <span role="img" aria-label="Parkoló jel">
             🅿️
@@ -120,23 +95,29 @@ const IndexPage = ({ data }) => (
             érhető el
           </em>
         </p>
-      </Container>
 
-      <Container>
-        <h1>Nyereményjáték</h1>
-        <p>
-          Szokásunkhoz híven a látogatók között idén is kisorsulunk értékes
-          nyereményeket. A játékban való részvétel követelménye két – egy a
-          Simonyi Károly Szakkollégium tagjai által és egy a rendezvény
-          támogatói által biztosított – stand meglátogatása. Az említett standok
-          felkeresésekor a telefonos applikáció – vagy az e-mailben kiküldött
-          QR-kód – segítségével kerülhet be a nevünk a virtuális kalapba.
-        </p>
+        <iframe
+          src={data.site.siteMetadata.siteAddressURL}
+          title="Térkép"
+          className={styles.mapFrame}
+        />
 
-        <div className={styles.sweepstakeIconsContainer}>
-          <MdTabletMac />
-          <MdDesktopWindows />
-        </div>
+        {/*
+            <h1>Nyereményjáték</h1>
+            <p>
+              Szokásunkhoz híven a látogatók között idén is kisorsulunk értékes
+              nyereményeket. A játékban való részvétel követelménye két – egy a
+              Simonyi Károly Szakkollégium tagjai által és egy a rendezvény
+              támogatói által biztosított – stand meglátogatása. Az említett standok
+              felkeresésekor a telefonos applikáció – vagy az e-mailben kiküldött
+              QR-kód – segítségével kerülhet be a nevünk a virtuális kalapba.
+            </p>
+
+            <div className={styles.sweepstakeIconsContainer}>
+              <MdTabletMac />
+              <MdDesktopWindows />
+            </div>
+          */}
 
         <h1>Kapcsolat</h1>
 
@@ -154,24 +135,26 @@ const IndexPage = ({ data }) => (
           ))}
         </div>
 
-        <h1>Támogatók</h1>
+        {/*
+          <h1>Támogatók</h1>
 
-        {data.allSponsorsYaml.edges.map(({ node }) => (
-          <div key={node.category}>
-            <h3 className="text-center">{node.category}</h3>
-            <div className={styles.sponsorLogosContainer}>
-              {node.organizations.map(organization =>
-                  organization.logo != null && (
-                    <img
-                      key={organization.name}
-                      src={organization.logo.publicURL}
-                      alt={organization.name}
-                      style={{ height: node.logosHeight }}
-                    />
-                  ))}
+          {data.allSponsorsYaml.edges.map(({ node }) => (
+            <div key={node.category}>
+              <h3 className="text-center">{node.category}</h3>
+              <div className={styles.sponsorLogosContainer}>
+                {node.organizations.map(organization =>
+                    organization.logo != null && (
+                      <img
+                        key={organization.name}
+                        src={organization.logo.publicURL}
+                        alt={organization.name}
+                        style={{ height: node.logosHeight }}
+                      />
+                    ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+          */}
       </Container>
     </PageContent>
   </div>
