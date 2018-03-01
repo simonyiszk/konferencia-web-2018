@@ -9,15 +9,20 @@
 .logosContainer {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 
   @include gap(1rem);
 
   margin-bottom: 1em;
+}
 
-  img {
-    height: 2.5em;
-  }
+.logo {
+  height: 2.5em;
+}
+
+.logoBMEVIK {
+  height: 3em;
 }
 
 .iconsContainer {

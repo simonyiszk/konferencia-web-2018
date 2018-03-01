@@ -24,11 +24,13 @@ const Footer = ({
         <img
           src={SimonyiSzakkollegiumLogoSrc}
           alt="Simonyi Károly Szakkollégium"
+          className={styles.logo}
         />
-        <img src={SchonherzLogoSrc} alt="Schönherz" />
+        <img src={SchonherzLogoSrc} alt="Schönherz" className={styles.logo} />
         <img
           src={BMEVIKLogoSrc}
           alt="BME Villamosmérnöki és Informatikai Kar"
+          className={styles.logoBMEVIK}
         />
       </div>
 
