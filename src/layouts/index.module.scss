@@ -22,3 +22,17 @@
     filter: brightness(0) invert(1);
   }
 }
+
+.navLink {
+  color: rgba(255, 255, 255, 0.75);
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.navLinkActive {
+  color: white;
+  font-weight: bold;
+}

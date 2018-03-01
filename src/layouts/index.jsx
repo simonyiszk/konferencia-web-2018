@@ -10,6 +10,15 @@ import './index.scss';
 
 const colorPrimaryRGB = [78, 28, 57];
 
+const NavLink = ({ ...props }) => (
+  <Link
+    exact
+    activeClassName={styles.navLinkActive}
+    className={styles.navLink}
+    {...props}
+  />
+);
+
 export default class IndexLayout extends React.Component {
   constructor() {
     super();
@@ -76,10 +85,8 @@ export default class IndexLayout extends React.Component {
                 : {}
             }
           >
-            <Link to="/">Kezdőlap</Link>
-            <Link to="/retrospective">Visszatekintés</Link>
-            <Link to="/expo">Expo</Link>
-            <Link to="/pressroom">Sajtószoba</Link>
+            <NavLink to="/">Kezdőlap</NavLink>
+            <NavLink to="/retrospective">Visszatekintés</NavLink>
           </Navbar>
         </header>
 
