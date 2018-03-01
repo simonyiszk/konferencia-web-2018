@@ -1,17 +1,15 @@
-- title: Lorem ipsum (TODO)
-  presenterName: John Doe
-  presenterRole: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  presenterImage: ./albums/2014/0415-140253-laja.jpg
-  abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- title: Fejlesztés és tesztelés úton a sztratoszférába
+  presenterName: Góczán Bence
+  presenterRole: Simonyi Károly Szakkollégium
+  presenterImage: ./pictures/goczan-bence.jpg
+  abstract: A Simonyi Károly Szakkollégium UPRA csapata egy rugalmasan felhasználható, megbízható magaslégköri ballonplatform kifejlesztésén dolgozik, mely a tervek szerint lehetőséget biztosítana egyetemi kutatócsapatoknak kísérleteik eljuttatására a sztratoszférába. Előadásában, Góczán Bence, a csapat rendszermérnöke bemutatja, milyen kihívásokkal kell megküzdeni, milyen tervezési lépéseket követtek fejlesztés során és milyen tesztelési folyamatok zajlottak le, hogy a fedélzeti rendszer a lehető legmegbízhatóbban működjön.
 
-- title: Lorem ipsum (TODO 2)
-  presenterName: John Doe
-  presenterRole: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  presenterImage: ./albums/2014/0415-140253-laja.jpg
-  abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- title: A mátrix csapdájában
+  presenterName: Kiss Ádám
+  presenterRole: Simonyi Károly Szakkollégium
+  presenterImage: ./pictures/kiss-adam.jpg
+  abstract: Előadásom során a Schönherz Kollégium óriáskijelzőjének a fejlődéstörténetét mutatom be, valamint az aktuális fejlesztési irányvonalat. A technikai megoldások mellett kitérek az üzemeltetési kérdésekre is.
 
-- title: Lorem ipsum (TODO 3)
-  presenterName: John Doe
-  presenterRole: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  presenterImage: ./albums/2014/0415-140253-laja.jpg
-  abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- title: Érdekelnek a további előadások?
+  presenterImage: ./pictures/question-mark.png
+  abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.

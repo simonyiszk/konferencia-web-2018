@@ -19,25 +19,33 @@ const Presentation = ({
 
     <div>
       <h2 className={styles.title}>{title}</h2>
-      <p>
-        {presenterName} – {presenterRole}
-      </p>
+      {presenterName != null && (
+        <p>
+          {presenterName} – {presenterRole}
+        </p>
+      )}
 
-      <p className={styles.abstract}>{abstract}</p>
+      <p
+        className={styles.abstract}
+        /* eslint-disable-next-line react/no-danger */
+        dangerouslySetInnerHTML={{ __html: abstract }}
+      />
     </div>
   </article>
 );
 
 Presentation.propTypes = {
   title: PropTypes.string.isRequired,
-  presenterName: PropTypes.string.isRequired,
-  presenterRole: PropTypes.string.isRequired,
+  presenterName: PropTypes.string,
+  presenterRole: PropTypes.string,
   presenterImage: PropTypes.shape({}).isRequired,
   abstract: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
 Presentation.defaultProps = {
+  presenterName: null,
+  presenterRole: null,
   className: '',
 };
 
