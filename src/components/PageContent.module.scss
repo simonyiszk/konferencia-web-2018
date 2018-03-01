@@ -5,10 +5,11 @@
   margin-bottom: 3rem;
 
   h1 {
-    margin-top: 1.5em;
     text-align: center;
 
     &:not(:first-child) {
+      margin-top: 1.5em;
+
       @include media-breakpoint-up(lg) {
         margin-top: 3em;
       }
@@ -21,5 +22,9 @@
 
   > :last-child {
     margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 5rem;
   }
 }
