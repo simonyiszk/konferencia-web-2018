@@ -1,6 +1,10 @@
 @import '~normalize.css';
 @import '../utils/theme';
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
