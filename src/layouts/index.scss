@@ -1,14 +1,14 @@
 @import '~normalize.css';
 @import '../utils/theme';
 
-html {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 

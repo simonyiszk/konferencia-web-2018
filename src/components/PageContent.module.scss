@@ -1,3 +1,5 @@
+@import '../utils/breakpoints';
+
 .root {
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -5,6 +7,12 @@
   h1 {
     margin-top: 1.5em;
     text-align: center;
+
+    &:not(:first-child) {
+      @include media-breakpoint-up(lg) {
+        margin-top: 3em;
+      }
+    }
   }
 
   > :first-child {
