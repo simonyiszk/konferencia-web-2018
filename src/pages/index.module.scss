@@ -147,7 +147,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include gap(1rem);
+  @include gap(1rem 0.5rem);
 
   * {
     text-align: center;

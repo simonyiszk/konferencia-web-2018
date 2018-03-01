@@ -9,7 +9,7 @@ const ContactInfo = ({
   <div {...props}>
     <Img resolutions={image} className={styles.image} />
     <h2>{name}</h2>
-    <h3>{role}</h3>
+    <strong>{role}</strong>
     <p>
       <a href={`mailto:${email}`}>{email}</a>
     </p>
