@@ -6,7 +6,7 @@
   z-index: 1;
   width: 100%;
   padding: 1rem 0;
-  background: mix($color-primary, $color-secondary, 50%);
+  background: $navbar-background;
 }
 
 .mainContainer {
@@ -16,8 +16,10 @@
   justify-content: space-between;
 }
 
-.brandContainer {
+.brandAndTogglerContainer {
+  display: flex;
   flex: 100%;
+  justify-content: space-between;
 
   img {
     height: 2rem;
@@ -25,6 +27,24 @@
 
   @include media-breakpoint-up(lg) {
     flex: initial;
+  }
+}
+
+.navToggler {
+  border: none;
+  background: none;
+  color: inherit;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.navCollapsed {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: initial;
   }
 }
 
