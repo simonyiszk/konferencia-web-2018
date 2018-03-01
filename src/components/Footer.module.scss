@@ -1,16 +1,23 @@
+@import '../utils/flexbox';
+
 .root {
-  padding: 0.5em 0;
+  padding: 1em 0;
   font-size: 2rem;
   text-align: center;
-
-  a,
-  img {
-    margin: 0.5em;
-  }
 }
 
-.logo {
-  max-height: 2em;
+.logosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include gap(1rem);
+
+  margin-bottom: 1em;
+
+  img {
+    height: 2.5em;
+  }
 }
 
 .iconsContainer {
