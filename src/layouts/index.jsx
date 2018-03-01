@@ -68,11 +68,7 @@ export default class IndexLayout extends React.Component {
         {/* TODO: A proper navigation bar */}
         <header className={styles.header}>
           <Navbar
-            brand={() => (
-              <Link to="/">
-                <img src={SimonyiKonferenciaLogoSrc} alt="Kezdőlap" />
-              </Link>
-            )}
+            brandImageSrc={SimonyiKonferenciaLogoSrc}
             allocateSpace={!isHomepage}
             style={
               isHomepage

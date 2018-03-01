@@ -1,3 +1,4 @@
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
@@ -12,11 +13,30 @@ export default class Navbar extends React.Component {
     this.state = {
       isNavCollapsed: true,
     };
+
+    this.handleNavTogglerClick = this.handleNavTogglerClick.bind(this);
+    this.handleNavLinkClick = this.handleNavLinkClick.bind(this);
+  }
+
+  handleNavTogglerClick() {
+    this.setState(prevState => ({
+      isNavCollapsed: !prevState.isNavCollapsed,
+    }));
+  }
+
+  handleNavLinkClick() {
+    this.setState({
+      isNavCollapsed: true,
+    });
   }
 
   render() {
     const {
-      brand, children, allocateSpace, className, ...props
+      brandImageSrc,
+      children,
+      allocateSpace,
+      className,
+      ...props
     } = this.props;
     const { isNavCollapsed } = this.state;
 
@@ -25,7 +45,11 @@ export default class Navbar extends React.Component {
         <div className={`${styles.root} ${className}`} {...props}>
           <Container className={styles.mainContainer}>
             <div className={styles.brandAndTogglerContainer}>
-              <div>{brand()}</div>
+              <div>
+                <Link to="/" onClick={this.handleNavLinkClick}>
+                  <img src={brandImageSrc} alt="Kezdőlap" />
+                </Link>
+              </div>
 
               <button
                 type="button"
@@ -33,11 +57,7 @@ export default class Navbar extends React.Component {
                 aria-expanded="false"
                 aria-label="Navigáció mutatása/elrejtése"
                 className={styles.navToggler}
-                onClick={() =>
-                  this.setState(prevState => ({
-                    isNavCollapsed: !prevState.isNavCollapsed,
-                  }))
-                }
+                onClick={this.handleNavTogglerClick}
               >
                 {isNavCollapsed ? <FaChevronDown /> : <FaChevronUp />}
               </button>
@@ -49,7 +69,11 @@ export default class Navbar extends React.Component {
             >
               <ul className={styles.navItemsContainer}>
                 {React.Children.map(children, navLink => (
-                  <li className={styles.navItem}>{navLink}</li>
+                  <li className={styles.navItem}>
+                    {React.cloneElement(navLink, {
+                      onClick: this.handleNavLinkClick,
+                    })}
+                  </li>
                 ))}
               </ul>
             </nav>
@@ -61,7 +85,7 @@ export default class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {
-  brand: PropTypes.func.isRequired,
+  brandImageSrc: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   allocateSpace: PropTypes.bool,
   className: PropTypes.string,
