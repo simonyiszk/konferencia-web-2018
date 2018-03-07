@@ -104,4 +104,5 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   allocateSpace: true,
   className: '',
+  style: {},
 };
