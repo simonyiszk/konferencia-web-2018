@@ -36,13 +36,22 @@ export default class Navbar extends React.Component {
       children,
       allocateSpace,
       className,
+      style,
       ...props
     } = this.props;
     const { isNavCollapsed } = this.state;
+    const { background: styleBackground, ...styleWithoutBackground } = style;
 
     return (
       <div style={allocateSpace ? { marginBottom: '4rem' } : {}}>
-        <div className={`${styles.root} ${className}`} {...props}>
+        <div
+          className={`${styles.root} ${className}`}
+          style={{
+            ...styleWithoutBackground,
+            ...(isNavCollapsed && { background: styleBackground }),
+          }}
+          {...props}
+        >
           <Container className={styles.mainContainer}>
             <div className={styles.brandAndTogglerContainer}>
               <div>
@@ -89,6 +98,7 @@ Navbar.propTypes = {
   children: PropTypes.node.isRequired,
   allocateSpace: PropTypes.bool,
   className: PropTypes.string,
+  style: PropTypes.shape({}),
 };
 
 Navbar.defaultProps = {
