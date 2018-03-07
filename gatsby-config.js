@@ -8,6 +8,7 @@ module.exports = {
     siteAddressPretty: 'Budapest, Magyar tudósok körútja 2, 1117',
     siteEventbriteURL:
       'https://www.eventbrite.com/e/xv-simonyi-konferencia-tickets-41605153133?aff=web',
+    siteEventbriteID: '41605153133',
     siteEmailURL: 'mailto:konferencia@simonyi.bme.hu',
     siteFacebookURL: 'https://facebook.com/simonyiszk',
     siteYouTubeURL: 'https://youtube.com/user/SimonyiSzakkoli',

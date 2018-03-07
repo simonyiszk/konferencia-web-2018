@@ -9,97 +9,137 @@ import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import styles from './index.module.scss';
 
-const IndexPage = ({ data }) => (
-  <div>
-    <Hero className={styles.hero}>
-      <Container className={styles.heroContentContainer}>
-        <div className={styles.iconContainer}>
-          <img src={SimonyiKonferenciaIconSrc} alt="" className={styles.icon} />
-        </div>
+class IndexPage extends React.PureComponent {
+  componentDidMount() {
+    const { data } = this.props;
 
-        <div>
-          <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
+    if (typeof window !== 'undefined') {
+      const eventbriteWidgetScript = document.createElement('script');
+      eventbriteWidgetScript.type = 'text/javascript';
+      eventbriteWidgetScript.src =
+        'https://www.eventbrite.com/static/widgets/eb_widgets.js';
 
-          <div>
-            <h2 className={styles.eventDate}>
-              {data.site.siteMetadata.eventDate}
-            </h2>
+      document.head.appendChild(eventbriteWidgetScript);
+      eventbriteWidgetScript.onload = () => {
+        window.EBWidgets.createWidget({
+          widgetType: 'checkout',
+          eventId: data.site.siteMetadata.siteEventbriteID,
+          modal: true,
+          modalTriggerElementId: `eventbrite-widget-modal-trigger-${
+            data.site.siteMetadata.siteEventbriteID
+          }`,
+          onOrderComplete: () => {},
+        });
+      };
+    }
+  }
 
-            <h2 className={styles.eventVenue}>
-              {data.site.siteMetadata.eventVenue}
-            </h2>
+  render() {
+    const { data } = this.props;
 
-            <h3 className={styles.eventAddress}>
-              {data.site.siteMetadata.siteAddressPretty}
-            </h3>
-          </div>
+    return (
+      <div>
+        <Hero className={styles.hero}>
+          <Container className={styles.heroContentContainer}>
+            <div className={styles.iconContainer}>
+              <img
+                src={SimonyiKonferenciaIconSrc}
+                alt=""
+                className={styles.icon}
+              />
+            </div>
 
-          <a
-            href={data.site.siteMetadata.siteEventbriteURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            role="button"
-            className={styles.registrationButton}
-          >
-            Regisztráció
-          </a>
-        </div>
-      </Container>
-    </Hero>
+            <div>
+              <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
-    <PageContent>
-      <Container>
-        <h1>A Konferenciáról</h1>
+              <div>
+                <h2 className={styles.eventDate}>
+                  {data.site.siteMetadata.eventDate}
+                </h2>
 
-        <div className={styles.highlightsContainer}>
-          {data.allHighlightsYaml.edges.map(({ node }) => (
-            <Highlight
-              key={node.title}
-              title={node.title}
-              symbol={node.symbol}
-              symbolLabel={node.symbolLabel}
-              text={node.text}
-              className={styles.highlight}
+                <h2 className={styles.eventVenue}>
+                  {data.site.siteMetadata.eventVenue}
+                </h2>
+
+                <h3 className={styles.eventAddress}>
+                  {data.site.siteMetadata.siteAddressPretty}
+                </h3>
+              </div>
+
+              <a
+                id={`eventbrite-widget-modal-trigger-${
+                  data.site.siteMetadata.siteEventbriteID
+                }`}
+                href={data.site.siteMetadata.siteEventbriteURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                role="button"
+                className={styles.registrationButton}
+                onClick={(event) => {
+                  event.preventDefault();
+                }}
+              >
+                Regisztráció
+              </a>
+            </div>
+          </Container>
+        </Hero>
+
+        <PageContent>
+          <Container>
+            <h1>A Konferenciáról</h1>
+
+            <div className={styles.highlightsContainer}>
+              {data.allHighlightsYaml.edges.map(({ node }) => (
+                <Highlight
+                  key={node.title}
+                  title={node.title}
+                  symbol={node.symbol}
+                  symbolLabel={node.symbolLabel}
+                  text={node.text}
+                  className={styles.highlight}
+                />
+              ))}
+            </div>
+
+            <h1>Előadások</h1>
+
+            <div className={styles.presentationsContainer}>
+              {data.allPresentationsYaml.edges.map(({ node }) => (
+                <Presentation
+                  key={node.title}
+                  title={node.title}
+                  presenterName={node.presenterName}
+                  presenterRole={node.presenterRole}
+                  presenterImage={
+                    node.presenterImage.childImageSharp.resolutions
+                  }
+                  abstract={node.abstract}
+                />
+              ))}
+            </div>
+          </Container>
+
+          <h1>Helyszín</h1>
+
+          <Container>
+            <p className="text-center">
+              <span role="img" aria-label="Parkoló jel">
+                🅿️
+              </span>{' '}
+              <em>
+                A helyszínen parkolási lehetőség csak korlátozott mennyiségben
+                érhető el
+              </em>
+            </p>
+
+            <iframe
+              src={data.site.siteMetadata.siteAddressURL}
+              title="Térkép"
+              className={styles.mapFrame}
             />
-          ))}
-        </div>
 
-        <h1>Előadások</h1>
-
-        <div className={styles.presentationsContainer}>
-          {data.allPresentationsYaml.edges.map(({ node }) => (
-            <Presentation
-              key={node.title}
-              title={node.title}
-              presenterName={node.presenterName}
-              presenterRole={node.presenterRole}
-              presenterImage={node.presenterImage.childImageSharp.resolutions}
-              abstract={node.abstract}
-            />
-          ))}
-        </div>
-      </Container>
-
-      <h1>Helyszín</h1>
-
-      <Container>
-        <p className="text-center">
-          <span role="img" aria-label="Parkoló jel">
-            🅿️
-          </span>{' '}
-          <em>
-            A helyszínen parkolási lehetőség csak korlátozott mennyiségben
-            érhető el
-          </em>
-        </p>
-
-        <iframe
-          src={data.site.siteMetadata.siteAddressURL}
-          title="Térkép"
-          className={styles.mapFrame}
-        />
-
-        {/*
+            {/*
             <h1>Nyereményjáték</h1>
             <p>
               Szokásunkhoz híven a látogatók között idén is kisorsulunk értékes
@@ -116,23 +156,23 @@ const IndexPage = ({ data }) => (
             </div>
           */}
 
-        <h1>Kapcsolat</h1>
+            <h1>Kapcsolat</h1>
 
-        <div className={styles.contactInfosContainer}>
-          {data.allContactsYaml.edges.map(({ node }) => (
-            <ContactInfo
-              key={node.name}
-              name={node.name}
-              role={node.role}
-              email={node.email}
-              telephone={node.telephone}
-              image={node.image.childImageSharp.resolutions}
-              className={styles.contactInfo}
-            />
-          ))}
-        </div>
+            <div className={styles.contactInfosContainer}>
+              {data.allContactsYaml.edges.map(({ node }) => (
+                <ContactInfo
+                  key={node.name}
+                  name={node.name}
+                  role={node.role}
+                  email={node.email}
+                  telephone={node.telephone}
+                  image={node.image.childImageSharp.resolutions}
+                  className={styles.contactInfo}
+                />
+              ))}
+            </div>
 
-        {/*
+            {/*
           <h1>Támogatók</h1>
 
           {data.allSponsorsYaml.edges.map(({ node }) => (
@@ -152,10 +192,12 @@ const IndexPage = ({ data }) => (
             </div>
           ))}
           */}
-      </Container>
-    </PageContent>
-  </div>
-);
+          </Container>
+        </PageContent>
+      </div>
+    );
+  }
+}
 
 IndexPage.propTypes = {
   data: PropTypes.shape({}).isRequired,
@@ -173,6 +215,7 @@ export const query = graphql`
         siteAddressURL
         siteAddressPretty
         siteEventbriteURL
+        siteEventbriteID
       }
     }
 
