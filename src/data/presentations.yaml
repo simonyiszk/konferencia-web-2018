@@ -10,6 +10,18 @@
   presenterImage: ./pictures/kiss-adam.jpg
   abstract: Előadásom során a Schönherz Kollégium óriáskijelzőjének a fejlődéstörténetét mutatom be, valamint az aktuális fejlesztési irányvonalat. A technikai megoldások mellett kitérek az üzemeltetési kérdésekre is.
 
+- title: Önvezető autó jogi oldala
+  presenterName: Takács Árpás
+  presenterRole: AImotive
+  presenterImage: ./pictures/takacs-arpad.jpg
+  abstract: Az önvezető autózás mára a mesterséges intelligencia alapú technológiák zászlóshajójává vált. Ahhoz, hogy kormány és pedálok nélküli autók népesítsék be a világ útjait, számos technológiai, szabályozási és etikai feltételnek kell teljesülnie – ezekről a feltételekről lesz szó az AImotive előadásában.
+
+- title: "Komplexitásból adódó paradigmaváltás: kongitív hálózatok"
+  presenterName: Dr. Vincze Zoltán
+  presenterRole: Nokia
+  presenterImage: ./pictures/vincze-zoltan.jpg
+  abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel - gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
+
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
   abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
