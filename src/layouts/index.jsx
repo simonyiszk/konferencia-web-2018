@@ -58,7 +58,10 @@ export default class IndexLayout extends React.Component {
           <html lang="hu" />
 
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+          <meta
+            property="og:image"
+            content="https://konferencia.simonyi.bme.hu/logo_big.png"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat"
             rel="stylesheet"
