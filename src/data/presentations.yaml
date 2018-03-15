@@ -22,6 +22,18 @@
   presenterImage: ./pictures/vincze-zoltan.jpg
   abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel - gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
 
+- title: A mesterséges intelligencia gyengeségei és veszélyei
+  presenterName: Móricz Tamás
+  presenterRole: Simonyi Károly Szakkollégium
+  presenterImage: ./pictures/moricz-tamas.jpg
+  abstract: Manapság egyre több területen támaszkodunk a mesterséges intelligenciára. Vezeti az autónkat, tanácsokat ad az orvosunknak és rá alapozzuk a tőzsdei befektetéseinket. De vajon bízhatunk benne? Mennyire könnyen lehet egy "intelligens" rendszert átverni? Vagy milyen veszélyeket rejt magában a túlbozgó használatuk?
+
+- title: Streaming the future – Video Over IP
+  presenterName: Makó Imre
+  presenterRole: Lightware
+  presenterImage: ./pictures/mako-imre.jpg
+  abstract: Az előadás során bemutatásra kerülnek a professzionális videó alkalmazásokban használt extendálási és mátrixolási megoldások, valamint az IP technológia alkalmazhatósága a ProAV világában. Gyakorlati alkalmazások mellett a 10Gb Ethernet alapú virtuális mátrix technológia működésének részleteiben is elmerülünk.
+
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
   abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
