@@ -5,6 +5,7 @@ import Album from '../components/Album';
 import Container from '../components/Container';
 import PageContent from '../components/PageContent';
 import PresentationVideo from '../components/PresentationVideo';
+import Sponsors from '../sections/Sponsors';
 import styles from './retrospective.module.scss';
 
 export const frontmatter = {
@@ -45,6 +46,8 @@ const RetrospectivePage = ({ data }) => (
           />
         ))}
       </div>
+
+      <Sponsors data={data} />
     </Container>
   </PageContent>
 );
@@ -96,5 +99,7 @@ export const query = graphql`
         }
       }
     }
+
+    ...SponsorsSection
   }
 `;
