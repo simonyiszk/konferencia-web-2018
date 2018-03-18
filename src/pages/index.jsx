@@ -172,26 +172,24 @@ class IndexPage extends React.PureComponent {
               ))}
             </div>
 
-            {/*
-          <h1>Támogatók</h1>
+            <h1>Támogatók</h1>
 
-          {data.allSponsorsYaml.edges.map(({ node }) => (
-            <div key={node.category}>
-              <h3 className="text-center">{node.category}</h3>
-              <div className={styles.sponsorLogosContainer}>
-                {node.organizations.map(organization =>
-                    organization.logo != null && (
-                      <img
-                        key={organization.name}
-                        src={organization.logo.publicURL}
-                        alt={organization.name}
-                        style={{ height: node.logosHeight }}
-                      />
-                    ))}
+            {data.allSponsorsYaml.edges.map(({ node }) => (
+              <div key={node.category}>
+                <h3 className="text-center">{node.category}</h3>
+                <div className={styles.sponsorLogosContainer}>
+                  {node.organizations.map(organization =>
+                      organization.logo != null && (
+                        <img
+                          key={organization.name}
+                          src={organization.logo.image.publicURL}
+                          alt={organization.name}
+                          style={{ height: organization.logo.height }}
+                        />
+                      ))}
+                </div>
               </div>
-            </div>
-          ))}
-          */}
+            ))}
           </Container>
         </PageContent>
       </div>
@@ -270,11 +268,13 @@ export const query = graphql`
       edges {
         node {
           category
-          logosHeight
           organizations {
             name
             logo {
-              publicURL
+              image {
+                publicURL
+              }
+              height
             }
           }
         }

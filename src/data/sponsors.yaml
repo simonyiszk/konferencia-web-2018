@@ -1,21 +1,50 @@
 - category: Főtámogató
-  logosHeight: 6em
   organizations:
-    - name: NNG
-      logo: ./logos/nng.svg
-- category: Kiemelt támogatók
-  logosHeight: 3em
-  organizations:
-    - name: Bosch
-    - name: NI
-    - name: Accenture
-      logo: ./logos/accenture.svg
     - name: Vodafone
-    - name: Lightware
-      logo: ./logos/lightware.svg
-    - name: OTP
-      logo: ./logos/otp-bank.svg
-- category: További támogatók
-  logosHeight: 2em
+      logo:
+        image: ./logos/vodafone.svg
+        height: 6em
+- category: Kiemelt támogatók
   organizations:
-    - name: Sicontact
+    - name: Accenture
+      logo:
+        image: ./logos/accenture.svg
+        height: 3em
+    - name: Bosch
+      logo:
+        image: ./logos/bosch.svg
+        height: 3em
+    - name: Lightware
+      logo:
+        image: ./logos/lightware.svg
+        height: 3em
+    - name: National Instruments
+      logo:
+        image: ./logos/national-instruments.svg
+        height: 3em
+    - name: Nokia Bell Labs
+      logo:
+        image: ./logos/nokia-bell-labs.svg
+        height: 1.5em
+    - name: OTP Bank
+      logo:
+        image: ./logos/otp-bank.svg
+        height: 3em
+    - name: BME Villamosmérnöki és Informatikai Kar
+      logo:
+        image: ./logos/bme-vik.svg
+        height: 5em
+- category: További támogatók
+  organizations:
+    - name: Simonyi Károly Szakkollégium
+      logo:
+        image: ./logos/simonyi-szakkollegium.svg
+        height: 3em
+    - name: Schönherz
+      logo:
+        image: ./logos/schonherz.svg
+        height: 3em
+    - name: Schönherz Vállalati Kapcsolatok
+      logo:
+        image: ./logos/svk.svg
+        height: 3em

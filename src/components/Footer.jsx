@@ -4,9 +4,6 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaYouTubePlay from 'react-icons/lib/fa/youtube-play';
-import BMEVIKLogoSrc from '../data/logos/bme-vik.svg';
-import SchonherzLogoSrc from '../data/logos/schonherz.svg';
-import SimonyiSzakkollegiumLogoSrc from '../data/logos/simonyi-szakkollegium.svg';
 import Container from './Container';
 import styles from './Footer.module.scss';
 
@@ -20,20 +17,6 @@ const Footer = ({
 }) => (
   <footer className={`${styles.root} ${className}`} {...props}>
     <Container>
-      <div className={styles.logosContainer}>
-        <img
-          src={SimonyiSzakkollegiumLogoSrc}
-          alt="Simonyi Károly Szakkollégium"
-          className={styles.logo}
-        />
-        <img src={SchonherzLogoSrc} alt="Schönherz" className={styles.logo} />
-        <img
-          src={BMEVIKLogoSrc}
-          alt="BME Villamosmérnöki és Informatikai Kar"
-          className={styles.logoBMEVIK}
-        />
-      </div>
-
       <div className={styles.iconsContainer}>
         <a
           href={siteFacebookURL}
