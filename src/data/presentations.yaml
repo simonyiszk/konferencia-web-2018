@@ -34,6 +34,18 @@
   presenterImage: ./pictures/mako-imre.jpg
   abstract: Az előadás során bemutatásra kerülnek a professzionális videó alkalmazásokban használt extendálási és mátrixolási megoldások, valamint az IP technológia alkalmazhatósága a ProAV világában. Gyakorlati alkalmazások mellett a 10Gb Ethernet alapú virtuális mátrix technológia működésének részleteiben is elmerülünk.
 
+- title: "Légy a világ ura: építs botnet hálózatot"
+  presenterName: Makay Kálmán
+  presenterRole: mySec Kft.
+  presenterImage: ./pictures/makay-kalman.png
+  abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
+
+- title: Smart Factory - Digital Thread használata a digitális gyártásban
+  presenterName: Nagy Dániel
+  presenterRole: Accenture
+  presenterImage: ./pictures/nagy-daniel.jpg
+  abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
+
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
   abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
