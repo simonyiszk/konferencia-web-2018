@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Sponsors.module.scss';
 
 const Sponsors = ({ data }) => (
-  <div>
+  <React.Fragment>
     <h1>Támogatók</h1>
 
     {data.allSponsorsYaml.edges.map(({ node }) => (
@@ -22,7 +22,7 @@ const Sponsors = ({ data }) => (
         </div>
       </div>
     ))}
-  </div>
+  </React.Fragment>
 );
 
 Sponsors.propTypes = {
