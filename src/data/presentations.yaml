@@ -46,6 +46,12 @@
   presenterImage: ./pictures/nagy-daniel.jpg
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
+- title: Biztonságos kommunikáció gépjárművek között - kutatási eredményektől a valós bevezetésig
+  presenterName: Dr. Buttyán Levente
+  presenterRole: CrySyS
+  presenterImage: ./pictures/buttyan-levente.jpg
+  abstract: Ebben az előadásban elmagyarázom a gépjárművek közötti kommunikáció biztonsági kihívásait, bemutatom a korábbi kutatási eredményeket, és áttekintést adok a jelenlegi gyakorlati megvalósítás helyzetéről, kitérve a gépjárművek hitelesítését célzó PKI kérdéseire.
+
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
   abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
