@@ -38,7 +38,7 @@ export default class IndexLayout extends React.Component {
       };
     } else {
       this.state = {
-        windowScrollY: 1,
+        windowScrollY: 0,
         windowInnerHeight: 1,
       };
     }
