@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
+import { navbarBackgroundRGB } from '../utils/colors';
 import Container from './Container';
 import styles from './Navbar.module.scss';
 
@@ -40,15 +41,16 @@ export default class Navbar extends React.Component {
       ...props
     } = this.props;
     const { isNavCollapsed } = this.state;
-    const { background: styleBackground, ...styleWithoutBackground } = style;
 
     return (
       <div style={allocateSpace ? { marginBottom: '4rem' } : {}}>
         <div
           className={`${styles.root} ${className}`}
           style={{
-            ...styleWithoutBackground,
-            ...(isNavCollapsed && { background: styleBackground }),
+            ...style,
+            ...(!isNavCollapsed && {
+              background: `rgb(${navbarBackgroundRGB})`,
+            }),
           }}
           {...props}
         >
@@ -74,7 +76,7 @@ export default class Navbar extends React.Component {
 
             <nav
               id="navbar-nav"
-              className={isNavCollapsed && styles.navCollapsed}
+              className={isNavCollapsed ? styles.navCollapsed : ''}
             >
               <ul className={styles.navItemsContainer}>
                 {React.Children.map(children, navLink => (

@@ -5,10 +5,9 @@ import Helmet from 'react-helmet';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import SimonyiKonferenciaLogoSrc from '../data/logos/simonyi-konferencia.svg';
+import { navbarBackgroundRGB } from '../utils/colors';
 import styles from './index.module.scss';
 import './index.scss';
-
-const colorPrimaryRGB = [78, 28, 57];
 
 const NavLink = ({ ...props }) => (
   <Link
@@ -76,14 +75,14 @@ export default class IndexLayout extends React.Component {
             style={
               isHomepage
                 ? {
-                    background: `rgba(${colorPrimaryRGB}, ${Math.min(
+                    background: `rgba(${navbarBackgroundRGB}, ${Math.min(
                       windowScrollY / (windowInnerHeight / 2),
                       1,
                     )})`,
                   }
                 : {}
             }
-            className={!isHomepage && styles.navbarBackground}
+            className={!isHomepage ? styles.navbarBackground : ''}
           >
             <NavLink to="/">Kezdőlap</NavLink>
             <NavLink to="/retrospective">Visszatekintés</NavLink>
