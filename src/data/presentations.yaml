@@ -20,7 +20,7 @@
   presenterName: Dr. Vincze Zoltán
   presenterRole: Nokia
   presenterImage: ./pictures/vincze-zoltan.jpg
-  abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel - gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
+  abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel – gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
 
 - title: A mesterséges intelligencia gyengeségei és veszélyei
   presenterName: Móricz Tamás
@@ -40,13 +40,13 @@
   presenterImage: ./pictures/makay-kalman.png
   abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
 
-- title: Smart Factory - Digital Thread használata a digitális gyártásban
+- title: Smart Factory – Digital Thread használata a digitális gyártásban
   presenterName: Nagy Dániel
   presenterRole: Accenture
   presenterImage: ./pictures/nagy-daniel.jpg
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
-- title: Biztonságos kommunikáció gépjárművek között - kutatási eredményektől a valós bevezetésig
+- title: Biztonságos kommunikáció gépjárművek között – kutatási eredményektől a valós bevezetésig
   presenterName: Dr. Buttyán Levente
   presenterRole: CrySyS
   presenterImage: ./pictures/buttyan-levente.jpg
