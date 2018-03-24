@@ -39,12 +39,7 @@ class Album extends React.Component {
       <div {...props}>
         <h2 className={styles.title}>{title}</h2>
 
-        <a
-          href={source}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={this.handleClickThumbnail}
-        >
+        <a href={source} onClick={this.handleClickThumbnail}>
           <Img sizes={thumbnail} />
         </a>
 
