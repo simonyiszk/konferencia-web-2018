@@ -10,15 +10,27 @@ const Sponsors = ({ data }) => (
       <div key={node.category}>
         <h3 className="text-center">{node.category}</h3>
         <div className={styles.sponsorLogosContainer}>
-          {node.organizations.map(organization =>
-              organization.logo != null && (
-                <img
-                  key={organization.name}
-                  src={organization.logo.image.publicURL}
-                  alt={organization.name}
-                  style={{ height: organization.logo.height }}
-                />
-              ))}
+          {node.organizations.map((organization) => {
+            if (organization.logo == null) return null;
+
+            const logoImage = (
+              <img
+                src={organization.logo.image.publicURL}
+                alt={organization.name}
+                style={{ height: organization.logo.height }}
+              />
+            );
+
+            return organization.website != null ? (
+              <a key={organization.name} href={organization.website}>
+                {logoImage}
+              </a>
+            ) : (
+              React.cloneElement(logoImage, {
+                key: organization.name,
+              })
+            );
+          })}
         </div>
       </div>
     ))}
@@ -39,6 +51,7 @@ export const query = graphql`
           category
           organizations {
             name
+            website
             logo {
               image {
                 publicURL
