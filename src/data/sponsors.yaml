@@ -30,6 +30,14 @@
       logo:
         image: ./logos/otp-bank.svg
         height: 3em
+    - name: Sicontact
+      logo:
+        image: ./logos/sicontact.svg
+        height: 3em
+    - name: SZOMEL
+      logo:
+        image: ./logos/szomel.png
+        height: 3em
     - name: BME Villamosmérnöki és Informatikai Kar
       logo:
         image: ./logos/bme-vik.svg
