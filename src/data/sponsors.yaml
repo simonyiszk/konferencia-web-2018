@@ -13,6 +13,7 @@
         image: ./logos/accenture.svg
         height: 3em
     - name: Bosch
+      website: http://www.bosch-career.hu
       logo:
         image: ./logos/bosch.svg
         height: 3em
