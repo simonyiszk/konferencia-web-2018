@@ -52,6 +52,18 @@
   presenterImage: ./pictures/buttyan-levente.jpg
   abstract: Ebben az előadásban elmagyarázom a gépjárművek közötti kommunikáció biztonsági kihívásait, bemutatom a korábbi kutatási eredményeket, és áttekintést adok a jelenlegi gyakorlati megvalósítás helyzetéről, kitérve a gépjárművek hitelesítését célzó PKI kérdéseire.
 
+- title: Networks and drones @ Vodafone
+  presenterName: Stelios Savvides
+  presenterRole: Vodafone
+  presenterImage: ./pictures/stelios-savvides.jpg
+  abstract: A key enabler for common drone usage is cellular connectivity. Let us introduce some of the drone projects in Vodafone and explore them together e.g. how we are supporting the adoption of drones with its mobile network based tracking and safety technology and how we are utilizing drones in our networks!
+
+- title: A Simple story – banki innováció történet az OTP-től
+  presenterName: Benyó Péter
+  presenterRole: OTP
+  presenterImage: ./pictures/benyo-peter.jpg
+  abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
+
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
   abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
