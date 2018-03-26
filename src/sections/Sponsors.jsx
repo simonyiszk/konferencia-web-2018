@@ -22,7 +22,12 @@ const Sponsors = ({ data }) => (
             );
 
             return organization.website != null ? (
-              <a key={organization.name} href={organization.website}>
+              <a
+                key={organization.name}
+                href={organization.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {logoImage}
               </a>
             ) : (
