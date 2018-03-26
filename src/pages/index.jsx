@@ -72,6 +72,8 @@ class IndexPage extends React.PureComponent {
                   data.site.siteMetadata.siteEventbriteID
                 }`}
                 href={data.site.siteMetadata.siteEventbriteURL}
+                target="_blank"
+                rel="noopener noreferrer"
                 role="button"
                 className={styles.registrationButton}
                 onClick={(event) => {

@@ -18,15 +18,30 @@ const Footer = ({
   <footer className={`${styles.root} ${className}`} {...props}>
     <Container>
       <div className={styles.iconsContainer}>
-        <a href={siteFacebookURL} aria-label="Facebook">
+        <a
+          href={siteFacebookURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
           <FaFacebookOfficial />
         </a>
 
-        <a href={siteYouTubeURL} aria-label="YouTube">
+        <a
+          href={siteYouTubeURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
           <FaYouTubePlay />
         </a>
 
-        <a href={siteInstagramURL} aria-label="Instagram">
+        <a
+          href={siteInstagramURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
           <FaInstagram />
         </a>
 
