@@ -18,7 +18,7 @@
 
 - title: "Komplexitásból adódó paradigmaváltás: kognitív hálózatok"
   presenterName: Dr. Vincze Zoltán
-  presenterRole: Nokia
+  presenterRole: Kutatómérnök, Nokia
   presenterImage: ./pictures/vincze-zoltan.jpg
   abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel – gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
 
@@ -36,31 +36,31 @@
 
 - title: "Légy a világ ura: építs botnet hálózatot"
   presenterName: Makay Kálmán
-  presenterRole: mySec Kft.
+  presenterRole: Alapító-tulajdonos, mySec Kft.
   presenterImage: ./pictures/makay-kalman.png
   abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
 
 - title: Smart Factory – Digital Thread használata a digitális gyártásban
   presenterName: Nagy Dániel
-  presenterRole: Accenture
+  presenterRole: Senior Digital Engineer, Accenture
   presenterImage: ./pictures/nagy-daniel.jpg
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
 - title: Biztonságos kommunikáció gépjárművek között – kutatási eredményektől a valós bevezetésig
   presenterName: Dr. Buttyán Levente
-  presenterRole: CrySyS
+  presenterRole: CrySyS Lab vezető
   presenterImage: ./pictures/buttyan-levente.jpg
   abstract: Ebben az előadásban elmagyarázom a gépjárművek közötti kommunikáció biztonsági kihívásait, bemutatom a korábbi kutatási eredményeket, és áttekintést adok a jelenlegi gyakorlati megvalósítás helyzetéről, kitérve a gépjárművek hitelesítését célzó PKI kérdéseire.
 
 - title: Networks and drones @ Vodafone
   presenterName: Stelios Savvides
-  presenterRole: Vodafone
+  presenterRole: Head of Mobile Network Development, Vodafone
   presenterImage: ./pictures/stelios-savvides.jpg
   abstract: A key enabler for common drone usage is cellular connectivity. Let us introduce some of the drone projects in Vodafone and explore them together e.g. how we are supporting the adoption of drones with its mobile network based tracking and safety technology and how we are utilizing drones in our networks!
 
 - title: A Simple story – banki innováció történet az OTP-től
   presenterName: Benyó Péter
-  presenterRole: OTP
+  presenterRole: Ügyvezető, OTP Mobile
   presenterImage: ./pictures/benyo-peter.jpg
   abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
 
