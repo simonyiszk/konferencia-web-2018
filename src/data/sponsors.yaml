@@ -46,10 +46,6 @@
       logo:
         image: ./logos/sicontact.svg
         height: 3em
-    - name: SZOMEL
-      logo:
-        image: ./logos/szomel.png
-        height: 3em
 - category: További támogatók
   organizations:
     - name: Simonyi Károly Szakkollégium
@@ -67,3 +63,7 @@
       logo:
         image: ./logos/svk.svg
         height: 3em
+    - name: SZOMEL
+      logo:
+        image: ./logos/szomel.png
+        height: 2em
