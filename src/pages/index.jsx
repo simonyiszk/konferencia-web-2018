@@ -7,6 +7,9 @@ import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
+// import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
+import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
+import PresentationsSectionSeparatorSrc from '../data/section-separators/presentations.svg';
 import Sponsors from '../sections/Sponsors';
 import styles from './index.module.scss';
 
@@ -102,45 +105,56 @@ class IndexPage extends React.PureComponent {
                 />
               ))}
             </div>
-
-            <h1>Előadások</h1>
-
-            <div className={styles.presentationsContainer}>
-              {data.allPresentationsYaml.edges.map(({ node }) => (
-                <Presentation
-                  key={node.title}
-                  title={node.title}
-                  presenterName={node.presenterName}
-                  presenterRole={node.presenterRole}
-                  presenterImage={
-                    node.presenterImage.childImageSharp.resolutions
-                  }
-                  abstract={node.abstract}
-                />
-              ))}
-            </div>
           </Container>
 
-          <h1>Helyszín</h1>
+          <div className={styles.presentationsSection}>
+            <img src={PresentationsSectionSeparatorSrc} alt="" />
 
-          <Container>
-            <p className="text-center">
-              <span role="img" aria-label="Parkoló jel">
-                🅿️
-              </span>{' '}
-              <em>
-                A helyszínen parkolási lehetőség csak korlátozott mennyiségben
-                érhető el
-              </em>
-            </p>
+            <Container>
+              <h1>Előadások</h1>
 
-            <iframe
-              src={data.site.siteMetadata.siteAddressURL}
-              title="Térkép"
-              className={styles.mapFrame}
-            />
+              <div className={styles.presentationsContainer}>
+                {data.allPresentationsYaml.edges.map(({ node }) => (
+                  <Presentation
+                    key={node.title}
+                    title={node.title}
+                    presenterName={node.presenterName}
+                    presenterRole={node.presenterRole}
+                    presenterImage={
+                      node.presenterImage.childImageSharp.resolutions
+                    }
+                    abstract={node.abstract}
+                  />
+                ))}
+              </div>
+            </Container>
+          </div>
 
-            {/*
+          <div className={styles.locationSection}>
+            <img src={LocationSectionSeparatorSrc} alt="" />
+
+            <Container>
+              <h1>Helyszín</h1>
+
+              <p className="text-center">
+                <span role="img" aria-label="Parkoló jel">
+                  🅿️
+                </span>{' '}
+                <em>
+                  A helyszínen parkolási lehetőség csak korlátozott mennyiségben
+                  érhető el
+                </em>
+              </p>
+
+              <iframe
+                src={data.site.siteMetadata.siteAddressURL}
+                title="Térkép"
+                className={styles.mapFrame}
+              />
+            </Container>
+          </div>
+
+          {/*
             <h1>Nyereményjáték</h1>
             <p>
               Szokásunkhoz híven a látogatók között idén is kisorsulunk értékes
@@ -157,6 +171,7 @@ class IndexPage extends React.PureComponent {
             </div>
           */}
 
+          <Container>
             <h1>Kapcsolat</h1>
 
             <div className={styles.contactInfosContainer}>

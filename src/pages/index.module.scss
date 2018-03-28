@@ -94,6 +94,10 @@
   @include item-grid;
 }
 
+.presentationsSection {
+  background: #eee;
+}
+
 .presentationsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +107,11 @@
   @include media-breakpoint-up(lg) {
     @include gap(2rem);
   }
+}
+
+.locationSection {
+  background: #263238;
+  color: white;
 }
 
 .locationMainList {
