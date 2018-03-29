@@ -99,6 +99,15 @@
   background: #eee;
 }
 
+.presentationsSection,
+.locationSection {
+  padding-bottom: 2em;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 4em;
+  }
+}
+
 .presentationsContainer {
   display: flex;
   flex-wrap: wrap;
