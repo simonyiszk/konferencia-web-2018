@@ -10,6 +10,7 @@ import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import PresentationsSectionSeparatorSrc from '../data/section-separators/presentations.svg';
+import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg';
 import Sponsors from '../sections/Sponsors';
 import styles from './index.module.scss';
 
@@ -190,7 +191,13 @@ class IndexPage extends React.PureComponent {
                   />
                 ))}
               </div>
+            </Container>
+          </div>
 
+          <div>
+            <img src={SponsorsSectionSeparatorSrc} alt="" />
+
+            <Container>
               <Sponsors data={data} />
             </Container>
           </div>
