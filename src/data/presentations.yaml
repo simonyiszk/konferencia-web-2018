@@ -43,7 +43,7 @@
 - title: Smart Factory – Digital Thread használata a digitális gyártásban
   presenterName: Nagy Dániel
   presenterRole: Senior Digital Engineer, Accenture
-  presenterImage: ./pictures/nagy-daniel.jpg
+  presenterImage: ./pictures/nagy-daniel-accenture.jpg
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
 - title: Biztonságos kommunikáció gépjárművek között – kutatási eredményektől a valós bevezetésig
@@ -63,6 +63,24 @@
   presenterRole: Ügyvezető, OTP Mobile
   presenterImage: ./pictures/benyo-peter.jpg
   abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
+
+- title: A jövő Bosch gyára a jelenben
+  presenterName: Czirják Katalin
+  presenterRole: Ipar 4.0 projektmenedzser, adatbányász, Bosch
+  presenterImage: ./pictures/czirjak-katalin.jpg
+  abstract: A Bosch iparági kompetenciákkal, ipari megoldások szolgáltatójaként látja el saját magát és partnereit számos Ipar 4.0 megoldással. Előadásomból kiderül, hogyan optimalizáljuk saját világszintű termékbázisunkat, teljes körű és integrált megoldásokkal, vezető felhasználóként első kézből szerzett tapasztalatok alapján.
+
+- title: Mónika – humanoid robotok a kifutón!
+  presenterName: Nagy Dániel
+  presenterRole: R&D Software Engineer, NI
+  presenterImage: ./pictures/nagy-daniel-ni.jpg
+  abstract: Az NI egyik terméke adja annak a 4 fős robot manöken brigádnak az agyát, mely 2017 tavaszán részt vett egy divatbemutatón. Előadásomban szeretném bemutatni, hogyan hozott a világra 5 mérnök kifutó modelleket.
+
+- title: IoT, okoseszközök és más  „okosságok”
+  presenterName: Szincsák Tamás
+  presenterRole: IT Tanácsadó, Sicontact
+  presenterImage: ./pictures/szincsak-tamas.jpg
+  abstract: Előadásomban a hallgatók betekintést nyerhetnek az aktuális okostelefon és IoT eszközök világába valamint áttekintést kaphatnak az aktuális fenyegetésekről is, ezt követően szó fog esni olyan más unortodox fertőzési módszerekről is, amelyek meglepő képességeikkel kilógnak a „hagyományos” kártevők és kibertámadások sorából.
 
 - title: Érdekelnek a további előadások?
   presenterImage: ./pictures/question-mark.png
