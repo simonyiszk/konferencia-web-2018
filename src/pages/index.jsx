@@ -7,7 +7,7 @@ import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
-// import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
+import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import PresentationsSectionSeparatorSrc from '../data/section-separators/presentations.svg';
 import Sponsors from '../sections/Sponsors';
@@ -171,25 +171,29 @@ class IndexPage extends React.PureComponent {
             </div>
           */}
 
-          <Container>
-            <h1>Kapcsolat</h1>
+          <div className={styles.contactSection}>
+            <img src={ContactSectionSeparatorSrc} alt="" />
 
-            <div className={styles.contactInfosContainer}>
-              {data.allContactsYaml.edges.map(({ node }) => (
-                <ContactInfo
-                  key={node.name}
-                  name={node.name}
-                  role={node.role}
-                  email={node.email}
-                  telephone={node.telephone}
-                  image={node.image.childImageSharp.resolutions}
-                  className={styles.contactInfo}
-                />
-              ))}
-            </div>
+            <Container>
+              <h1>Kapcsolat</h1>
 
-            <Sponsors data={data} />
-          </Container>
+              <div className={styles.contactInfosContainer}>
+                {data.allContactsYaml.edges.map(({ node }) => (
+                  <ContactInfo
+                    key={node.name}
+                    name={node.name}
+                    role={node.role}
+                    email={node.email}
+                    telephone={node.telephone}
+                    image={node.image.childImageSharp.resolutions}
+                    className={styles.contactInfo}
+                  />
+                ))}
+              </div>
+
+              <Sponsors data={data} />
+            </Container>
+          </div>
         </PageContent>
       </div>
     );
