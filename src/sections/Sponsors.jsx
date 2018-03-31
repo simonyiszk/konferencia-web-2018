@@ -13,11 +13,17 @@ const Sponsors = ({ data }) => (
           {node.organizations.map((organization) => {
             if (organization.logo == null) return null;
 
+            const logoOuterStyle = organization.logo.occupiesFullRow
+              ? { flex: '100%' }
+              : {};
+
+            const logoInnerStyle = { height: organization.logo.height };
+
             const logoImage = (
               <img
                 src={organization.logo.image.publicURL}
                 alt={organization.name}
-                style={{ height: organization.logo.height }}
+                style={logoInnerStyle}
               />
             );
 
@@ -27,12 +33,17 @@ const Sponsors = ({ data }) => (
                 href={organization.website}
                 target="_blank"
                 rel="noopener noreferrer"
+                style={logoOuterStyle}
               >
                 {logoImage}
               </a>
             ) : (
               React.cloneElement(logoImage, {
                 key: organization.name,
+                style: {
+                  ...logoOuterStyle,
+                  ...logoInnerStyle,
+                },
               })
             );
           })}
@@ -62,6 +73,7 @@ export const query = graphql`
                 publicURL
               }
               height
+              occupiesFullRow
             }
           }
         }

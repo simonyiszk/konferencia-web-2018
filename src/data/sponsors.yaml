@@ -12,6 +12,7 @@
       logo:
         image: ./logos/bme-vik.svg
         height: 5em
+        occupiesFullRow: true
     - name: Accenture
       website: https://www.accenture.com/beyourself
       logo:
