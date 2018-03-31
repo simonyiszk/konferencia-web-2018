@@ -3,8 +3,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   > * {
-    margin: 2rem;
+    margin: 1rem 2rem;
   }
 }
