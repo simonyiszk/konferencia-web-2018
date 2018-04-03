@@ -44,7 +44,7 @@ class IndexPage extends React.PureComponent {
 
     return (
       <div>
-        <Hero className={styles.hero}>
+        <div className={styles.hero}>
           <Container className={styles.streamsSection}>
             <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
@@ -88,9 +88,26 @@ class IndexPage extends React.PureComponent {
           </Container>
 
           <Container>
-            <div>Lorem ipsum TODO</div>
+            <h1 className="text-center">Előadások</h1>
+
+            <div className={styles.presentationsContainer}>
+              {data.allPresentationsYaml.edges.map(({ node }) => (
+                <Presentation
+                  key={node.title}
+                  title={node.title}
+                  presenterName={node.presenterName}
+                  presenterRole={node.presenterRole}
+                  presenterImage={
+                    node.presenterImage.childImageSharp.resolutions
+                  }
+                  time={node.time}
+                  location={node.location}
+                  abstract={node.abstract}
+                />
+              ))}
+            </div>
           </Container>
-        </Hero>
+        </div>
 
         <PageContent>
           <Container>
@@ -109,31 +126,6 @@ class IndexPage extends React.PureComponent {
               ))}
             </div>
           </Container>
-
-          <div className={styles.presentationsSection}>
-            <img src={PresentationsSectionSeparatorSrc} alt="" />
-
-            <Container>
-              <h1>Előadások</h1>
-
-              <div className={styles.presentationsContainer}>
-                {data.allPresentationsYaml.edges.map(({ node }) => (
-                  <Presentation
-                    key={node.title}
-                    title={node.title}
-                    presenterName={node.presenterName}
-                    presenterRole={node.presenterRole}
-                    presenterImage={
-                      node.presenterImage.childImageSharp.resolutions
-                    }
-                    time={node.time}
-                    location={node.location}
-                    abstract={node.abstract}
-                  />
-                ))}
-              </div>
-            </Container>
-          </div>
 
           <div className={styles.locationSection}>
             <img src={LocationSectionSeparatorSrc} alt="" />

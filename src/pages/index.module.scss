@@ -28,6 +28,10 @@
   margin-top: 0;
   text-align: center;
   text-transform: uppercase;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 3em;
+  }
 }
 
 .streamsContainer {
@@ -59,34 +63,18 @@
   @include item-grid;
 }
 
-.presentationsSection,
 .contactSection {
   background: #eee;
 }
 
-.presentationsSection,
 .locationSection {
   padding-bottom: 2em;
+  background: #263238;
+  color: white;
 
   @include media-breakpoint-up(lg) {
     padding-bottom: 4em;
   }
-}
-
-.presentationsContainer {
-  display: flex;
-  flex-wrap: wrap;
-
-  @include gap(1rem);
-
-  @include media-breakpoint-up(lg) {
-    @include gap(2rem);
-  }
-}
-
-.locationSection {
-  background: #263238;
-  color: white;
 }
 
 .locationMainList {
