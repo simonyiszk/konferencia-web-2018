@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import AspectRatioBox from '../components/AspectRatioBox';
 import ContactInfo from '../components/ContactInfo';
 import Container from '../components/Container';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
+import VideoStream from '../components/VideoStream';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg';
@@ -49,38 +49,32 @@ class IndexPage extends React.PureComponent {
             <div className={styles.streamsContainer}>
               <div className={styles.stream}>
                 <h2>IB028 (eredeti)</h2>
-                <AspectRatioBox aspectRatio={16 / 9}>
-                  <iframe
-                    src="https://www.youtube.com/embed/AoDNLGFRNWs"
-                    title="IB028 stream"
-                    allowFullScreen
-                    className={styles.streamFrame}
-                  />
-                </AspectRatioBox>
+
+                <VideoStream
+                  src="https://www.youtube.com/embed/AoDNLGFRNWs"
+                  title="IB028 (eredeti) stream"
+                  allowFullScreen
+                />
               </div>
 
               <div className={styles.stream}>
                 <h2>IB028 (szinkronos)</h2>
-                <AspectRatioBox aspectRatio={16 / 9}>
-                  <iframe
-                    src="https://www.youtube.com/embed/AoDNLGFRNWs"
-                    title="IB028 stream"
-                    allowFullScreen
-                    className={styles.streamFrame}
-                  />
-                </AspectRatioBox>
+
+                <VideoStream
+                  src="https://www.youtube.com/embed/AoDNLGFRNWs"
+                  title="IB028 (szinkronos) stream"
+                  allowFullScreen
+                />
               </div>
 
               <div className={styles.stream}>
                 <h2>IB025</h2>
-                <AspectRatioBox aspectRatio={16 / 9}>
-                  <iframe
-                    src="https://www.youtube.com/embed/5qreqkHn1Vk"
-                    title="IB025 stream"
-                    allowFullScreen
-                    className={styles.streamFrame}
-                  />
-                </AspectRatioBox>
+
+                <VideoStream
+                  src="https://www.youtube.com/embed/5qreqkHn1Vk"
+                  title="IB025 stream"
+                  allowFullScreen
+                />
               </div>
             </div>
           </Container>
