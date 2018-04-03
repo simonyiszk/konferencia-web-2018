@@ -45,48 +45,38 @@ class IndexPage extends React.PureComponent {
     return (
       <div>
         <Hero className={styles.hero}>
-          <Container className={styles.heroContentContainer}>
-            <div className={styles.iconContainer}>
-              <img
-                src={SimonyiKonferenciaIconSrc}
-                alt=""
-                className={styles.icon}
-              />
-            </div>
+          <Container className={styles.streamsSection}>
+            <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
-            <div>
-              <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
-
-              <div>
-                <h2 className={styles.eventDate}>
-                  {data.site.siteMetadata.eventDate}
-                </h2>
-
-                <h2 className={styles.eventVenue}>
-                  {data.site.siteMetadata.eventVenue}
-                </h2>
-
-                <h3 className={styles.eventAddress}>
-                  {data.site.siteMetadata.siteAddressPretty}
-                </h3>
+            <div className={styles.streamsContainer}>
+              <div className={styles.stream}>
+                <h2>IB028</h2>
+                <iframe
+                  src="https://www.youtube.com/embed/AoDNLGFRNWs"
+                  title="IB028 stream"
+                  width="560"
+                  height="315"
+                  allowFullScreen
+                  className={styles.streamFrame}
+                />
               </div>
 
-              <a
-                id={`eventbrite-widget-modal-trigger-${
-                  data.site.siteMetadata.siteEventbriteID
-                }`}
-                href={data.site.siteMetadata.siteEventbriteURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                role="button"
-                className={styles.registrationButton}
-                onClick={(event) => {
-                  event.preventDefault();
-                }}
-              >
-                Regisztráció
-              </a>
+              <div className={styles.stream}>
+                <h2>IB025</h2>
+                <iframe
+                  src="https://www.youtube.com/embed/5qreqkHn1Vk"
+                  title="IB025 stream"
+                  width="560"
+                  height="315"
+                  allowFullScreen
+                  className={styles.streamFrame}
+                />
+              </div>
             </div>
+          </Container>
+
+          <Container>
+            <div>Lorem ipsum TODO</div>
           </Container>
         </Hero>
 

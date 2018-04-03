@@ -5,89 +5,49 @@
 @import '../utils/item-grid';
 
 .hero {
-  min-height: 100vh;
-  padding: 4rem 0;
   background: linear-gradient(137.5deg, $color-secondary, $color-primary);
   color: white;
-}
 
-.heroContentContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  > :first-child {
+    padding-top: 4rem;
+  }
 
-  @include media-breakpoint-up(lg) {
-    flex-flow: row-reverse nowrap;
-    text-align: left;
+  > :last-child {
+    padding-bottom: 4rem;
   }
 }
 
-.iconContainer {
-  flex: 100%;
-
-  @include media-breakpoint-up(lg) {
-    flex: none;
-  }
-}
-
-.icon {
-  height: 100vh;
-  max-height: 8em;
-
-  @include media-breakpoint-up(lg) {
-    max-height: 12em;
-  }
+.streamsSection {
+  min-height: 100vh;
 }
 
 .title {
-  @include media-breakpoint-up(lg) {
-    margin-top: 0;
-    word-spacing: 100vw;
-  }
+  text-align: center;
+  text-transform: uppercase;
 }
 
-%h2 {
-  display: inline;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-  }
-}
-
-.eventDate {
-  @extend %h2;
-}
-
-.eventVenue {
-  @extend %h2;
-
-  margin-bottom: 0;
-
-  &::before {
-    content: ' – ';
-
-    @include media-breakpoint-up(lg) {
-      content: '';
-    }
-  }
-}
-
-.eventAddress {
-  display: none;
-  margin-top: 0.5em;
+.streamsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+  text-align: center;
 
   @include media-breakpoint-up(lg) {
-    display: block;
+    flex-wrap: nowrap;
+
+    @include gap(0 3rem);
+
+    margin-bottom: 4em;
   }
 }
 
-.registrationButton {
-  @include outline-button(white, $color-secondary);
+.stream {
+  flex: 100%;
+}
 
-  margin-top: 1.25em;
-  font-weight: bold;
+.streamFrame {
+  width: 100%;
+  border: none;
 }
 
 .highlightsContainer {
