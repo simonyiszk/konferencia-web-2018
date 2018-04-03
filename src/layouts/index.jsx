@@ -65,8 +65,9 @@ export default class IndexLayout extends React.Component {
             />
             <meta
               property="og:image"
-              content="https://konferencia.simonyi.bme.hu/logo_big.png"
+              content="https://konferencia.simonyi.bme.hu/favicon.png"
             />
+
             <link
               href="https://fonts.googleapis.com/css?family=Montserrat"
               rel="stylesheet"
