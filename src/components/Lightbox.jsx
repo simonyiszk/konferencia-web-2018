@@ -3,6 +3,14 @@ import React from 'react';
 import LightboxBase from 'react-images';
 
 class Lightbox extends React.Component {
+  static getDerivedStateFromProps(nextProps) {
+    if (!nextProps.isOpen) return null;
+
+    return {
+      currentImage: 0,
+    };
+  }
+
   constructor() {
     super();
 
@@ -14,14 +22,6 @@ class Lightbox extends React.Component {
     this.goToNext = this.goToNext.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
     this.handleClickImage = this.handleClickImage.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen) {
-      this.setState({
-        currentImage: 0,
-      });
-    }
   }
 
   goToPrev() {
