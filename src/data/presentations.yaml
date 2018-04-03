@@ -2,90 +2,120 @@
   presenterName: Góczán Bence
   presenterRole: Simonyi Károly Szakkollégium
   presenterImage: ./pictures/goczan-bence.jpg
+  time: 00:00
+  location: IB02X
   abstract: A Simonyi Károly Szakkollégium UPRA csapata egy rugalmasan felhasználható, megbízható magaslégköri ballonplatform kifejlesztésén dolgozik, mely a tervek szerint lehetőséget biztosítana egyetemi kutatócsapatoknak kísérleteik eljuttatására a sztratoszférába. Előadásában, Góczán Bence, a csapat rendszermérnöke bemutatja, milyen kihívásokkal kell megküzdeni, milyen tervezési lépéseket követtek fejlesztés során és milyen tesztelési folyamatok zajlottak le, hogy a fedélzeti rendszer a lehető legmegbízhatóbban működjön.
 
 - title: A mátrix csapdájában
   presenterName: Kiss Ádám
   presenterRole: Simonyi Károly Szakkollégium
   presenterImage: ./pictures/kiss-adam.jpg
+  time: 00:00
+  location: IB02X
   abstract: Előadásom során a Schönherz Kollégium óriáskijelzőjének a fejlődéstörténetét mutatom be, valamint az aktuális fejlesztési irányvonalat. A technikai megoldások mellett kitérek az üzemeltetési kérdésekre is.
 
 - title: Önvezető autó jogi oldala
   presenterName: Takács Árpád
   presenterRole: AImotive
   presenterImage: ./pictures/takacs-arpad.jpg
+  time: 00:00
+  location: IB02X
   abstract: Az önvezető autózás mára a mesterséges intelligencia alapú technológiák zászlóshajójává vált. Ahhoz, hogy kormány és pedálok nélküli autók népesítsék be a világ útjait, számos technológiai, szabályozási és etikai feltételnek kell teljesülnie – ezekről a feltételekről lesz szó az AImotive előadásában.
 
 - title: "Komplexitásból adódó paradigmaváltás: kognitív hálózatok"
   presenterName: Dr. Vincze Zoltán
   presenterRole: Kutatómérnök, Nokia
   presenterImage: ./pictures/vincze-zoltan.jpg
+  time: 00:00
+  location: IB02X
   abstract: A mobiltávközlési technológia rohamos fejlődése bonyolult hálózati rendszereket eredményezett. Bemutatom, hogyan ruházhatók fel ezek a megfelelő felhasználói élmény biztosításához szükséges kognitív képességekkel – gépi tanulás, programozható hálózatok, MI és virtualizációs technológiák ötvözésével.
 
 - title: A mesterséges intelligencia gyengeségei és veszélyei
   presenterName: Móricz Tamás
   presenterRole: Simonyi Károly Szakkollégium
   presenterImage: ./pictures/moricz-tamas.jpg
+  time: 00:00
+  location: IB02X
   abstract: Manapság egyre több területen támaszkodunk a mesterséges intelligenciára. Vezeti az autónkat, tanácsokat ad az orvosunknak és rá alapozzuk a tőzsdei befektetéseinket. De vajon bízhatunk benne? Mennyire könnyen lehet egy "intelligens" rendszert átverni? Vagy milyen veszélyeket rejt magában a túlbozgó használatuk?
 
 - title: Streaming the future – Video Over IP
   presenterName: Makó Imre
   presenterRole: Lightware
   presenterImage: ./pictures/mako-imre.jpg
+  time: 00:00
+  location: IB02X
   abstract: Az előadás során bemutatásra kerülnek a professzionális videó alkalmazásokban használt extendálási és mátrixolási megoldások, valamint az IP technológia alkalmazhatósága a ProAV világában. Gyakorlati alkalmazások mellett a 10Gb Ethernet alapú virtuális mátrix technológia működésének részleteiben is elmerülünk.
 
 - title: "Légy a világ ura: építs botnet hálózatot"
   presenterName: Makay Kálmán
   presenterRole: Alapító-tulajdonos, mySec Kft.
   presenterImage: ./pictures/makay-kalman.png
+  time: 00:00
+  location: IB02X
   abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
 
 - title: Smart Factory – Digital Thread használata a digitális gyártásban
   presenterName: Nagy Dániel
   presenterRole: Senior Digital Engineer, Accenture
   presenterImage: ./pictures/nagy-daniel-accenture.jpg
+  time: 00:00
+  location: IB02X
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
 - title: Biztonságos kommunikáció gépjárművek között – kutatási eredményektől a valós bevezetésig
   presenterName: Dr. Buttyán Levente
   presenterRole: CrySyS Lab vezető
   presenterImage: ./pictures/buttyan-levente.jpg
+  time: 00:00
+  location: IB02X
   abstract: Ebben az előadásban elmagyarázom a gépjárművek közötti kommunikáció biztonsági kihívásait, bemutatom a korábbi kutatási eredményeket, és áttekintést adok a jelenlegi gyakorlati megvalósítás helyzetéről, kitérve a gépjárművek hitelesítését célzó PKI kérdéseire.
 
 - title: Networks and drones @ Vodafone
   presenterName: Stelios Savvides
   presenterRole: Head of Mobile Network Development, Vodafone
   presenterImage: ./pictures/stelios-savvides.jpg
+  time: 00:00
+  location: IB02X
   abstract: A key enabler for common drone usage is cellular connectivity. Let us introduce some of the drone projects in Vodafone and explore them together e.g. how we are supporting the adoption of drones with its mobile network based tracking and safety technology and how we are utilizing drones in our networks!
 
 - title: A Simple story – banki innováció történet az OTP-től
   presenterName: Benyó Péter
   presenterRole: Ügyvezető, OTP Mobile
   presenterImage: ./pictures/benyo-peter.jpg
+  time: 00:00
+  location: IB02X
   abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
 
 - title: A jövő Bosch gyára a jelenben
   presenterName: Czirják Katalin
   presenterRole: Ipar 4.0 projektmenedzser, adatbányász, Bosch
   presenterImage: ./pictures/czirjak-katalin.jpg
+  time: 00:00
+  location: IB02X
   abstract: A Bosch iparági kompetenciákkal, ipari megoldások szolgáltatójaként látja el saját magát és partnereit számos Ipar 4.0 megoldással. Előadásomból kiderül, hogyan optimalizáljuk saját világszintű termékbázisunkat, teljes körű és integrált megoldásokkal, vezető felhasználóként első kézből szerzett tapasztalatok alapján.
 
 - title: Mónika – humanoid robotok a kifutón!
   presenterName: Nagy Dániel
   presenterRole: R&D Software Engineer, NI
   presenterImage: ./pictures/nagy-daniel-ni.jpg
+  time: 00:00
+  location: IB02X
   abstract: Az NI egyik terméke adja annak a 4 fős robot manöken brigádnak az agyát, mely 2017 tavaszán részt vett egy divatbemutatón. Előadásomban szeretném bemutatni, hogyan hozott a világra 5 mérnök kifutó modelleket.
 
 - title: IoT, okoseszközök és más  „okosságok”
   presenterName: Szincsák Tamás
   presenterRole: IT Tanácsadó, Sicontact
   presenterImage: ./pictures/szincsak-tamas.jpg
+  time: 00:00
+  location: IB02X
   abstract: Előadásomban a hallgatók betekintést nyerhetnek az aktuális okostelefon és IoT eszközök világába valamint áttekintést kaphatnak az aktuális fenyegetésekről is, ezt követően szó fog esni olyan más unortodox fertőzési módszerekről is, amelyek meglepő képességeikkel kilógnak a „hagyományos” kártevők és kibertámadások sorából.
 
 - title: A blockchain alapú technológia alkalmazhatóságának fejtörői
   presenterName: Csabai Csaba
   presenterRole: Blogger, variance.hu
   presenterImage: ./pictures/csabai-csaba.jpg
+  time: 00:00
+  location: IB02X
   abstract: Az ipari 4.0 árnyékában csendben kialakuló blockchain technológiai komoly fejtörést okoz a mai megoldásszállítóknak. A blockchain technológia adottságai (tokenizáció, manipulálhatatlanság, harmadik fél nélküli bizalom) alapvetően fogják megreformálni az összes olyan iparágat, amit 20 éve már aktívan reformál az Internet. Hogyan fog kinézni az a világ, aminek új alapját az Értékek Internete adja?
 
 - title: Érdekelnek a további előadások?

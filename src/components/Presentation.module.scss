@@ -4,7 +4,6 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
 
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
@@ -26,8 +25,19 @@
   border-radius: 50%;
 }
 
+.timeAndLocationContainer {
+  text-align: right;
+}
+
 @include media-breakpoint-up(lg) {
+  .time,
   .title {
+    margin-top: 1rem;
+    margin-bottom: 0.25em;
+  }
+
+  .location,
+  .presenterInfo {
     margin-top: 0;
   }
 

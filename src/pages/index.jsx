@@ -113,6 +113,8 @@ class IndexPage extends React.PureComponent {
                     presenterImage={
                       node.presenterImage.childImageSharp.resolutions
                     }
+                    time={node.time}
+                    location={node.location}
                     abstract={node.abstract}
                   />
                 ))}
@@ -235,11 +237,13 @@ export const query = graphql`
           presenterRole
           presenterImage {
             childImageSharp {
-              resolutions(width: 192, height: 192, cropFocus: CENTER) {
+              resolutions(width: 86, height: 86, cropFocus: CENTER) {
                 ...GatsbyImageSharpResolutions
               }
             }
           }
+          time
+          location
           abstract
         }
       }
