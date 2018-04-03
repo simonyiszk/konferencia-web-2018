@@ -49,57 +49,62 @@ export default class IndexLayout extends React.Component {
     const isHomepage = location.pathname === withPrefix('/');
 
     return (
-      <div className={styles.root}>
-        <Helmet
-          titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-          defaultTitle={data.site.siteMetadata.title}
-        >
-          <html lang="hu" />
-
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            property="og:image"
-            content="https://konferencia.simonyi.bme.hu/logo_big.png"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Montserrat"
-            rel="stylesheet"
-          />
-        </Helmet>
-
-        {/* TODO: A proper navigation bar */}
-        <header className={styles.header}>
-          <Navbar
-            brandImageSrc={SimonyiKonferenciaLogoSrc}
-            allocateSpace={!isHomepage}
-            style={
-              isHomepage
-                ? {
-                    background: `rgba(${navbarBackgroundRGB}, ${Math.min(
-                      windowScrollY / (windowInnerHeight / 2),
-                      1,
-                    )})`,
-                  }
-                : {}
-            }
-            className={!isHomepage ? styles.navbarBackground : ''}
+      <React.StrictMode>
+        <div className={styles.root}>
+          <Helmet
+            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            defaultTitle={data.site.siteMetadata.title}
           >
-            <NavLink to="/">Kezdőlap</NavLink>
-            <NavLink to="/retrospective">Visszatekintés</NavLink>
-            <NavLink to="/sponsors">Támogatók</NavLink>
-          </Navbar>
-        </header>
+            <html lang="hu" />
 
-        <main className={styles.main}>{children()}</main>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <meta
+              property="og:image"
+              content="https://konferencia.simonyi.bme.hu/logo_big.png"
+            />
+            <link
+              href="https://fonts.googleapis.com/css?family=Montserrat"
+              rel="stylesheet"
+            />
+          </Helmet>
 
-        <Footer
-          siteEmailURL={data.site.siteMetadata.siteEmailURL}
-          siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
-          siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
-          siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
-          className={styles.footer}
-        />
-      </div>
+          {/* TODO: A proper navigation bar */}
+          <header className={styles.header}>
+            <Navbar
+              brandImageSrc={SimonyiKonferenciaLogoSrc}
+              allocateSpace={!isHomepage}
+              style={
+                isHomepage
+                  ? {
+                      background: `rgba(${navbarBackgroundRGB}, ${Math.min(
+                        windowScrollY / (windowInnerHeight / 2),
+                        1,
+                      )})`,
+                    }
+                  : {}
+              }
+              className={!isHomepage ? styles.navbarBackground : ''}
+            >
+              <NavLink to="/">Kezdőlap</NavLink>
+              <NavLink to="/retrospective">Visszatekintés</NavLink>
+              <NavLink to="/sponsors">Támogatók</NavLink>
+            </Navbar>
+          </header>
+
+          <main className={styles.main}>{children()}</main>
+
+          <Footer
+            siteEmailURL={data.site.siteMetadata.siteEmailURL}
+            siteFacebookURL={data.site.siteMetadata.siteFacebookURL}
+            siteYouTubeURL={data.site.siteMetadata.siteYouTubeURL}
+            siteInstagramURL={data.site.siteMetadata.siteInstagramURL}
+            className={styles.footer}
+          />
+        </div>
+      </React.StrictMode>
     );
   }
 }
