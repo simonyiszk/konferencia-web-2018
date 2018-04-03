@@ -6,7 +6,6 @@ import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
-import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import PresentationsSectionSeparatorSrc from '../data/section-separators/presentations.svg';
