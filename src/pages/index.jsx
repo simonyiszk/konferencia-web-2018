@@ -234,7 +234,7 @@ export const query = graphql`
           presenterRole
           presenterImage {
             childImageSharp {
-              resolutions(width: 86, height: 86, cropFocus: CENTER) {
+              resolutions(width: 92, height: 92, cropFocus: CENTER) {
                 ...GatsbyImageSharpResolutions
               }
             }

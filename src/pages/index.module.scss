@@ -58,7 +58,11 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include gap(1rem);
+  @include gap(0 1rem);
+
+  @include media-breakpoint-up(lg) {
+    @include gap(1rem);
+  }
 }
 
 .highlightsContainer {

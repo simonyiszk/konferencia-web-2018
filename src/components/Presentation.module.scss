@@ -19,6 +19,8 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include gap(0 1rem);
+
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
 
@@ -27,10 +29,12 @@
 }
 
 .presenterImageContainer {
+  display: none;
   flex: 100%;
   text-align: center;
 
   @include media-breakpoint-up(lg) {
+    display: block;
     flex: initial;
   }
 }
@@ -47,19 +51,17 @@
   flex: 1;
 }
 
-@include media-breakpoint-up(lg) {
-  .time,
-  .title {
-    margin-top: 1rem;
-    margin-bottom: 0.25em;
-  }
+.time,
+.title {
+  margin-bottom: 0.25em;
+  font-size: 1.25em;
 
-  .location,
-  .presenterInfo {
-    margin-top: 0;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5em;
   }
+}
 
-  .abstract {
-    margin-bottom: 0;
-  }
+.location,
+.presenterInfo {
+  margin-top: 0;
 }
