@@ -2,6 +2,20 @@
 @import '../utils/flexbox';
 
 .root {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  color: inherit;
+  text-align: left;
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+  }
+}
+
+.article {
   display: flex;
   flex-wrap: wrap;
 
@@ -27,6 +41,10 @@
 
 .timeAndLocationContainer {
   text-align: right;
+}
+
+.presentationDetailsContainer {
+  flex: 1;
 }
 
 @include media-breakpoint-up(lg) {

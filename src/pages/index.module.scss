@@ -54,6 +54,13 @@
   flex: 100%;
 }
 
+.presentationsContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include gap(1rem);
+}
+
 .highlightsContainer {
   @include item-grid;
 }
