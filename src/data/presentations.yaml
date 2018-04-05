@@ -1,3 +1,15 @@
+- title: Manage 'em Fibers! – An agile approach to serve billions of people
+  presenterName: Dobson Levente
+  presenterRole: Facebook
+  presenterImage: ./pictures/dobson-levente.jpg
+  abstract: Billions of people use Facebook all over the world. With traffic growing day-by-day the scale at which we build and operate datacenters brings some interesting challenges. Besides the challenges - which might be very specific to companies operating at such scale - I am also going to talk about the principles we use to approach these problems.
+
+- title: Szerezzük vissza a kiterjesztett valóságot a Terminatortól
+  presenterName: Somlai-Fischer Ádám
+  presenterRole: Művészeti vezető és társalapító, Prezi
+  presenterImage: ./pictures/somlai-fischer-adam.jpg
+  abstract: Manapság egyre nagyobb teret hódít magának a kiterjesztett valóság. A Prezi küldetése, hogy mindenki számára lehetővé váljon az ötletük vizuális és térbeli kifejezése. Hogyan lehet ezt ötvözni a kiterjesztett valósággal és csupán egy laptop segítségével megvalósítani? Gyere el az előadásomra, ahol ezekre is választ kapsz!
+
 - title: Fejlesztés és tesztelés úton a sztratoszférába
   presenterName: Góczán Bence
   presenterRole: Simonyi Károly Szakkollégium
@@ -37,7 +49,7 @@
 - title: "Légy a világ ura: építs botnet hálózatot"
   presenterName: Makay Kálmán
   presenterRole: Alapító-tulajdonos, mySec Kft.
-  presenterImage: ./pictures/makay-kalman.png
+  presenterImage: ./pictures/makay-kalman.jpg
   abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
 
 - title: Smart Factory – Digital Thread használata a digitális gyártásban
@@ -76,7 +88,7 @@
   presenterImage: ./pictures/nagy-daniel-ni.jpg
   abstract: Az NI egyik terméke adja annak a 4 fős robot manöken brigádnak az agyát, mely 2017 tavaszán részt vett egy divatbemutatón. Előadásomban szeretném bemutatni, hogyan hozott a világra 5 mérnök kifutó modelleket.
 
-- title: IoT, okoseszközök és más  „okosságok”
+- title: IoT, okoseszközök és más „okosságok”
   presenterName: Szincsák Tamás
   presenterRole: IT Tanácsadó, Sicontact
   presenterImage: ./pictures/szincsak-tamas.jpg
@@ -87,7 +99,3 @@
   presenterRole: Blogger, variance.hu
   presenterImage: ./pictures/csabai-csaba.jpg
   abstract: Az ipari 4.0 árnyékában csendben kialakuló blockchain technológiai komoly fejtörést okoz a mai megoldásszállítóknak. A blockchain technológia adottságai (tokenizáció, manipulálhatatlanság, harmadik fél nélküli bizalom) alapvetően fogják megreformálni az összes olyan iparágat, amit 20 éve már aktívan reformál az Internet. Hogyan fog kinézni az a világ, aminek új alapját az Értékek Internete adja?
-
-- title: Érdekelnek a további előadások?
-  presenterImage: ./pictures/question-mark.png
-  abstract: Ha érdekelnek, milyen előadók lesznek a továbbiakban, akkor kövesd a <a href="https://www.facebook.com/events/2452825948276800/" target="_blank" rel="noopener noreferrer">Facebook eseményünket</a>, vagy térj vissza rendszeresen a weboldalunkra! Hétről hétre egyre izgalmasabb előadásokat teszünk elérhetővé, így március végére kiderülhet, hogy ki az a 17 előadó, akiknek az előadásait meghallgathatod áprilisban a XV. Simonyi Konferencián.
