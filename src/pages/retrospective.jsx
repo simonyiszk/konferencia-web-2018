@@ -85,7 +85,7 @@ export const query = graphql`
                 maxWidth: 690
                 maxHeight: 460
                 cropFocus: EAST
-                quality: 100
+                quality: 92
               ) {
                 ...GatsbyImageSharpSizes
               }
@@ -94,7 +94,7 @@ export const query = graphql`
           images {
             path {
               childImageSharp {
-                sizes(maxWidth: 1024, jpegProgressive: true, quality: 100) {
+                sizes(maxWidth: 1024, jpegProgressive: true, quality: 92) {
                   src
                   srcSet
                 }
