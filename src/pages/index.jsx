@@ -238,7 +238,7 @@ export const query = graphql`
                 width: 92
                 height: 92
                 cropFocus: CENTER
-                quality: 100
+                quality: 92
               ) {
                 ...GatsbyImageSharpResolutions
               }
@@ -264,7 +264,7 @@ export const query = graphql`
                 width: 256
                 height: 256
                 cropFocus: CENTER
-                quality: 100
+                quality: 92
               ) {
                 ...GatsbyImageSharpResolutions
               }
