@@ -81,7 +81,12 @@ export const query = graphql`
           source
           thumbnail {
             childImageSharp {
-              sizes(maxWidth: 690, maxHeight: 460, cropFocus: EAST) {
+              sizes(
+                maxWidth: 690
+                maxHeight: 460
+                cropFocus: EAST
+                quality: 100
+              ) {
                 ...GatsbyImageSharpSizes
               }
             }
@@ -89,7 +94,7 @@ export const query = graphql`
           images {
             path {
               childImageSharp {
-                sizes(maxWidth: 1024, jpegProgressive: true) {
+                sizes(maxWidth: 1024, jpegProgressive: true, quality: 100) {
                   src
                   srcSet
                 }

@@ -246,7 +246,12 @@ export const query = graphql`
           presenterRole
           presenterImage {
             childImageSharp {
-              resolutions(width: 192, height: 192, cropFocus: CENTER) {
+              resolutions(
+                width: 192
+                height: 192
+                cropFocus: CENTER
+                quality: 100
+              ) {
                 ...GatsbyImageSharpResolutions
               }
             }
@@ -265,7 +270,12 @@ export const query = graphql`
           telephone
           image {
             childImageSharp {
-              resolutions(width: 256, height: 256, cropFocus: CENTER) {
+              resolutions(
+                width: 256
+                height: 256
+                cropFocus: CENTER
+                quality: 100
+              ) {
                 ...GatsbyImageSharpResolutions
               }
             }
