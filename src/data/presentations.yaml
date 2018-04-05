@@ -1,3 +1,15 @@
+- title: Manage 'em Fibers! – An agile approach to serve billions of people
+  presenterName: Dobson Levente
+  presenterRole: Facebook
+  presenterImage: ./pictures/dobson-levente.jpg
+  abstract: Billions of people use Facebook all over the world. With traffic growing day-by-day the scale at which we build and operate datacenters brings some interesting challenges. Besides the challenges - which might be very specific to companies operating at such scale - I am also going to talk about the principles we use to approach these problems.
+
+- title: Szerezzük vissza a kiterjesztett valóságot a Terminatortól
+  presenterName: Somlai-Fischer Ádám
+  presenterRole: Művészeti vezető és társalapító, Prezi
+  presenterImage: ./pictures/somlai-fischer-adam.jpg
+  abstract: Manapság egyre nagyobb teret hódít magának a kiterjesztett valóság. A Prezi küldetése, hogy mindenki számára lehetővé váljon az ötletük vizuális és térbeli kifejezése. Hogyan lehet ezt ötvözni a kiterjesztett valósággal és csupán egy laptop segítségével megvalósítani? Gyere el az előadásomra, ahol ezekre is választ kapsz!
+
 - title: Fejlesztés és tesztelés úton a sztratoszférába
   presenterName: Góczán Bence
   presenterRole: Simonyi Károly Szakkollégium
@@ -49,7 +61,7 @@
 - title: "Légy a világ ura: építs botnet hálózatot"
   presenterName: Makay Kálmán
   presenterRole: Alapító-tulajdonos, mySec Kft.
-  presenterImage: ./pictures/makay-kalman.png
+  presenterImage: ./pictures/makay-kalman.jpg
   time: 00:00
   location: IB02X
   abstract: "Mások erőforrásának a használata nem idegen az állatvilágban, amely működhet kihasználás, vagy szimbiózis alapján is. Így sincs más az IT világában: előadásomban elmondom, hogy a rossz oldalon állók milyen célok mentén dolgoznak és milyen más lehetőségek rejlenek a hálózatra kötött rendszerek kapcsán."
@@ -102,7 +114,7 @@
   location: IB02X
   abstract: Az NI egyik terméke adja annak a 4 fős robot manöken brigádnak az agyát, mely 2017 tavaszán részt vett egy divatbemutatón. Előadásomban szeretném bemutatni, hogyan hozott a világra 5 mérnök kifutó modelleket.
 
-- title: IoT, okoseszközök és más  „okosságok”
+- title: IoT, okoseszközök és más „okosságok”
   presenterName: Szincsák Tamás
   presenterRole: IT Tanácsadó, Sicontact
   presenterImage: ./pictures/szincsak-tamas.jpg
