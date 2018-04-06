@@ -9,19 +9,19 @@
     "format": "prettier-eslint --write \"**/*.{js,jsx,json,scss,md}\""
   },
   "dependencies": {
-    "gatsby": "^1.9.175",
-    "gatsby-image": "^1.0.34",
+    "gatsby": "^1.9.246",
+    "gatsby-image": "^1.0.43",
     "gatsby-link": "^1.6.35",
     "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-google-analytics": "^1.0.25",
+    "gatsby-plugin-google-analytics": "^1.0.28",
     "gatsby-plugin-react-helmet": "^2.0.4",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^1.0.16",
     "gatsby-plugin-sharp": "^1.6.27",
-    "gatsby-source-filesystem": "^1.5.16",
+    "gatsby-source-filesystem": "^1.5.28",
     "gatsby-transformer-sharp": "^1.6.17",
     "gatsby-transformer-yaml": "^1.5.14",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-images": "^0.5.16"
@@ -33,9 +33,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "prettier-eslint-cli": "^4.7.0",
-    "stylelint": "^8.4.0",
+    "stylelint": "^9.2.0",
     "stylelint-config-idiomatic-order": "^5.0.0",
     "stylelint-config-recommended-scss": "^3.0.0",
-    "stylelint-scss": "^2.2.0"
+    "stylelint-scss": "^3.0.0"
   }
 }
