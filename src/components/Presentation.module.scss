@@ -41,7 +41,12 @@
 }
 
 .timeAndLocationContainer {
+  flex: 0 0 8ch;
   text-align: right;
+
+  @include media-breakpoint-up(lg) {
+    flex-basis: 11ch;
+  }
 }
 
 .presentationDetailsContainer {
