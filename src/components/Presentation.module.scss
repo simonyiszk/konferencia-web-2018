@@ -17,13 +17,10 @@
 
 .article {
   display: flex;
-  flex-wrap: wrap;
 
   @include gap(0 1rem);
 
   @include media-breakpoint-up(lg) {
-    flex-wrap: nowrap;
-
     @include gap(0 2rem);
   }
 }
@@ -54,7 +51,7 @@
 .time,
 .title {
   margin-bottom: 0.25em;
-  font-size: 1.25em;
+  font-size: 1.15em;
 
   @include media-breakpoint-up(lg) {
     font-size: 1.5em;
