@@ -8,6 +8,8 @@ const Presentation = ({
   presenterName,
   presenterRole,
   presenterImage,
+  time,
+  location,
   abstract,
   className,
   ...props
@@ -17,18 +19,23 @@ const Presentation = ({
       <Img resolutions={presenterImage} className={styles.presenterImage} />
     </div>
 
-    <div>
+    <div className={styles.timeAndLocationContainer}>
+      <h2 className={styles.time}>{time}</h2>
+      <p className={styles.location}>{location}</p>
+    </div>
+
+    <div className={styles.presentationDetailsContainer}>
       <h2 className={styles.title}>{title}</h2>
       {presenterName != null && (
-        <p>
+        <p className={styles.presenterInfo}>
           {presenterName} – {presenterRole}
         </p>
       )}
 
       <p
-        className={styles.abstract}
         /* eslint-disable-next-line react/no-danger */
         dangerouslySetInnerHTML={{ __html: abstract }}
+        className={styles.abstract}
       />
     </div>
   </article>
@@ -39,6 +46,8 @@ Presentation.propTypes = {
   presenterName: PropTypes.string,
   presenterRole: PropTypes.string,
   presenterImage: PropTypes.shape({}).isRequired,
+  time: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   abstract: PropTypes.string.isRequired,
   className: PropTypes.string,
 };

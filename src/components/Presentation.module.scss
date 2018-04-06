@@ -4,7 +4,8 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+
+  @include gap(0 1rem);
 
   @include media-breakpoint-up(lg) {
     flex-wrap: nowrap;
@@ -26,12 +27,30 @@
   border-radius: 50%;
 }
 
-@include media-breakpoint-up(lg) {
-  .title {
-    margin-top: 0;
-  }
+.timeAndLocationContainer {
+  flex: 0 0 8ch;
+  text-align: right;
 
-  .abstract {
-    margin-bottom: 0;
+  @include media-breakpoint-up(lg) {
+    flex-basis: 11ch;
   }
+}
+
+.presentationDetailsContainer {
+  flex: 1;
+}
+
+.time,
+.title {
+  margin-bottom: 0.25em;
+  font-size: 1.15em;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5em;
+  }
+}
+
+.location,
+.presenterInfo {
+  margin-top: 0;
 }

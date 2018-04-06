@@ -124,6 +124,8 @@ class IndexPage extends React.PureComponent {
                     presenterImage={
                       node.presenterImage.childImageSharp.resolutions
                     }
+                    time={node.time}
+                    location={node.location}
                     abstract={node.abstract}
                   />
                 ))}
@@ -256,6 +258,8 @@ export const query = graphql`
               }
             }
           }
+          time: date(formatString: "HH:mm")
+          location
           abstract
         }
       }
