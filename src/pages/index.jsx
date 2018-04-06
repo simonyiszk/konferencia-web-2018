@@ -244,7 +244,7 @@ export const query = graphql`
               }
             }
           }
-          time
+          time: date(formatString: "HH:mm")
           location
           abstract
         }
