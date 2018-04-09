@@ -22,13 +22,6 @@ export default class IndexLayout extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      windowScrollY: 0,
-      windowInnerHeight: 1,
-    };
-  }
-
-  componentDidMount() {
     if (typeof window !== 'undefined') {
       this.state = {
         windowScrollY: window.scrollY,
@@ -42,6 +35,11 @@ export default class IndexLayout extends React.Component {
       window.addEventListener('resize', () => {
         this.setState({ windowInnerHeight: window.innerHeight });
       });
+    } else {
+      this.state = {
+        windowScrollY: 0,
+        windowInnerHeight: 1,
+      };
     }
   }
 
