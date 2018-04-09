@@ -55,9 +55,9 @@
   abstract: Ebben az előadásban elmagyarázom a gépjárművek közötti kommunikáció biztonsági kihívásait, bemutatom a korábbi kutatási eredményeket, és áttekintést adok a jelenlegi gyakorlati megvalósítás helyzetéről, kitérve a gépjárművek hitelesítését célzó PKI kérdéseire.
 
 - title: Streaming the future – Video Over IP
-  presenterName: Makó Imre
-  presenterRole: Lightware
-  presenterImage: ./pictures/mako-imre.jpg
+  presenterName: Vida Gergely
+  presenterRole: Ügyvezető, Lightware
+  presenterImage: ./pictures/vida-gergely.jpg
   date: "2018-04-18T15:15Z"
   location: IB025
   abstract: Az előadás során bemutatásra kerülnek a professzionális videó alkalmazásokban használt extendálási és mátrixolási megoldások, valamint az IP technológia alkalmazhatósága a ProAV világában. Gyakorlati alkalmazások mellett a 10Gb Ethernet alapú virtuális mátrix technológia működésének részleteiben is elmerülünk.
