@@ -29,7 +29,7 @@
         image: ./logos/lightware.svg
         height: 3em
     - name: National Instruments
-      website:
+      website: http://hungary.ni.com/debrecen
       logo:
         image: ./logos/national-instruments.svg
         height: 3em
