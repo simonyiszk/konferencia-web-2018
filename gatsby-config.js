@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'XV. Simonyi Konferencia',
+    baseURL: 'https://konferencia.simonyi.bme.hu',
     eventDate: '2018-04-18',
     eventVenue: 'BME I épület',
     siteAddressURL:

@@ -61,9 +61,10 @@ export default class IndexLayout extends React.Component {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+
             <meta
               property="og:image"
-              content="https://konferencia.simonyi.bme.hu/favicon.png"
+              content={`${data.site.siteMetadata.baseURL}/cover.png`}
             />
 
             <link
@@ -121,6 +122,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        baseURL
         siteEmailURL
         siteFacebookURL
         siteYouTubeURL
