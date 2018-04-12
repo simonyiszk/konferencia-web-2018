@@ -6,13 +6,13 @@
   location: IB028
   abstract: A Bosch iparági kompetenciákkal, ipari megoldások szolgáltatójaként látja el saját magát és partnereit számos Ipar 4.0 megoldással. Előadásomból kiderül, hogyan optimalizáljuk saját világszintű termékbázisunkat, teljes körű és integrált megoldásokkal, vezető felhasználóként első kézből szerzett tapasztalatok alapján.
 
-- title: IoT, okoseszközök és más „okosságok”
-  presenterName: Szincsák Tamás
-  presenterRole: IT Tanácsadó, Sicontact
-  presenterImage: ./pictures/szincsak-tamas.jpg
+- title: A Simple story – banki innováció történet az OTP-től
+  presenterName: Benyó Péter
+  presenterRole: Ügyvezető, OTP Mobile
+  presenterImage: ./pictures/benyo-peter.jpg
   date: "2018-04-18T13:30Z"
   location: IB025
-  abstract: Előadásomban a hallgatók betekintést nyerhetnek az aktuális okostelefon és IoT eszközök világába valamint áttekintést kaphatnak az aktuális fenyegetésekről is, ezt követően szó fog esni olyan más unortodox fertőzési módszerekről is, amelyek meglepő képességeikkel kilógnak a „hagyományos” kártevők és kibertámadások sorából.
+  abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
 
 - title: Mónika – humanoid robotok a kifutón!
   presenterName: Nagy Dániel
@@ -70,13 +70,13 @@
   location: IB028
   abstract: Sokszor találkozol a digital thread kifejezéssel, de nem tudod hogy pontosan micsoda? Kíváncsi lenné rá, hogyan használják a cégek? Hogy néz ki ez a digitális gyártásban? Gyere el az Accenture előadására és ismerd meg a digital thread folyamatát gyakori demókon keresztül vegyítve a kiterjesztett valósággal.
 
-- title: A Simple story – banki innováció történet az OTP-től
-  presenterName: Benyó Péter
-  presenterRole: Ügyvezető, OTP Mobile
-  presenterImage: ./pictures/benyo-peter.jpg
+- title: IoT, okoseszközök és más „okosságok”
+  presenterName: Szincsák Tamás
+  presenterRole: IT Tanácsadó, Sicontact
+  presenterImage: ./pictures/szincsak-tamas.jpg
   date: "2018-04-18T15:45Z"
   location: IB025
-  abstract: Előadásomban arról mesélek, hogyan jött létre a Simple alkalmazás, amelynek manapság már 150-200 ezer aktív felhasználója van és az egyik legnépszerűbb pénzügyi alkalmazás hazánkban. Illetve szó lesz arról is, hogyan lehet egy közel 70 éves cégnél innovatív ötleteket bevezetni, felépíteni és sikerre vinni.
+  abstract: Előadásomban a hallgatók betekintést nyerhetnek az aktuális okostelefon és IoT eszközök világába valamint áttekintést kaphatnak az aktuális fenyegetésekről is, ezt követően szó fog esni olyan más unortodox fertőzési módszerekről is, amelyek meglepő képességeikkel kilógnak a „hagyományos” kártevők és kibertámadások sorából.
 
 - title: Szerezzük vissza a kiterjesztett valóságot a Terminatortól
   presenterName: Somlai-Fischer Ádám
