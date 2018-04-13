@@ -83,6 +83,23 @@
   }
 }
 
+.presentationsContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include gap(1rem);
+
+  @include media-breakpoint-up(lg) {
+    @include gap(2rem);
+  }
+}
+
+.locationSection,
+.giveawaySection {
+  background: #263238;
+  color: white;
+}
+
 .locationMainList {
   padding: 0;
   line-height: 1.5;
