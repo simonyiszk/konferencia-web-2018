@@ -93,6 +93,7 @@ export default class IndexLayout extends React.Component {
               <NavLink to="/">Kezdőlap</NavLink>
               <NavLink to="/retrospective">Visszatekintés</NavLink>
               <NavLink to="/sponsors">Támogatók</NavLink>
+              <NavLink to="/pressroom">Sajtószoba</NavLink>
             </Navbar>
           </header>
 
