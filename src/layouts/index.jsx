@@ -46,7 +46,9 @@ export default class IndexLayout extends React.Component {
   render() {
     const { children, data, location } = this.props;
     const { windowScrollY, windowInnerHeight } = this.state;
-    const isHomepage = location.pathname === withPrefix('/');
+    const isNavbarTransparentByDefault = ['/', '/expo']
+      .map(relativeURL => withPrefix(relativeURL))
+      .includes(location.pathname);
 
     return (
       <React.StrictMode>
@@ -77,9 +79,9 @@ export default class IndexLayout extends React.Component {
           <header className={styles.header}>
             <Navbar
               brandImageSrc={SimonyiKonferenciaLogoSrc}
-              allocateSpace={!isHomepage}
+              allocateSpace={!isNavbarTransparentByDefault}
               style={
-                isHomepage
+                isNavbarTransparentByDefault
                   ? {
                       background: `rgba(${navbarBackgroundRGB}, ${Math.min(
                         windowScrollY / (windowInnerHeight / 2),
@@ -88,7 +90,9 @@ export default class IndexLayout extends React.Component {
                     }
                   : {}
               }
-              className={!isHomepage ? styles.navbarBackground : ''}
+              className={
+                isNavbarTransparentByDefault ? '' : styles.navbarBackground
+              }
             >
               <NavLink to="/">Kezdőlap</NavLink>
               <NavLink to="/expo">Expo</NavLink>

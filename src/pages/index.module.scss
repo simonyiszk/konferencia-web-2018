@@ -4,12 +4,12 @@
 @import '../utils/flexbox';
 @import '../utils/item-grid';
 
-.hero {
-  min-height: 100vh;
-  padding: 4rem 0;
-  background: $gradient-primary;
-  background-attachment: fixed;
-  color: white;
+.heroContentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   > :first-child {
     padding-top: 4rem;
