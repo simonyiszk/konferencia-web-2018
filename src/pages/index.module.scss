@@ -101,11 +101,17 @@
 
 .presentationsSection,
 .locationSection {
-  padding-bottom: 2em;
-
   @include media-breakpoint-up(lg) {
     padding-bottom: 4em;
   }
+}
+
+.presentationsSection {
+  padding-bottom: 2em;
+}
+
+.locationSection {
+  padding-bottom: 4em;
 }
 
 .presentationsContainer {
@@ -133,10 +139,20 @@
   margin: 0 auto;
 }
 
+.giveawayIllustrationImage {
+  display: block;
+  height: 4em;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(md) {
+    height: 6em;
+  }
+}
+
 .prizesIllustrationImage {
   display: block;
   width: 75%;
-  padding: 1rem 0 4rem;
+  padding: 1em 0 4em;
   margin: 0 auto;
 
   @include media-breakpoint-up(lg) {

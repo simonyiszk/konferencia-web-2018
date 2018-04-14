@@ -7,9 +7,9 @@ import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
+import GiveawayIllustrationSrc from '../data/illustrations/giveaway.svg';
 import PrizesIllustrationSrc from '../data/illustrations/prizes.svg';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
-import GiveawaySectionSeparatorSrc from '../data/section-separators/giveaway.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import PresentationsSectionSeparatorSrc from '../data/section-separators/presentations.svg';
 import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg';
@@ -160,7 +160,7 @@ class IndexPage extends React.PureComponent {
           </div>
 
           <div className={styles.giveawaySection}>
-            <img src={GiveawaySectionSeparatorSrc} alt="" />
+            <img src={GiveawayIllustrationSrc} alt="" className={styles.giveawayIllustrationImage} />
 
             <Container>
               <h1>Nyereményjáték</h1>
