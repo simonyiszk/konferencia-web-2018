@@ -1,6 +1,44 @@
-@import '../utils/theme';
+@import '../utils/breakpoints';
+
+.heroContentContainer {
+  font-size: 1.5rem;
+}
+
+.mapAndLegendContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    flex-flow: row-reverse nowrap;
+  }
+}
+
+.mapImageContainer {
+  flex: 100%;
+}
+
+.legendContainer {
+  margin: 0 auto;
+  border-spacing: 0.75em 0.5em;
+  white-space: nowrap;
+}
+
+.loadingIndicator {
+  font-size: 2em;
+}
 
 .mapImage {
-  height: 20em;
-  background: $gradient-primary;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(md) {
+    width: 75%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    padding-left: 5rem;
+  }
 }

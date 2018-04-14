@@ -46,7 +46,7 @@ class IndexPage extends React.PureComponent {
 
     return (
       <div>
-        <Hero className={styles.hero}>
+        <Hero>
           <Container className={styles.heroContentContainer}>
             <div className={styles.iconContainer}>
               <img
@@ -160,7 +160,11 @@ class IndexPage extends React.PureComponent {
           </div>
 
           <div className={styles.giveawaySection}>
-            <img src={GiveawayIllustrationSrc} alt="" className={styles.giveawayIllustrationImage} />
+            <img
+              src={GiveawayIllustrationSrc}
+              alt=""
+              className={styles.giveawayIllustrationImage}
+            />
 
             <Container>
               <h1>Nyereményjáték</h1>

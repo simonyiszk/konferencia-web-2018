@@ -1,8 +1,13 @@
 @import '../utils/breakpoints';
+@import '../utils/theme';
 
 .root {
   display: flex;
+  min-height: 100vh;
   align-items: center;
+  padding: 3em 0;
+  background: $gradient-primary;
+  color: white;
 
   h1 {
     font-size: 1.5em;

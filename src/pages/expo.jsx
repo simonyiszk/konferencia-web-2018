@@ -2,6 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import 'whatwg-fetch';
 import Container from '../components/Container';
+import Hero from '../components/Hero';
+import LoadingIndicator from '../components/LoadingIndicator';
 import PageContent from '../components/PageContent';
 import styles from './expo.module.scss';
 
@@ -33,33 +35,55 @@ export default class ExpoPage extends React.Component {
     const { isExhibitorDataLoaded, exhibitors } = this.state;
 
     return (
-      <PageContent>
-        <Container>
-          <Helmet title={frontmatter.title} />
+      <div>
+        <Helmet title={frontmatter.title} />
 
-          <h1>{frontmatter.title}</h1>
+        <Hero>
+          <Container className={styles.heroContentContainer}>
+            {isExhibitorDataLoaded ? (
+              <div className={styles.mapAndLegendContainer}>
+                <div className={styles.mapImageContainer}>
+                  <img
+                    src="http://gyromouse.net/weboldal/konferenciapi/map.png"
+                    alt="Térkép"
+                    className={styles.mapImage}
+                  />
+                </div>
 
-          <img
-            src="http://gyromouse.net/weboldal/konferenciapi/map.png"
-            alt="Térkép"
-            className={styles.mapImage}
-          />
+                <table className={styles.legendContainer}>
+                  {exhibitors.map(exhibitor => (
+                    <tr key={exhibitor.id}>
+                      <td className="text-right">{exhibitor.id}</td>
+                      <td>{exhibitor.name}</td>
+                    </tr>
+                  ))}
+                </table>
+              </div>
+            ) : (
+              <div className="text-center">
+                <LoadingIndicator className={styles.loadingIndicator} />
 
-          {isExhibitorDataLoaded ? (
-            exhibitors.map(exhibitor => (
-              <React.Fragment>
-                <h2 key={exhibitor.id}>
-                  {exhibitor.id} {exhibitor.name}
-                </h2>
+                <p>Kiállítók adatainak betöltése folyamatban...</p>
+              </div>
+            )}
+          </Container>
+        </Hero>
 
-                <p>{exhibitor.description}</p>
-              </React.Fragment>
-            ))
-          ) : (
-            <p>Kiállítók adatainak betöltése folyamatban...</p>
-          )}
-        </Container>
-      </PageContent>
+        {isExhibitorDataLoaded && (
+          <PageContent>
+            <Container>
+              <h1>Kiállítók</h1>
+
+              {exhibitors.map(exhibitor => (
+                <React.Fragment>
+                  <h2 key={exhibitor.id}>{exhibitor.name}</h2>
+                  <p>{exhibitor.description}</p>
+                </React.Fragment>
+              ))}
+            </Container>
+          </PageContent>
+        )}
+      </div>
     );
   }
 }
