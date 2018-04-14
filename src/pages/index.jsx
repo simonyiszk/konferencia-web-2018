@@ -6,6 +6,8 @@ import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import VideoStream from '../components/VideoStream';
+import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
+import PrizesIllustrationSrc from '../data/illustrations/prizes.svg';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import GiveawaySectionSeparatorSrc from '../data/section-separators/giveaway.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
@@ -155,10 +157,15 @@ class IndexPage extends React.PureComponent {
                 értékes nyereményeket. A játékban való részvétel követelménye
                 két – egy a Simonyi Károly Szakkollégium tagjai által és egy a
                 rendezvény támogatói által biztosított – stand meglátogatása. Az
-                említett standok felkeresésekor a telefonos applikáció – vagy az
-                e-mailben kiküldött QR-kód – segítségével kerülhet be a nevünk a
-                virtuális kalapba.
+                említett standok felkeresésekor a telefonos applikáció
+                segítségével kerülhet be a nevünk a virtuális kalapba.
               </p>
+
+              <img
+                src={PrizesIllustrationSrc}
+                alt="iPad, ultraszéles monitor"
+                className={styles.prizesIllustrationImage}
+              />
             </Container>
           </div>
 

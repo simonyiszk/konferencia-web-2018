@@ -100,22 +100,6 @@
   color: white;
 }
 
-.locationMainList {
-  padding: 0;
-  line-height: 1.5;
-  list-style-type: none;
-
-  > li {
-    margin-bottom: 1em;
-  }
-}
-
-.emojiContainer {
-  display: inline-block;
-  width: 1.5em;
-  text-align: center;
-}
-
 .mapFrame {
   display: block;
   width: 100%;
@@ -124,17 +108,14 @@
   margin: 0 auto;
 }
 
-.sweepstakeIconsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 12em;
-  text-align: center;
-
-  @include gap(2rem);
+.prizesIllustrationImage {
+  display: block;
+  width: 75%;
+  padding: 1rem 0 4rem;
+  margin: 0 auto;
 
   @include media-breakpoint-up(lg) {
-    font-size: 20em;
+    width: 50%;
   }
 }
 
