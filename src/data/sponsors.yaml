@@ -70,6 +70,11 @@
       logo:
         image: ./logos/antenna-hungaria.svg
         height: 3em
+    - name: HunPress
+      website: https://hunpress.com
+      logo:
+        image: ./logos/hunpress.svg
+        height: 4em
     - name: SZOMEL
       logo:
         image: ./logos/szomel.png
