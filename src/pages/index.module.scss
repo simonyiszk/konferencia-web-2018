@@ -7,7 +7,7 @@
 .hero {
   min-height: 100vh;
   padding: 4rem 0;
-  background: linear-gradient(137.5deg, $color-secondary, $color-primary);
+  background: $gradient-primary;
   color: white;
 }
 

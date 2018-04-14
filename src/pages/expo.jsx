@@ -1,33 +1,65 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import 'whatwg-fetch';
 import Container from '../components/Container';
 import PageContent from '../components/PageContent';
+import styles from './expo.module.scss';
 
 export const frontmatter = {
   title: 'Expo',
 };
 
-const ExpoPage = () => (
-  <PageContent>
-    <Container>
-      <Helmet title={frontmatter.title} />
+export default class ExpoPage extends React.Component {
+  constructor(props) {
+    super(props);
 
-      <h1>{frontmatter.title}</h1>
+    this.state = {
+      isExhibitorDataLoaded: false,
+      exhibitors: [],
+    };
+  }
 
-      <p>
-        Az immár 15. alkalommal megrendezésre kerülő konferencián nem csak az
-        előadások szolgálhatnak kellemes időtöltéssel, ugyanis az épület
-        aulájában a látogatók egy kiállításon is részt vehetnek. A helyszín több
-        – az esemény támogatói illetve a szakkollégiumunk által biztosított –
-        szakmai témájú standnak is otthont ad, melyeken nem mindennapi
-        projekteket tekinthetünk meg és modern számítástechnikai eszközöket is
-        kipróbálhatunk. Az érdeklődni vágyóknak természetesen lehetősége van
-        beszélgetésbe elegyedni a standolókkal, legyenek azok
-        mérnöki/informatikai cégek alkalmazottai, vagy szakkollégiumunk tagjai,
-        diákjai.
-      </p>
-    </Container>
-  </PageContent>
-);
+  componentDidMount() {
+    fetch('http://gyromouse.net/weboldal/konferenciapi/stand.php')
+      .then(response => response.json())
+      .then(exhibitors =>
+        this.setState({
+          isExhibitorDataLoaded: true,
+          exhibitors,
+        }));
+  }
 
-export default ExpoPage;
+  render() {
+    const { isExhibitorDataLoaded, exhibitors } = this.state;
+
+    return (
+      <PageContent>
+        <Container>
+          <Helmet title={frontmatter.title} />
+
+          <h1>{frontmatter.title}</h1>
+
+          <img
+            src="http://gyromouse.net/weboldal/konferenciapi/map.png"
+            alt="Térkép"
+            className={styles.mapImage}
+          />
+
+          {isExhibitorDataLoaded ? (
+            exhibitors.map(exhibitor => (
+              <React.Fragment>
+                <h2 key={exhibitor.id}>
+                  {exhibitor.id} {exhibitor.name}
+                </h2>
+
+                <p>{exhibitor.description}</p>
+              </React.Fragment>
+            ))
+          ) : (
+            <p>Kiállítók adatainak betöltése folyamatban...</p>
+          )}
+        </Container>
+      </PageContent>
+    );
+  }
+}

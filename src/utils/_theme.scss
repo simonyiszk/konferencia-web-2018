@@ -2,5 +2,7 @@ $color-primary: #771215;
 $color-secondary: #25255c;
 $color-link: #0288d1;
 
+$gradient-primary: linear-gradient(137.5deg, $color-secondary, $color-primary);
+
 $navbar-background: mix($color-primary, $color-secondary, 50%);
 $footer-background: #263238;

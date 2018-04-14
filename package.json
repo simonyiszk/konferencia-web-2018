@@ -24,7 +24,8 @@
     "normalize.css": "^8.0.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
-    "react-images": "^0.5.16"
+    "react-images": "^0.5.16",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "eslint": "^4.16.0",

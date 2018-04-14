@@ -91,6 +91,7 @@ export default class IndexLayout extends React.Component {
               className={!isHomepage ? styles.navbarBackground : ''}
             >
               <NavLink to="/">Kezdőlap</NavLink>
+              <NavLink to="/expo">Expo</NavLink>
               <NavLink to="/retrospective">Visszatekintés</NavLink>
               <NavLink to="/sponsors">Támogatók</NavLink>
               <NavLink to="/pressroom">Sajtószoba</NavLink>
