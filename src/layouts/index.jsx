@@ -46,7 +46,8 @@ export default class IndexLayout extends React.Component {
   render() {
     const { children, data, location } = this.props;
     const { windowScrollY, windowInnerHeight } = this.state;
-    const isNavbarTransparentByDefault = ['/', '/expo']
+
+    const isNavbarTransparentByDefault = ['/', '/expo/']
       .map(relativeURL => withPrefix(relativeURL))
       .includes(location.pathname);
 
@@ -95,10 +96,10 @@ export default class IndexLayout extends React.Component {
               }
             >
               <NavLink to="/">Kezdőlap</NavLink>
-              <NavLink to="/expo">Expo</NavLink>
-              <NavLink to="/retrospective">Visszatekintés</NavLink>
-              <NavLink to="/sponsors">Támogatók</NavLink>
-              <NavLink to="/pressroom">Sajtószoba</NavLink>
+              <NavLink to="/expo/">Expo</NavLink>
+              <NavLink to="/retrospective/">Visszatekintés</NavLink>
+              <NavLink to="/sponsors/">Támogatók</NavLink>
+              <NavLink to="/pressroom/">Sajtószoba</NavLink>
             </Navbar>
           </header>
 
