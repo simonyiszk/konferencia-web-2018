@@ -22,13 +22,15 @@ export default class ExpoPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://gyromouse.net/weboldal/konferenciapi/stand.php')
-      .then(response => response.json())
-      .then(exhibitors =>
-        this.setState({
-          isExhibitorDataLoaded: true,
-          exhibitors,
-        }));
+    if (typeof window !== 'undefined') {
+      fetch('http://gyromouse.net/weboldal/konferenciapi/stand.php')
+        .then(response => response.json())
+        .then(exhibitors =>
+          this.setState({
+            isExhibitorDataLoaded: true,
+            exhibitors,
+          }));
+    }
   }
 
   render() {
