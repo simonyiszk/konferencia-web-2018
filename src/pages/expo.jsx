@@ -58,12 +58,14 @@ export default class ExpoPage extends React.Component {
                 </div>
 
                 <table className={styles.legendContainer}>
-                  {exhibitors.map(exhibitor => (
-                    <tr key={exhibitor.id}>
-                      <td className="text-right">{exhibitor.id}</td>
-                      <td>{exhibitor.name}</td>
-                    </tr>
-                  ))}
+                  <tbody>
+                    {exhibitors.map(exhibitor => (
+                      <tr key={exhibitor.id}>
+                        <td className="text-right">{exhibitor.id}</td>
+                        <td>{exhibitor.name}</td>
+                      </tr>
+                    ))}
+                  </tbody>
                 </table>
               </div>
             ) : (
@@ -82,8 +84,8 @@ export default class ExpoPage extends React.Component {
               <h1>Kiállítók</h1>
 
               {exhibitors.map(exhibitor => (
-                <React.Fragment>
-                  <h2 key={exhibitor.id}>{exhibitor.name}</h2>
+                <React.Fragment key={exhibitor.id}>
+                  <h2>{exhibitor.name}</h2>
 
                   <p
                     /* eslint-disable-next-line react/no-danger */
