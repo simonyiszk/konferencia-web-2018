@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 // import 'whatwg-fetch';
@@ -6,6 +7,7 @@ import Hero from '../components/Hero';
 import LoadingIndicator from '../components/LoadingIndicator';
 import PageContent from '../components/PageContent';
 import exhibitors from '../data/api/exhibitors';
+import Sponsors from '../sections/Sponsors';
 import styles from './expo.module.scss';
 
 export const frontmatter = {
@@ -40,6 +42,7 @@ export default class ExpoPage extends React.Component {
   render() {
     // const { isExhibitorDataLoaded, exhibitors } = this.state;
     const isExhibitorDataLoaded = true;
+    const { data } = this.props;
 
     return (
       <div>
@@ -93,6 +96,8 @@ export default class ExpoPage extends React.Component {
                   />
                 </React.Fragment>
               ))}
+
+              <Sponsors data={data} />
             </Container>
           </PageContent>
         )}
@@ -100,3 +105,13 @@ export default class ExpoPage extends React.Component {
     );
   }
 }
+
+ExpoPage.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
+export const query = graphql`
+  query ExpoPageQuery {
+    ...SponsorsSection
+  }
+`;

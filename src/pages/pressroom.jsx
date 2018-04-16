@@ -1,13 +1,15 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Container from '../components/Container';
 import PageContent from '../components/PageContent';
+import Sponsors from '../sections/Sponsors';
 
 export const frontmatter = {
   title: 'Sajtószoba',
 };
 
-const PressroomPage = () => (
+const PressroomPage = ({ data }) => (
   <PageContent>
     <Container>
       <Helmet title={frontmatter.title} />
@@ -78,8 +80,20 @@ const PressroomPage = () => (
           nyílik.
         </p>
       </article>
+
+      <Sponsors data={data} />
     </Container>
   </PageContent>
 );
 
+PressroomPage.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 export default PressroomPage;
+
+export const query = graphql`
+  query PressroomPageQuery {
+    ...SponsorsSection
+  }
+`;
