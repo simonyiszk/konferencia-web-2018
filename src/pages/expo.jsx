@@ -1,17 +1,20 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import 'whatwg-fetch';
+// import 'whatwg-fetch';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import LoadingIndicator from '../components/LoadingIndicator';
 import PageContent from '../components/PageContent';
+import exhibitors from '../data/api/exhibitors';
 import styles from './expo.module.scss';
 
 export const frontmatter = {
   title: 'Expo',
 };
 
+/* eslint-disable-next-line react/prefer-stateless-function */
 export default class ExpoPage extends React.Component {
+  /*
   constructor(props) {
     super(props);
 
@@ -32,9 +35,11 @@ export default class ExpoPage extends React.Component {
           }));
     }
   }
+  */
 
   render() {
-    const { isExhibitorDataLoaded, exhibitors } = this.state;
+    // const { isExhibitorDataLoaded, exhibitors } = this.state;
+    const isExhibitorDataLoaded = true;
 
     return (
       <div>
@@ -79,7 +84,11 @@ export default class ExpoPage extends React.Component {
               {exhibitors.map(exhibitor => (
                 <React.Fragment>
                   <h2 key={exhibitor.id}>{exhibitor.name}</h2>
-                  <p>{exhibitor.description}</p>
+
+                  <p
+                    /* eslint-disable-next-line react/no-danger */
+                    dangerouslySetInnerHTML={{ __html: exhibitor.description }}
+                  />
                 </React.Fragment>
               ))}
             </Container>
