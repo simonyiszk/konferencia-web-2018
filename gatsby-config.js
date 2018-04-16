@@ -14,6 +14,10 @@ module.exports = {
     siteFacebookURL: 'https://facebook.com/simonyiszk',
     siteYouTubeURL: 'https://youtube.com/user/SimonyiSzakkoli',
     siteInstagramURL: 'https://instagram.com/simonyikonferencia',
+    siteAppStoreURL:
+      'https://itunes.apple.com/us/app/konferenciapp/id1213978754',
+    siteGooglePlayURL:
+      'https://play.google.com/store/apps/details?id=com.simonyi.konferenciapp',
   },
   plugins: [
     {

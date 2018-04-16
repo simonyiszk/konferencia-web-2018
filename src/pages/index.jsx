@@ -9,6 +9,8 @@ import VideoStream from '../components/VideoStream';
 import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import GiveawayIllustrationSrc from '../data/illustrations/giveaway.svg';
 import PrizesIllustrationSrc from '../data/illustrations/prizes.svg';
+import AppStoreBadgeSrc from '../data/logos/app-store-badge.svg';
+import GooglePlayBadgeSrc from '../data/logos/google-play-badge.svg';
 import ContactSectionSeparatorSrc from '../data/section-separators/contact.svg';
 import LocationSectionSeparatorSrc from '../data/section-separators/location.svg';
 import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg';
@@ -165,6 +167,32 @@ class IndexPage extends React.PureComponent {
                 segítségével kerülhet be a nevünk a virtuális kalapba.
               </p>
 
+              <div className="text-center">
+                <a
+                  href={data.site.siteMetadata.siteAppStoreURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={AppStoreBadgeSrc}
+                    alt="Letölthető az App Store-ból"
+                    className={styles.appDownloadBadge}
+                  />
+                </a>
+
+                <a
+                  href={data.site.siteMetadata.siteGooglePlayURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={GooglePlayBadgeSrc}
+                    alt="Szerezd meg: Google Play"
+                    className={styles.appDownloadBadge}
+                  />
+                </a>
+              </div>
+
               <img
                 src={PrizesIllustrationSrc}
                 alt="iPad, ultraszéles monitor"
@@ -225,6 +253,8 @@ export const query = graphql`
         siteAddressPretty
         siteEventbriteURL
         siteEventbriteID
+        siteAppStoreURL
+        siteGooglePlayURL
       }
     }
 
