@@ -19,7 +19,7 @@ export default class ExpoPage extends React.Component {
     super(props);
 
     this.state = {
-      isExhibitorDataLoaded: true,
+      isExhibitorsDataLoaded: true,
       exhibitors: initialExhibitors,
     };
   }
@@ -30,14 +30,14 @@ export default class ExpoPage extends React.Component {
         .then(response => response.json())
         .then(exhibitors =>
           this.setState({
-            isExhibitorDataLoaded: true,
+            isExhibitorsDataLoaded: true,
             exhibitors,
           }));
     }
   }
 
   render() {
-    const { isExhibitorDataLoaded, exhibitors } = this.state;
+    const { isExhibitorsDataLoaded, exhibitors } = this.state;
     const { data } = this.props;
 
     return (
@@ -46,7 +46,7 @@ export default class ExpoPage extends React.Component {
 
         <Hero>
           <Container className={styles.heroContentContainer}>
-            {isExhibitorDataLoaded ? (
+            {isExhibitorsDataLoaded ? (
               <div className={styles.mapAndLegendContainer}>
                 <div className={styles.mapImageContainer}>
                   <img
@@ -77,7 +77,7 @@ export default class ExpoPage extends React.Component {
           </Container>
         </Hero>
 
-        {isExhibitorDataLoaded && (
+        {isExhibitorsDataLoaded && (
           <PageContent>
             <Container>
               <h1>Kiállítók</h1>
