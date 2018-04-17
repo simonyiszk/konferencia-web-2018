@@ -25,7 +25,13 @@ class IndexPage extends React.Component {
     super(props);
 
     const { data } = props;
-    const initialPresentations = data.allPresentationsYaml.edges;
+    const initialPresentations = data.allPresentationsYaml.edges
+      .map(edge => edge.node)
+      .map(presentation => ({
+        ...presentation,
+        presenterImageSrc:
+          presentation.presenterImage.childImageSharp.resolutions.src,
+      }));
 
     this.state = {
       presentations: initialPresentations,

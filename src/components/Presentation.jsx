@@ -62,7 +62,10 @@ export default class Presentation extends React.Component {
             <h2 className={styles.title}>{title}</h2>
             {presenterName != null && (
               <p className={styles.presenterInfo}>
-                {presenterName} – {presenterRole}
+                {presenterName}
+                {presenterRole != null &&
+                  presenterRole !== '' &&
+                  ` – ${presenterRole}`}
               </p>
             )}
 
