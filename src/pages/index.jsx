@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ContactInfo from '../components/ContactInfo';
 import Container from '../components/Container';
+import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
 import VideoStream from '../components/VideoStream';
-import SimonyiKonferenciaIconSrc from '../data/icons/simonyi-konferencia.svg';
 import GiveawayIllustrationSrc from '../data/illustrations/giveaway.svg';
 import PrizesIllustrationSrc from '../data/illustrations/prizes.svg';
 import AppStoreBadgeSrc from '../data/logos/app-store-badge.svg';
@@ -47,8 +47,8 @@ class IndexPage extends React.PureComponent {
 
     return (
       <div>
-        <Hero>
-          <Container className={styles.heroContentContainer}>
+        <div className={styles.hero}>
+          <Container className={styles.streamsSection}>
             <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
             <div className={styles.streamsContainer}>
@@ -104,7 +104,7 @@ class IndexPage extends React.PureComponent {
               ))}
             </div>
           </Container>
-        </Hero>
+        </div>
 
         <PageContent>
           <Container>

@@ -4,6 +4,20 @@
 @import '../utils/flexbox';
 @import '../utils/item-grid';
 
+.hero {
+  background: linear-gradient(137.5deg, $color-secondary, $color-primary);
+  background-attachment: fixed;
+  color: white;
+
+  > :first-child {
+    padding-top: 4rem;
+  }
+
+  > :last-child {
+    padding-bottom: 4rem;
+  }
+}
+
 .heroContentContainer {
   display: flex;
   flex-wrap: wrap;
@@ -76,10 +90,6 @@
 }
 
 .locationSection {
-  padding-bottom: 2em;
-  background: #263238;
-  color: white;
-
   @include media-breakpoint-up(lg) {
     padding-bottom: 4em;
   }
@@ -91,17 +101,6 @@
 
 .locationSection {
   padding-bottom: 4em;
-}
-
-.presentationsContainer {
-  display: flex;
-  flex-wrap: wrap;
-
-  @include gap(1rem);
-
-  @include media-breakpoint-up(lg) {
-    @include gap(2rem);
-  }
 }
 
 .locationSection,
