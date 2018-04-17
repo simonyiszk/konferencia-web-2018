@@ -16,7 +16,20 @@ import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg
 import Sponsors from '../sections/Sponsors';
 import styles from './index.module.scss';
 
-class IndexPage extends React.PureComponent {
+const flatten = array => array.reduce((acc, prev) => acc.concat(prev), []);
+
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const { data } = props;
+    const initialPresentations = data.allPresentationsYaml.edges;
+
+    this.state = {
+      presentations: initialPresentations,
+    };
+  }
+
   componentDidMount() {
     const { data } = this.props;
 
@@ -38,11 +51,40 @@ class IndexPage extends React.PureComponent {
           onOrderComplete: () => {},
         });
       };
+
+      this.refreshPresentationsData();
     }
+  }
+
+  refreshPresentationsData() {
+    fetch('https://proxy.kir-dev.sch.bme.hu/weboldal/konferenciapi/timetable.php')
+      .then(response => response.json())
+      .then(rooms =>
+        this.setState({
+          presentations: flatten(rooms.map(room =>
+            room.programs
+              .filter(program => program.break !== '1')
+              .map(program => ({
+                title: program.title,
+                presenterName: program.performer,
+                presenterRole: program.titulus,
+                presenterImageSrc: program.picture,
+                time: program.time.split('-')[0],
+                location: room.room,
+                abstract: program.text,
+              })))).sort((a, b) => {
+            const locationDiff = b.location.localeCompare(a.location);
+            if (locationDiff !== 0) return locationDiff;
+
+            const timeDiff = a.time.localeCompare(b.time);
+            return timeDiff;
+          }),
+        }));
   }
 
   render() {
     const { data } = this.props;
+    const { presentations } = this.state;
 
     return (
       <div>
@@ -87,18 +129,16 @@ class IndexPage extends React.PureComponent {
             <h1 className="text-center">Előadások</h1>
 
             <div className={styles.presentationsContainer}>
-              {data.allPresentationsYaml.edges.map(({ node }) => (
+              {presentations.map(presentation => (
                 <Presentation
-                  key={node.title}
-                  title={node.title}
-                  presenterName={node.presenterName}
-                  presenterRole={node.presenterRole}
-                  presenterImage={
-                    node.presenterImage.childImageSharp.resolutions
-                  }
-                  time={node.time}
-                  location={node.location}
-                  abstract={node.abstract}
+                  key={presentation.title}
+                  title={presentation.title}
+                  presenterName={presentation.presenterName}
+                  presenterRole={presentation.presenterRole}
+                  presenterImageSrc={presentation.presenterImageSrc}
+                  time={presentation.time}
+                  location={presentation.location}
+                  abstract={presentation.abstract}
                 />
               ))}
             </div>
@@ -282,7 +322,7 @@ export const query = graphql`
                 cropFocus: CENTER
                 quality: 92
               ) {
-                ...GatsbyImageSharpResolutions
+                src
               }
             }
           }

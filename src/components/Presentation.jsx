@@ -27,7 +27,7 @@ export default class Presentation extends React.Component {
       title,
       presenterName,
       presenterRole,
-      presenterImage,
+      presenterImageSrc,
       time,
       location,
       abstract,
@@ -47,8 +47,9 @@ export default class Presentation extends React.Component {
       >
         <article className={styles.article}>
           <div className={styles.presenterImageContainer}>
-            <Img
-              resolutions={presenterImage}
+            <img
+              src={presenterImageSrc}
+              alt=""
               className={styles.presenterImage}
             />
           </div>
@@ -85,7 +86,7 @@ Presentation.propTypes = {
   title: PropTypes.string.isRequired,
   presenterName: PropTypes.string,
   presenterRole: PropTypes.string,
-  presenterImage: PropTypes.shape({}).isRequired,
+  presenterImageSrc: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   abstract: PropTypes.string.isRequired,
