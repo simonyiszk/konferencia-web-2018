@@ -37,8 +37,8 @@ export default class ExpoPage extends React.Component {
   }
 
   render() {
-    const { isExhibitorsDataLoaded, exhibitors } = this.state;
     const { data } = this.props;
+    const { isExhibitorsDataLoaded, exhibitors } = this.state;
 
     return (
       <div>
@@ -50,7 +50,7 @@ export default class ExpoPage extends React.Component {
               <div className={styles.mapAndLegendContainer}>
                 <div className={styles.mapImageContainer}>
                   <img
-                    src="http://gyromouse.net/weboldal/konferenciapi/map.png"
+                    src="https://proxy.kir-dev.sch.bme.hu/weboldal/konferenciapi/map.png"
                     alt="Térkép"
                     className={styles.mapImage}
                   />
