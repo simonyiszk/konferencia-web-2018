@@ -14,6 +14,8 @@ export const frontmatter = {
   title: 'Expo',
 };
 
+const EXHIBITORS_DATA_REFRESH_INTERVAL = 60000;
+
 export default class ExpoPage extends React.Component {
   constructor(props) {
     super(props);
@@ -22,18 +24,35 @@ export default class ExpoPage extends React.Component {
       isExhibitorsDataLoaded: true,
       exhibitors: initialExhibitors,
     };
+
+    this.exhibitorsDataIntervalID = 0;
   }
 
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      fetch('https://proxy.kir-dev.sch.bme.hu/weboldal/konferenciapi/stand.php')
-        .then(response => response.json())
-        .then(exhibitors =>
-          this.setState({
-            isExhibitorsDataLoaded: true,
-            exhibitors,
-          }));
+      this.refreshExhibitorsData();
+
+      this.exhibitorsDataIntervalID = window.setInterval(
+        () => this.refreshExhibitorsData(),
+        EXHIBITORS_DATA_REFRESH_INTERVAL,
+      );
     }
+  }
+
+  componentWillUnmount() {
+    if (this.exhibitorsDataIntervalID !== 0) {
+      window.clearInterval(this.exhibitorsDataIntervalID);
+    }
+  }
+
+  refreshExhibitorsData() {
+    fetch('https://proxy.kir-dev.sch.bme.hu/weboldal/konferenciapi/stand.php')
+      .then(response => response.json())
+      .then(exhibitors =>
+        this.setState({
+          isExhibitorsDataLoaded: true,
+          exhibitors,
+        }));
   }
 
   render() {
