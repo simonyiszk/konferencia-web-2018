@@ -61,12 +61,15 @@ export default class Presentation extends React.Component {
           <div className={styles.presentationDetailsContainer}>
             <h2 className={styles.title}>{title}</h2>
             {presenterName != null && (
-              <p className={styles.presenterInfo}>
-                {presenterName}
-                {presenterRole != null &&
-                  presenterRole !== '' &&
-                  ` – ${presenterRole}`}
-              </p>
+              <p
+                /* eslint-disable-next-line react/no-danger */
+                dangerouslySetInnerHTML={{
+                  __html: `${presenterName}${presenterRole != null &&
+                    presenterRole !== '' &&
+                    ` – ${presenterRole}`}`,
+                }}
+                className={styles.presenterInfo}
+              />
             )}
 
             <p
