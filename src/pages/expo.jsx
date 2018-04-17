@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-// import 'whatwg-fetch';
+import 'whatwg-fetch';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import LoadingIndicator from '../components/LoadingIndicator';
