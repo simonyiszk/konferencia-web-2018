@@ -18,6 +18,8 @@ import styles from './index.module.scss';
 
 const flatten = array => array.reduce((acc, prev) => acc.concat(prev), []);
 
+const PRESENTATIONS_DATA_REFRESH_INTERVAL = 60000;
+
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -28,6 +30,8 @@ class IndexPage extends React.Component {
     this.state = {
       presentations: initialPresentations,
     };
+
+    this.presentationsDataIntervalID = 0;
   }
 
   componentDidMount() {
@@ -53,6 +57,17 @@ class IndexPage extends React.Component {
       };
 
       this.refreshPresentationsData();
+
+      this.presentationsDataIntervalID = window.setInterval(
+        () => this.refreshPresentationsData(),
+        PRESENTATIONS_DATA_REFRESH_INTERVAL,
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.presentationsDataIntervalID !== 0) {
+      window.clearInterval(this.presentationsDataIntervalID);
     }
   }
 
