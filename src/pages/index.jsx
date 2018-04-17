@@ -97,11 +97,11 @@ class IndexPage extends React.Component {
                 location: room.room,
                 abstract: program.text,
               })))).sort((a, b) => {
-            const locationDiff = b.location.localeCompare(a.location);
-            if (locationDiff !== 0) return locationDiff;
-
             const timeDiff = a.time.localeCompare(b.time);
-            return timeDiff;
+            if (timeDiff !== 0) return timeDiff;
+
+            const locationDiff = b.location.localeCompare(a.location);
+            return locationDiff;
           }),
         }));
   }
