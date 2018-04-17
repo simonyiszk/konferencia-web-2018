@@ -83,7 +83,10 @@ class IndexPage extends React.Component {
                 title: program.title,
                 presenterName: program.performer,
                 presenterRole: program.titulus,
-                presenterImageSrc: program.picture,
+                presenterImageSrc: program.picture.replace(
+                  'http://gyromouse.net/',
+                  'https://proxy.kir-dev.sch.bme.hu/',
+                ),
                 time: program.time.split('-')[0],
                 location: room.room,
                 abstract: program.text,
