@@ -116,6 +116,24 @@ class IndexPage extends React.Component {
           <Container className={styles.streamsSection}>
             <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
 
+            <div className="text-center">
+              <a
+                id={`eventbrite-widget-modal-trigger-${
+                  data.site.siteMetadata.siteEventbriteID
+                }`}
+                href={data.site.siteMetadata.siteEventbriteURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                role="button"
+                className={styles.registrationButton}
+                onClick={(event) => {
+                  event.preventDefault();
+                }}
+              >
+                Regisztráció
+              </a>
+            </div>
+
             <div className={styles.streamsContainer}>
               <div className={styles.stream}>
                 <h2>IB028 (eredeti)</h2>
