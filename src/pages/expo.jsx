@@ -6,7 +6,7 @@ import Container from '../components/Container';
 import Hero from '../components/Hero';
 import LoadingIndicator from '../components/LoadingIndicator';
 import PageContent from '../components/PageContent';
-import exhibitors from '../data/api/exhibitors';
+import initialExhibitors from '../data/api/exhibitors';
 import Sponsors from '../sections/Sponsors';
 import styles from './expo.module.scss';
 
@@ -14,21 +14,19 @@ export const frontmatter = {
   title: 'Expo',
 };
 
-/* eslint-disable-next-line react/prefer-stateless-function */
 export default class ExpoPage extends React.Component {
-  /*
   constructor(props) {
     super(props);
 
     this.state = {
-      isExhibitorDataLoaded: false,
-      exhibitors: [],
+      isExhibitorDataLoaded: true,
+      exhibitors: initialExhibitors,
     };
   }
 
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      fetch('http://gyromouse.net/weboldal/konferenciapi/stand.php')
+      fetch('https://proxy.kir-dev.sch.bme.hu/weboldal/konferenciapi/stand.php')
         .then(response => response.json())
         .then(exhibitors =>
           this.setState({
@@ -37,11 +35,9 @@ export default class ExpoPage extends React.Component {
           }));
     }
   }
-  */
 
   render() {
-    // const { isExhibitorDataLoaded, exhibitors } = this.state;
-    const isExhibitorDataLoaded = true;
+    const { isExhibitorDataLoaded, exhibitors } = this.state;
     const { data } = this.props;
 
     return (
