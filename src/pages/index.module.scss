@@ -90,17 +90,11 @@
 }
 
 .locationSection {
-  @include media-breakpoint-up(lg) {
-    padding-bottom: 4em;
-  }
+  padding-bottom: 4em;
 }
 
 .presentationsSection {
   padding-bottom: 2em;
-}
-
-.locationSection {
-  padding-bottom: 4em;
 }
 
 .locationSection,

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ContactInfo from '../components/ContactInfo';
 import Container from '../components/Container';
-import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import PageContent from '../components/PageContent';
 import Presentation from '../components/Presentation';
