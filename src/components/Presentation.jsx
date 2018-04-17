@@ -64,9 +64,11 @@ export default class Presentation extends React.Component {
               <p
                 /* eslint-disable-next-line react/no-danger */
                 dangerouslySetInnerHTML={{
-                  __html: `${presenterName}${presenterRole != null &&
-                    presenterRole !== '' &&
-                    ` – ${presenterRole}`}`,
+                  __html: `${presenterName}${
+                    presenterRole != null && presenterRole !== ''
+                      ? ` – ${presenterRole}`
+                      : ''
+                  }`,
                 }}
                 className={styles.presenterInfo}
               />
