@@ -56,7 +56,7 @@ class IndexPage extends React.PureComponent {
                 <h2>IB028 (eredeti)</h2>
 
                 <VideoStream
-                  src="https://www.youtube.com/embed/AoDNLGFRNWs"
+                  src="https://www.youtube.com/embed/EscCbYtogtM?rel=0"
                   title="IB028 (eredeti) stream"
                   allowFullScreen
                 />
@@ -66,7 +66,7 @@ class IndexPage extends React.PureComponent {
                 <h2>IB028 (szinkronos)</h2>
 
                 <VideoStream
-                  src="https://www.youtube.com/embed/AoDNLGFRNWs"
+                  src="https://www.youtube.com/embed/KFoza47wFnc?rel=0"
                   title="IB028 (szinkronos) stream"
                   allowFullScreen
                 />
@@ -76,7 +76,7 @@ class IndexPage extends React.PureComponent {
                 <h2>IB025</h2>
 
                 <VideoStream
-                  src="https://www.youtube.com/embed/5qreqkHn1Vk"
+                  src="https://www.youtube.com/embed/F_Lmto6Xd-M?rel=0"
                   title="IB025 stream"
                   allowFullScreen
                 />
