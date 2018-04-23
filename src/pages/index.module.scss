@@ -51,14 +51,6 @@
   }
 }
 
-.registrationButton {
-  @include outline-button(white, $color-secondary);
-
-  margin-bottom: 1.25em;
-  font-size: 1.25em;
-  font-weight: bold;
-}
-
 .streamsContainer {
   display: flex;
   flex-wrap: wrap;

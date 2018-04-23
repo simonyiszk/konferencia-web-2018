@@ -41,27 +41,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-    const { data } = this.props;
-
     if (typeof window !== 'undefined') {
-      const eventbriteWidgetScript = document.createElement('script');
-      eventbriteWidgetScript.type = 'text/javascript';
-      eventbriteWidgetScript.src =
-        'https://www.eventbrite.com/static/widgets/eb_widgets.js';
-
-      document.head.appendChild(eventbriteWidgetScript);
-      eventbriteWidgetScript.onload = () => {
-        window.EBWidgets.createWidget({
-          widgetType: 'checkout',
-          eventId: data.site.siteMetadata.siteEventbriteID,
-          modal: true,
-          modalTriggerElementId: `eventbrite-widget-modal-trigger-${
-            data.site.siteMetadata.siteEventbriteID
-          }`,
-          onOrderComplete: () => {},
-        });
-      };
-
       this.refreshPresentationsData();
 
       this.presentationsDataIntervalID = window.setInterval(
@@ -115,24 +95,6 @@ class IndexPage extends React.Component {
         <div className={styles.hero}>
           <Container className={styles.streamsSection}>
             <h1 className={styles.title}>{data.site.siteMetadata.title}</h1>
-
-            <div className="text-center">
-              <a
-                id={`eventbrite-widget-modal-trigger-${
-                  data.site.siteMetadata.siteEventbriteID
-                }`}
-                href={data.site.siteMetadata.siteEventbriteURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                role="button"
-                className={styles.registrationButton}
-                onClick={(event) => {
-                  event.preventDefault();
-                }}
-              >
-                Regisztráció
-              </a>
-            </div>
 
             <div className={styles.streamsContainer}>
               <div className={styles.stream}>
@@ -332,8 +294,6 @@ export const query = graphql`
         eventVenue
         siteAddressURL
         siteAddressPretty
-        siteEventbriteURL
-        siteEventbriteID
         siteAppStoreURL
         siteGooglePlayURL
       }
