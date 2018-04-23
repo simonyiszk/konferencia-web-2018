@@ -16,9 +16,11 @@ import SponsorsSectionSeparatorSrc from '../data/section-separators/sponsors.svg
 import Sponsors from '../sections/Sponsors';
 import styles from './index.module.scss';
 
+/*
 const flatten = array => array.reduce((acc, prev) => acc.concat(prev), []);
 
 const PRESENTATIONS_DATA_REFRESH_INTERVAL = 60000;
+*/
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -37,9 +39,10 @@ class IndexPage extends React.Component {
       presentations: initialPresentations,
     };
 
-    this.presentationsDataIntervalID = 0;
+    // this.presentationsDataIntervalID = 0;
   }
 
+  /*
   componentDidMount() {
     if (typeof window !== 'undefined') {
       this.refreshPresentationsData();
@@ -85,6 +88,7 @@ class IndexPage extends React.Component {
           }),
         }));
   }
+  */
 
   render() {
     const { data } = this.props;

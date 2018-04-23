@@ -14,7 +14,7 @@ export const frontmatter = {
   title: 'Expo',
 };
 
-const EXHIBITORS_DATA_REFRESH_INTERVAL = 60000;
+// const EXHIBITORS_DATA_REFRESH_INTERVAL = 60000;
 
 export default class ExpoPage extends React.Component {
   constructor(props) {
@@ -25,9 +25,10 @@ export default class ExpoPage extends React.Component {
       exhibitors: initialExhibitors,
     };
 
-    this.exhibitorsDataIntervalID = 0;
+    // this.exhibitorsDataIntervalID = 0;
   }
 
+  /*
   componentDidMount() {
     if (typeof window !== 'undefined') {
       this.refreshExhibitorsData();
@@ -54,6 +55,7 @@ export default class ExpoPage extends React.Component {
           exhibitors,
         }));
   }
+  */
 
   render() {
     const { data } = this.props;
